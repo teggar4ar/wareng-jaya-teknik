@@ -15,6 +15,14 @@
       ],
       "redirect": "/about",
       "statusCode": 200
+    },
+    {
+      "route": "/services",
+      "methods": [
+        "get"
+      ],
+      "redirect": "/services",
+      "statusCode": 200
     }
   ]
 }
