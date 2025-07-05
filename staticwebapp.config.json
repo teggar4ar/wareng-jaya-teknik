@@ -11,6 +11,12 @@
       "methods": [
         "get"
       ]
+    },
+    {
+      "route": "/gallery",
+      "methods": [
+        "get"
+      ]
     }
   ]
 }
