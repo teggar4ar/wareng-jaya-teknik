@@ -7,6 +7,14 @@
       ],
       "redirect": "/",
       "statusCode": 200
+    },
+    {
+      "route": "/about",
+      "methods": [
+        "get"
+      ],
+      "redirect": "/about",
+      "statusCode": 200
     }
   ]
 }
