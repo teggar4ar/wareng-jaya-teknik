@@ -23,6 +23,12 @@
       "methods": [
         "get"
       ]
+    },
+    {
+      "route": "/",
+      "methods": [
+        "get"
+      ]
     }
   ]
 }
