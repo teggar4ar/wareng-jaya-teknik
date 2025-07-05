@@ -13,7 +13,7 @@
       "methods": [
         "get"
       ],
-      "redirect": "/about",
+      "redirect": "https://brave-beach-0ec172500.1.azurestaticapps.net/about",
       "statusCode": 200
     },
     {
