@@ -9,7 +9,7 @@
       "statusCode": 200
     },
     {
-      "route": "/about",
+      "route": "https://brave-beach-0ec172500.1.azurestaticapps.net/about",
       "methods": [
         "get"
       ],
