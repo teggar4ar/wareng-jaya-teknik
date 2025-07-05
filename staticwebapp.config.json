@@ -23,6 +23,14 @@
       ],
       "redirect": "/services",
       "statusCode": 200
+    },
+    {
+      "route": "/gallery",
+      "methods": [
+        "get"
+      ],
+      "redirect": "/gallery",
+      "statusCode": 200
     }
   ]
 }
