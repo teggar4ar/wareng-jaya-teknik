@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="64" viewBox="0 0 64 64">
+  <!-- Background Circle -->
+  <circle cx="32" cy="32" r="30" fill="#0066cc" />
+  <circle cx="32" cy="32" r="28" fill="#ffffff" />
+  
+  <!-- W for Wareng -->
+  <path d="M14,18 L18,42 L22,42 L25,25 L28,42 L32,42 L36,18 L32,18 L29,35 L26,18 L24,18 L21,35 L18,18 Z" fill="#0066cc" />
+  
+  <!-- Gear representing Engineering/Technical -->
+  <g transform="translate(32, 32)">
+    <circle cx="0" cy="0" r="12" fill="#0066cc" />
+    <circle cx="0" cy="0" r="8" fill="#ffffff" />
+    
+    <!-- Gear teeth -->
+    <g fill="#0066cc">
+      <rect x="-2" y="-15" width="4" height="6" />
+      <rect x="-2" y="9" width="4" height="6" />
+      <rect x="-15" y="-2" width="6" height="4" />
+      <rect x="9" y="-2" width="6" height="4" />
+      
+      <!-- Diagonal teeth -->
+      <rect x="-12" y="-12" width="5" height="4" transform="rotate(45)" />
+      <rect x="-12" y="8" width="5" height="4" transform="rotate(-45)" />
+      <rect x="7" y="-12" width="5" height="4" transform="rotate(135)" />
+      <rect x="7" y="8" width="5" height="4" transform="rotate(-135)" />
+    </g>
+  </g>
+</svg>

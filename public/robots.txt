@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Allow all search engine bots to index all content
+Disallow: 
+
+# Sitemap location
+Sitemap: https://warengjayteknik.com/sitemap.xml
