@@ -86,7 +86,7 @@ const HomePage = () => {
                 variants={fadeInUp}
               >
                 <a 
-                  href="https://wa.me/6281234567890" 
+                  href="https://wa.me/6281398427309" 
                   className="group relative inline-flex items-center justify-center rounded-lg bg-green-600 px-8 py-3.5 font-bold text-lg shadow-md transition-all duration-300 ease-out hover:shadow-xl hover:shadow-green-500/30 hover:-translate-y-1 hover:scale-105 text-white overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

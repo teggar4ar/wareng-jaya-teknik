@@ -93,7 +93,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <p className="font-medium">WhatsApp</p>
-                    <a href="https://wa.me/6281234567890" className="text-lg hover:underline transition">+62 8123 456 7890</a>
+                    <a href="https://wa.me/6281398427309" className="text-lg hover:underline transition">+62 8123 456 7890</a>
                   </div>
                 </div>
 
@@ -130,7 +130,7 @@ const ContactPage = () => {
 
               <div className="mt-8">
                 <a 
-                  href="https://wa.me/6281234567890" 
+                  href="https://wa.me/6281398427309" 
                   className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-6 rounded-lg transition duration-300 inline-flex items-center"
                 >
                   <FaWhatsapp className="mr-3" size={24}/>
