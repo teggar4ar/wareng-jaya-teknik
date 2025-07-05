@@ -69,10 +69,10 @@ const AboutUsPage = () => {
       <SEO 
         title="Tentang Kami"
         description="Pelajari tentang sejarah, misi, visi Wareng Jaya Teknik, dan tim berbakat di balik keunggulan teknik kami."
-        canonicalUrl="https://warengjayteknik.com/about"
+        canonicalUrl="https://warengjayateknik.com/about"
         keywords={['tentang Wareng Jaya Teknik', 'tim teknik', 'sejarah perusahaan', 'ahli fabrikasi logam']}
       />
-      <div className={`min-h-screen ${isDark ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'}`}>
+      <div className={`min-h-screen w-full overflow-x-hidden ${isDark ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'}`}>
         {/* Hero Section with Parallax Effect */}
         <div className="relative h-[60vh] flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 z-0">
@@ -106,7 +106,7 @@ const AboutUsPage = () => {
           </div>
         </div>
 
-        <div className="container mx-auto px-4 md:px-8 lg:px-10 mt-10">
+        <div className="container mx-auto px-4 md:px-8 lg:px-10 mt-10 overflow-hidden">
           {/* Statistics Section */}
           <section id="stats-section" className="scroll-animate -mt-16 md:-mt-24 mb-20 opacity-0">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
@@ -295,6 +295,12 @@ const AboutUsPage = () => {
 
       {/* Add global CSS for animations */}
       <style jsx global>{`
+        html, body {
+          overflow-x: hidden;
+          width: 100%;
+          position: relative;
+        }
+        
         .animate-fade-in {
           animation: fadeIn 1s forwards;
         }

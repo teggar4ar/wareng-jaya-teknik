@@ -165,4 +165,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Contact
 
-For any inquiries about this website, please contact at contact@warengjayteknik.com
+For any inquiries about this website, please contact at contact@warengjayateknik.com

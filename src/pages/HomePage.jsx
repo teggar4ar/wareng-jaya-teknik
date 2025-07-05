@@ -31,7 +31,7 @@ const HomePage = () => {
       <SEO 
         title="Beranda"
         description="Wareng Jaya Teknik - Mitra terpercaya Anda dalam fabrikasi logam. Kami menyediakan solusi teknik berkualitas tinggi untuk semua kebutuhan teknis Anda."
-        canonicalUrl="https://warengjayteknik.com/"
+        canonicalUrl="https://warengjayateknik.com/"
         keywords={['fabrikasi logam', 'solusi teknik', 'jasa pengelasan', 'layanan teknis', 'Wareng Jaya Teknik']}
       />
       <div className={isDark ? 'text-white' : 'text-gray-900'}>
@@ -46,7 +46,7 @@ const HomePage = () => {
               className="h-full w-full"
             >
               <img 
-                src="/images/hero.png" 
+                src="/images/hero-new.webp" 
                 alt="Fabrikasi logam pengelasan dengan percikan api" 
                 className="w-full h-full object-cover"
                 loading="eager"
@@ -327,10 +327,15 @@ const HomePage = () => {
                     className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
                     onError={(e) => {e.target.onerror = null; e.target.src = '/images/placeholder.svg'}}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-300"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                  {/* Always visible gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70 md:opacity-0 md:group-hover:opacity-70 transition-opacity duration-300"></div>
+                  
+                  {/* Project title and description - visible by default on mobile */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform md:translate-y-8 md:group-hover:translate-y-0 transition-transform duration-300">
                     <h3 className="text-xl font-bold">Judul Proyek {item}</h3>
-                    <p className="mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">Fabrikasi logam khusus untuk properti perumahan</p>
+                    <p className="mt-2 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
+                      Fabrikasi logam khusus untuk properti perumahan
+                    </p>
                   </div>
                 </motion.div>
               ))}

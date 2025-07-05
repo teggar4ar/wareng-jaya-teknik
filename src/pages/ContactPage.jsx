@@ -35,7 +35,7 @@ const ContactPage = () => {
   const faqs = [
     { 
       question: "Area mana saja yang Anda layani?", 
-      answer: "Kami menyediakan layanan teknik kami di seluruh wilayah Jakarta dan sekitarnya." 
+      answer: "Kami menyediakan layanan teknik kami di seluruh wilayah Jabodetabek dan sekitarnya." 
     },
     { 
       question: "Seberapa cepat Anda dapat memberikan penawaran?", 
@@ -52,7 +52,7 @@ const ContactPage = () => {
       <SEO 
         title="Hubungi Kami"
         description="Hubungi Wareng Jaya Teknik untuk penawaran, pertanyaan, atau untuk mendiskusikan kebutuhan proyek Anda. Kami tersedia melalui WhatsApp selama jam kerja."
-        canonicalUrl="https://warengjayteknik.com/contact"
+        canonicalUrl="https://warengjayateknik.com/contact"
         keywords={['kontak Wareng Jaya Teknik', 'kontak layanan teknik', 'penawaran fabrikasi logam', 'kontak WhatsApp']}
       />
       <div className={`min-h-screen py-16 px-6 ${isDark ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'}`}>
@@ -113,7 +113,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <p className="font-medium">Email</p>
-                    <a href="mailto:info@warengjayteknik.com" className="text-lg hover:underline transition">info@warengjayteknik.com</a>
+                    <a href="mailto:info@warengjayateknik.com" className="text-lg hover:underline transition">info@warengjayateknik.com</a>
                   </div>
                 </div>
 

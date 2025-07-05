@@ -30,6 +30,9 @@ const SEO = ({
       {keywordString && <meta name="keywords" content={keywordString} />}
       <link rel="canonical" href={canonicalUrl} />
       
+      {/* Viewport meta tag to control layout on mobile browsers */}
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+      
       {/* Open Graph Tags */}
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />

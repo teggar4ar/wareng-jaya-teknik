@@ -80,7 +80,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-2 text-sm">
                 <FaEnvelope className={theme === 'dark' ? 'text-gray-400' : 'text-blue-300'} />
-                <span>info@warengjayteknik.com</span>
+                <span>info@warengjayateknik.com</span>
               </div>
             </div>
           </div>
