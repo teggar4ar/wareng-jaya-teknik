@@ -17,6 +17,12 @@
       "methods": [
         "get"
       ]
+    },
+    {
+      "route": "/contact",
+      "methods": [
+        "get"
+      ]
     }
   ]
 }
