@@ -31,7 +31,7 @@ const HomePage = () => {
       <SEO 
         title="Beranda"
         description="Wareng Jaya Teknik - Mitra terpercaya Anda dalam fabrikasi logam. Kami menyediakan solusi teknik berkualitas tinggi untuk semua kebutuhan teknis Anda."
-        canonicalUrl="https://warengjayateknik.com/"
+        canonicalUrl="https://brave-beach-0ec172500.1.azurestaticapps.net/"
         keywords={['fabrikasi logam', 'solusi teknik', 'jasa pengelasan', 'layanan teknis', 'Wareng Jaya Teknik']}
       />
       <div className={isDark ? 'text-white' : 'text-gray-900'}>
@@ -311,7 +311,26 @@ const HomePage = () => {
             </motion.div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[1, 2, 3].map((item, index) => (
+              {[
+                {
+                  id: 1,
+                  title: "Pintu Lipat Besi Modern",
+                  description: "Desain pintu lipat besi dengan sentuhan modern untuk rumah pribadi",
+                  image: "/images/project-1.webp"
+                },
+                {
+                  id: 2,
+                  title: "Railing Tangga Minimalis",
+                  description: "Railing tangga dengan desain modern dan fungsional untuk keamanan",
+                  image: "/images/project-2.webp"
+                },
+                {
+                  id: 3,
+                  title: "Kanopi Outdoor Estetis",
+                  description: "Kanopi dengan desain estetis untuk area outdoor yang nyaman",
+                  image: "/images/project-3.webp"
+                }
+              ].map((project, index) => (
                 <motion.div 
                   key={index}
                   className="overflow-hidden rounded-lg shadow-lg group relative"
@@ -322,8 +341,8 @@ const HomePage = () => {
                   whileHover={{ y: -5 }}
                 >
                   <img 
-                    src={`/images/project-${item}.jpg`} 
-                    alt={`Proyek ${item}`} 
+                    src={project.image} 
+                    alt={project.title} 
                     className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
                     onError={(e) => {e.target.onerror = null; e.target.src = '/images/placeholder.svg'}}
                   />
@@ -332,9 +351,9 @@ const HomePage = () => {
                   
                   {/* Project title and description - visible by default on mobile */}
                   <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform md:translate-y-8 md:group-hover:translate-y-0 transition-transform duration-300">
-                    <h3 className="text-xl font-bold">Judul Proyek {item}</h3>
+                    <h3 className="text-xl font-bold">{project.title}</h3>
                     <p className="mt-2 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
-                      Fabrikasi logam khusus untuk properti perumahan
+                      {project.description}
                     </p>
                   </div>
                 </motion.div>
@@ -378,19 +397,19 @@ const HomePage = () => {
                   name: "Budi Santoso",
                   position: "Pemilik Rumah",
                   quote: "Wareng Jaya Teknik memasang pintu keamanan dan teralis jendela khusus untuk rumah saya. Kualitas pekerjaan sangat luar biasa, dan mereka menyelesaikan proyek lebih cepat dari jadwal.",
-                  image: "/images/placeholder.svg"
+                  image: "/images/profile.webp"
                 },
                 {
                   name: "PT. Graha Mitra",
                   position: "Pengembang Properti",
                   quote: "Kami telah bekerja sama dengan Wareng Jaya Teknik dalam berbagai proyek perumahan. Perhatian mereka terhadap detail dan komitmen terhadap kualitas menjadikan mereka mitra terpercaya untuk fabrikasi logam.",
-                  image: "/images/placeholder.svg"
+                  image: "/images/profile.webp"
                 },
                 {
                   name: "Ahmad Rizki",
                   position: "Pemilik Restoran",
                   quote: "Railing dan elemen dekoratif logam yang mereka buat untuk restoran kami telah menerima banyak pujian dari pelanggan. Layanan profesional dari awal hingga akhir.",
-                  image: "/images/placeholder.svg"
+                  image: "/images/profile.webp"
                 }
               ].map((testimonial, index) => (
                 <motion.div 

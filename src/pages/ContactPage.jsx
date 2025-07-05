@@ -52,7 +52,7 @@ const ContactPage = () => {
       <SEO 
         title="Hubungi Kami"
         description="Hubungi Wareng Jaya Teknik untuk penawaran, pertanyaan, atau untuk mendiskusikan kebutuhan proyek Anda. Kami tersedia melalui WhatsApp selama jam kerja."
-        canonicalUrl="https://warengjayateknik.com/contact"
+        canonicalUrl="https://brave-beach-0ec172500.1.azurestaticapps.net/contact"
         keywords={['kontak Wareng Jaya Teknik', 'kontak layanan teknik', 'penawaran fabrikasi logam', 'kontak WhatsApp']}
       />
       <div className={`min-h-screen py-16 px-6 ${isDark ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'}`}>
@@ -83,7 +83,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <p className="font-medium">Jam Kerja</p>
-                    <p className="text-lg">Senin - Sabtu: 08:00 - 17:00</p>
+                    <p className="text-lg">Setiap Hari: 08:00 - 17:00</p>
                   </div>
                 </div>
 
@@ -93,7 +93,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <p className="font-medium">WhatsApp</p>
-                    <a href="https://wa.me/6281398427309" className="text-lg hover:underline transition">+62 8123 456 7890</a>
+                    <a href="https://wa.me/6281398427309" className="text-lg hover:underline transition">+62 813 9842 7309</a>
                   </div>
                 </div>
 
@@ -103,7 +103,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <p className="font-medium">Telepon</p>
-                    <a href="tel:+6281234567890" className="text-lg hover:underline transition">+62 8123 456 7890</a>
+                    <a href="tel:+6281398427309" className="text-lg hover:underline transition">+62 813 9842 7309</a>
                   </div>
                 </div>
 
@@ -123,7 +123,7 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <p className="font-medium">Alamat Bengkel</p>
-                    <p className="text-lg">Jl. Raya Wareng, Bogor, Jawa Barat</p>
+                    <p className="text-lg">Jl. Raya Kalisuren, Kp. Kandang Panjang, Kec. Tajur Halang, Kabupaten Bogor, Jawa Barat 16320</p>
                   </div>
                 </div>
               </div>

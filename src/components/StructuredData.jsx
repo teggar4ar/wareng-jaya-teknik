@@ -6,8 +6,8 @@ const StructuredData = () => {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Wareng Jaya Teknik",
-    "image": "https://warengjayateknik.com/images/hero.png",
-    "url": "https://warengjayateknik.com",
+    "image": "https://brave-beach-0ec172500.1.azurestaticapps.net/images/hero.png",
+    "url": "https://brave-beach-0ec172500.1.azurestaticapps.net/",
     "description": "Bengkel Las profesional yang menyediakan solusi berkualitas tinggi untuk semua kebutuhan konstruksi Anda.",
     "address": {
       "@type": "PostalAddress",

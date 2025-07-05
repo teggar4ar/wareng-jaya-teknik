@@ -64,7 +64,7 @@ const Footer = () => {
               <h3 className="text-xl font-bold">Wareng Jaya Teknik</h3>
             </div>
             <p className="text-sm opacity-80">
-              Jasa teknis profesional untuk semua kebutuhan Anda. Kami menyediakan layanan perawatan, 
+              Bengkel Las profesional untuk semua kebutuhan konstruksi Anda. Kami menyediakan layanan perawatan, 
               instalasi, dan perbaikan dengan kualitas tinggi.
             </p>
             
@@ -72,11 +72,11 @@ const Footer = () => {
             <div className="space-y-2 pt-2">
               <div className="flex items-center space-x-2 text-sm">
                 <FaMapMarkerAlt className={theme === 'dark' ? 'text-gray-400' : 'text-blue-300'} />
-                <span>Jl. Raya Wareng, Bogor, Jawa Barat</span>
+                <span>Jl. Raya Kalisuren, Kp. Kandang Panjang, Kec. Tajur Halang, Kabupaten Bogor, Jawa Barat 16320</span>
               </div>
               <div className="flex items-center space-x-2 text-sm">
                 <FaPhone className={theme === 'dark' ? 'text-gray-400' : 'text-blue-300'} />
-                <span>+62 123-456-7890</span>
+                <span>+62 813-9842-7309</span>
               </div>
               <div className="flex items-center space-x-2 text-sm">
                 <FaEnvelope className={theme === 'dark' ? 'text-gray-400' : 'text-blue-300'} />

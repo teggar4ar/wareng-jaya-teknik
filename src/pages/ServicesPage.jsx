@@ -116,7 +116,7 @@ const ServicesPage = () => {
       <SEO 
         title="Layanan"
         description="Jelajahi rangkaian lengkap layanan pengerjaan logam kami termasuk pintu besi, pagar, teralis jendela, kanopi, dan banyak lagi."
-        canonicalUrl="https://warengjayateknik.com/services"
+        canonicalUrl="https://brave-beach-0ec172500.1.azurestaticapps.net/services"
         keywords={['pintu besi', 'pagar', 'teralis jendela', 'kanopi', 'konstruksi logam', 'tangga spiral', 'railing tangga', 'tower air']}
       />
       <div className={`min-h-screen ${isDark ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'}`}>

@@ -9,14 +9,16 @@ import ServicesPage from './pages/ServicesPage';
 import ProjectGalleryPage from './pages/ProjectGalleryPage';
 import ContactPage from './pages/ContactPage';
 import StructuredData from './components/StructuredData';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   const { theme } = useContext(ThemeContext);
   
   return (
     <Router>
+      <StructuredData />
+      <ScrollToTop />
       <div className={`min-h-screen flex flex-col ${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'} transition-colors duration-200`}>
-        <StructuredData />
         <Header />
         <main className="flex-grow pt-16 md:pt-20">
           <Routes>

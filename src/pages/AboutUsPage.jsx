@@ -69,7 +69,7 @@ const AboutUsPage = () => {
       <SEO 
         title="Tentang Kami"
         description="Pelajari tentang sejarah, misi, visi Wareng Jaya Teknik, dan tim berbakat di balik keunggulan teknik kami."
-        canonicalUrl="https://warengjayateknik.com/about"
+        canonicalUrl="https://brave-beach-0ec172500.1.azurestaticapps.net/about"
         keywords={['tentang Wareng Jaya Teknik', 'tim teknik', 'sejarah perusahaan', 'ahli fabrikasi logam']}
       />
       <div className={`min-h-screen w-full overflow-x-hidden ${isDark ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'}`}>
@@ -147,7 +147,7 @@ const AboutUsPage = () => {
             <div className="order-1 md:order-2 flex justify-center">
               <div className="relative">
                 <img 
-                  src="/images/placeholder.svg" 
+                  src="/images/welding.webp" 
                   alt="Interior Bengkel" 
                   className="rounded-lg shadow-2xl w-full h-auto object-cover z-10 relative"
                 />
