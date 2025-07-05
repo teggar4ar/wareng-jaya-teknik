@@ -31,6 +31,14 @@
       ],
       "redirect": "/gallery",
       "statusCode": 200
+    },
+    {
+      "route": "/contact",
+      "methods": [
+        "get"
+      ],
+      "redirect": "/contact",
+      "statusCode": 200
     }
   ]
 }
