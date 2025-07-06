@@ -69,7 +69,7 @@ const AboutUsPage = () => {
       <SEO 
         title="Tentang Kami"
         description="Pelajari tentang sejarah, misi, visi Wareng Jaya Teknik, dan tim berbakat di balik keunggulan teknik kami."
-        canonicalUrl="https://brave-beach-0ec172500.1.azurestaticapps.net/about"
+        canonicalUrl="https://wareng-jaya-teknik.vercel.app/about"
         keywords={['tentang Wareng Jaya Teknik', 'tim teknik', 'sejarah perusahaan', 'ahli fabrikasi logam']}
       />
       <div className={`min-h-screen w-full overflow-x-hidden ${isDark ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'}`}>
@@ -79,7 +79,7 @@ const AboutUsPage = () => {
             <div 
               className="absolute inset-0 bg-cover bg-center" 
               style={{
-                backgroundImage: "url('/images/workshop-hero.jpg')", 
+                backgroundImage: "url('/images/hero-about.jpg')", 
                 filter: isDark ? 'brightness(0.4)' : 'brightness(0.7)'
               }}
             ></div>
@@ -108,7 +108,7 @@ const AboutUsPage = () => {
 
         <div className="container mx-auto px-4 md:px-8 lg:px-10 mt-10 overflow-hidden">
           {/* Statistics Section */}
-          <section id="stats-section" className="scroll-animate -mt-16 md:-mt-24 mb-20 opacity-0">
+          <section id="stats-section" className="scroll-animate mb-20 opacity-0">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
               {[
                 { icon: <FaHardHat />, count: projectCount, label: "Proyek Selesai" },
@@ -208,26 +208,19 @@ const AboutUsPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 { 
-                  name: "Ahmad Sanjaya", 
+                  name: "Darto", 
                   role: "Pendiri & Kepala Fabrikasi",
-                  image: "/images/placeholder.svg",
-                  bio: "Dengan pengalaman lebih dari 20 tahun dalam fabrikasi logam, Ahmad memimpin tim kami dengan presisi dan semangat.",
+                  image: "/images/worker.svg",
+                  bio: "Dengan pengalaman lebih dari 20 tahun dalam fabrikasi logam, Darto memimpin tim kami dengan presisi dan semangat.",
                   social: { linkedin: "#", twitter: "#" }
                 },
                 { 
-                  name: "Dewi Pratama", 
-                  role: "Manajer Proyek",
-                  image: "/images/placeholder.svg",
-                  bio: "Dewi memastikan setiap proyek berjalan lancar dari konsep hingga pengiriman dengan perhatian detail yang tajam.",
+                  name: "Entong", 
+                  role: "Ahli Pengelasan",
+                  image: "/images/worker.svg",
+                  bio: "Entong memastikan setiap proyek berjalan lancar dari konsep hingga pengiriman dengan perhatian detail yang tajam.",
                   social: { linkedin: "#", twitter: "#" }
                 },
-                { 
-                  name: "Budi Wibowo", 
-                  role: "Kepala Desainer",
-                  image: "/images/placeholder.svg",
-                  bio: "Budi menerjemahkan visi klien menjadi desain yang menakjubkan dan fungsional menggunakan teknologi pemodelan 3D terbaru.",
-                  social: { linkedin: "#", twitter: "#" }
-                }
               ].map((member, index) => (
                 <div 
                   key={index} 
@@ -268,7 +261,7 @@ const AboutUsPage = () => {
                   "Wareng Jaya Teknik mengubah konsep kami menjadi kenyataan dengan keahlian pengerjaan yang luar biasa. Perhatian mereka terhadap detail dan komitmen terhadap kualitas melebihi harapan kami."
                 </p>
                 <div className="flex items-center justify-center">
-                  <img src="/images/placeholder.svg" alt="Klien" className="w-12 h-12 rounded-full mr-4 object-cover" />
+                  <img src="/images/profile.webp" alt="Klien" className="w-12 h-12 rounded-full mr-4 object-cover" />
                   <div>
                     <p className="font-bold">PT Industri Maju Bersama</p>
                     <p className={isDark ? 'text-gray-400' : 'text-gray-600'}>Klien Manufaktur</p>

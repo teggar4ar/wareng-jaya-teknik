@@ -13,13 +13,13 @@ import SEO from '../components/SEO';
 const projects = [
   { 
     id: 1,
-    title: 'Gerbang Keamanan Modern',
+    title: 'Gerbang Lipat Keamanan Modern',
     description: 'Gerbang keamanan yang dirancang khusus untuk properti perumahan dengan estetika modern dan konstruksi tahan lama.',
     category: 'Gerbang',
     client: 'Perumahan Pribadi',
     location: 'Jakarta',
     completionDate: '2023',
-    src: '/images/placeholder.svg', 
+    src: '/images/gallery/lipat.jpg', 
     width: 1200,
     height: 800
   },
@@ -31,19 +31,19 @@ const projects = [
     client: 'Kantor Komersial',
     location: 'Bandung',
     completionDate: '2022',
-    src: '/images/placeholder.svg',
+    src: '/images/gallery/teralis.jpg',
     width: 800,
     height: 1200 
   },
   { 
     id: 3,
-    title: 'Kanopi Industri',
-    description: 'Kanopi skala besar untuk fasilitas industri yang memberikan perlindungan cuaca dengan konstruksi logam yang tahan lama.',
+    title: 'Kanopi Rumah Minimalis',
+    description: 'Kanopi untuk rumah minimalis yang memberikan perlindungan cuaca dengan konstruksi logam yang tahan lama.',
     category: 'Kanopi',
-    client: 'PT Manufacturing',
+    client: 'Keluarga Santoso',
     location: 'Surabaya',
     completionDate: '2023',
-    src: '/images/placeholder.svg',
+    src: '/images/gallery/kanopi.jpg',
     width: 1200,
     height: 800
   },
@@ -55,31 +55,31 @@ const projects = [
     client: 'Apartemen Urban',
     location: 'Jakarta',
     completionDate: '2022',
-    src: '/images/placeholder.svg',
+    src: '/images/gallery/spiral.jpg',
     width: 800,
     height: 1200
   },
   { 
     id: 5,
-    title: 'Pagar Taman Dekoratif',
-    description: 'Pagar ornamental yang dirancang untuk meningkatkan estetika taman sambil memberikan keamanan dan pembatasan properti.',
-    category: 'Pagar',
+    title: 'Railing Tangga Mewah',
+    description: 'Railing tangga mewah yang dirancang untuk memberikan sentuhan elegan pada interior rumah.',
+    category: 'Railing',
     client: 'Vila Mewah',
-    location: 'Bali',
+    location: 'Bogor',
     completionDate: '2023',
-    src: '/images/placeholder.svg',
+    src: '/images/gallery/railing.jpg',
     width: 1200,
     height: 800
   },
   { 
     id: 6,
-    title: 'Sistem Pintu Keamanan',
-    description: 'Pintu keamanan heavy-duty dengan mekanisme penguncian canggih untuk fasilitas komersial.',
+    title: 'Pintu Teralis',
+    description: 'Pintu Teralis dengan desain yang menggabungkan keamanan dan keindahan, ideal untuk akses masuk rumah.',
     category: 'Pintu',
-    client: 'Cabang Bank',
-    location: 'Medan',
+    client: 'Perumahan Elite',
+    location: 'Bogor',
     completionDate: '2022',
-    src: '/images/placeholder.svg',
+    src: '/images/gallery/pintu.jpg',
     width: 800,
     height: 1200
   },
@@ -91,7 +91,7 @@ const projects = [
     client: 'Perumahan Pribadi',
     location: 'Yogyakarta',
     completionDate: '2023',
-    src: '/images/placeholder.svg',
+    src: '/images/gallery/pagar.jpg',
     width: 1200,
     height: 800
   },
@@ -103,19 +103,19 @@ const projects = [
     client: 'Proyek Komunitas',
     location: 'Jawa Barat',
     completionDate: '2022',
-    src: '/images/placeholder.svg',
+    src: '/images/gallery/toren.jpeg',
     width: 800,
     height: 1200
   },
   { 
     id: 9,
-    title: 'Partisi Logam Dekoratif',
-    description: 'Layar partisi logam yang dirancang khusus menciptakan pemisahan visual sambil mempertahankan nuansa terbuka.',
+    title: 'Pintu Dorong Kustom',
+    description: 'Pintu dorong yang dirancang khusus untuk memenuhi kebutuhan estetika dan fungsional rumah pribadi.',
     category: 'Interior',
-    client: 'Restoran',
+    client: 'Rumah Pribadi',
     location: 'Jakarta',
     completionDate: '2023',
-    src: '/images/placeholder.svg',
+    src: '/images/gallery/pintudorong.jpg',
     width: 1200,
     height: 800
   },
@@ -161,7 +161,7 @@ const ProjectGalleryPage = () => {
       <SEO 
         title="Galeri Proyek"
         description="Jelajahi galeri proyek yang telah selesai yang menampilkan keahlian kami dalam fabrikasi logam, pintu, pagar, dan pengerjaan logam khusus lainnya."
-        canonicalUrl="https://brave-beach-0ec172500.1.azurestaticapps.net/gallery"
+        canonicalUrl="https://wareng-jaya-teknik.vercel.app/gallery"
         keywords={['galeri proyek', 'portofolio pengerjaan logam', 'proyek yang telah selesai', 'contoh fabrikasi logam khusus']}
         ogType="article"
       />
@@ -172,7 +172,7 @@ const ProjectGalleryPage = () => {
             <div 
               className="absolute inset-0 bg-cover bg-center" 
               style={{
-                backgroundImage: "url('/images/gallery-hero.jpg')", 
+                backgroundImage: "url('/images/gallery/hero-gallery.jpg')", 
                 filter: isDark ? 'brightness(0.4)' : 'brightness(0.7)'
               }}
             ></div>
@@ -250,28 +250,29 @@ const ProjectGalleryPage = () => {
                     exit={{ opacity: 0, scale: 0.8 }}
                     transition={{ duration: 0.4 }}
                     key={project.id}
-                    className={`relative group overflow-hidden rounded-lg shadow-lg cursor-pointer ${
-                      project.height > project.width ? 'row-span-2' : ''
-                    }`}
+                    className={`relative group overflow-hidden rounded-lg shadow-lg cursor-pointer h-full`}
                     onClick={() => openLightbox(i)}
                     whileHover={{ y: -5, transition: { duration: 0.2 } }}
                   >
-                    <div className="aspect-square overflow-hidden">
+                    <div className="h-full">
                       <img 
                         src={project.src} 
                         alt={project.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        className={`w-full h-full transition-transform duration-500 group-hover:scale-110 ${
+                          project.height > project.width ? 'object-contain' : 'object-cover'
+                        }`}
                       />
                     </div>
                     
-                    {/* Overlay with project info */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5">
-                      <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                    {/* Overlay with project info - always visible on mobile, hover on desktop */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent md:opacity-0 opacity-100 md:group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5">
+                      <div className="transform md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-300">
                         <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-2 ${isDark ? 'bg-blue-600' : 'bg-blue-500'} text-white`}>
                           {project.category}
                         </span>
                         <h3 className="text-white text-xl font-bold">{project.title}</h3>
-                        <p className="text-gray-300 text-sm mt-1">{project.client} • {project.location}</p>
+                        <p className="text-gray-300 text-sm mt-1 hidden md:block md:group-hover:block">{project.client} • {project.location}</p>
+                        <p className="text-gray-300 text-sm mt-1 block md:hidden">{project.client} • {project.location}</p>
                       </div>
                     </div>
                   </motion.div>

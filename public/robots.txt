@@ -1,8 +1,5 @@
 User-agent: *
-Allow: /
-
-# Allow all search engine bots to index all content
 Disallow: 
 
 # Sitemap location
-Sitemap: https://brave-beach-0ec172500.1.azurestaticapps.net/sitemap.xml
+Sitemap: https://wareng-jaya-teknik.vercel.app/sitemap.xml

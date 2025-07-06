@@ -10,56 +10,56 @@ const services = [
   { 
     name: 'Pintu Besi', 
     description: 'Pintu keamanan yang dirancang khusus sesuai spesifikasi Anda. Pintu besi kami menggabungkan kekuatan superior dengan tampilan estetis, tersedia dalam berbagai finishing dan desain untuk melengkapi properti Anda.', 
-    imageUrl: '/images/placeholder.svg',
+    imageUrl: '/images/project-4.webp',
     icon: <FaDoorOpen size={32} />,
     features: ['Desain yang dapat disesuaikan', 'Pilihan keamanan tinggi', 'Tahan cuaca', 'Tersedia dalam berbagai finishing']
   },
   { 
     name: 'Pagar & Gerbang', 
     description: 'Lindungi dan tingkatkan properti Anda dengan solusi pagar khusus kami. Dari pagar dekoratif yang mewah hingga penghalang keamanan yang kuat, kami menciptakan batas yang tahan lama dan menarik.', 
-    imageUrl: '/images/placeholder.svg',
+    imageUrl: '/images/project-7.webp',
     icon: <FaShieldAlt size={32} />,
     features: ['Ketinggian dan desain kustom', 'Fokus dekoratif atau keamanan', 'Perawatan anti-korosi', 'Opsi gerbang otomatis']
   },
   { 
     name: 'Teralis Jendela', 
     description: 'Amankan jendela Anda tanpa mengorbankan gaya. Teralis jendela kami menawarkan perlindungan sambil meningkatkan daya tarik estetika properti Anda dengan desain dekoratif atau minimalis.', 
-    imageUrl: '/images/placeholder.svg',
+    imageUrl: '/images/project-5.webp',
     icon: <FaWindowRestore size={32} />,
     features: ['Dibuat khusus untuk jendela mana pun', 'Tersedia pola dekoratif', 'Opsi pelepasan cepat untuk keamanan', 'Finishing powder coating']
   },
   { 
     name: 'Kanopi', 
     description: 'Tambahkan tempat berlindung dan ketertarikan arsitektur dengan kanopi logam khusus kami. Dirancang untuk bertahan dari elemen sambil memberikan perlindungan dari matahari dan hujan.', 
-    imageUrl: '/images/placeholder.svg',
+    imageUrl: '/images/project-8.webp',
     icon: <FaWarehouse size={32} />,
     features: ['Konstruksi tahan cuaca', 'Ukuran dan bentuk khusus', 'Pencahayaan terintegrasi opsional', 'Berbagai material atap']
   },
   { 
     name: 'Konstruksi Logam', 
     description: 'Dari dukungan struktural hingga elemen dekoratif, konstruksi logam khusus kami dirancang untuk ketahanan dan presisi. Kami bekerja dengan berbagai logam untuk menciptakan apa yang Anda butuhkan.', 
-    imageUrl: '/images/placeholder.svg',
+    imageUrl: '/images/project-9.webp',
     icon: <FaIndustry size={32} />,
     features: ['Analisis struktural', 'Rekayasa khusus', 'Beberapa pilihan logam', 'Pemasangan di lokasi']
   },
   { 
     name: 'Tangga Spiral', 
     description: 'Hemat ruang dengan tangga spiral elegan kami. Dibuat khusus sesuai spesifikasi Anda, tangga spiral kami menggabungkan bentuk dan fungsi dengan keahlian pengerjaan yang luar biasa.', 
-    imageUrl: '/images/placeholder.svg',
+    imageUrl: '/images/project-10.webp',
     icon: <FaStepForward size={32} />,
     features: ['Desain hemat ruang', 'Railing dan pijakan kustom', 'Opsi dalam atau luar ruangan', 'Berbagai pilihan finishing']
   },
   { 
     name: 'Railing Tangga', 
     description: 'Tingkatkan keamanan dan gaya dengan railing tangga khusus kami. Tersedia dalam berbagai desain dari minimalis modern hingga gaya tradisional yang mewah untuk cocok dengan preferensi estetika Anda.', 
-    imageUrl: '/images/placeholder.svg',
+    imageUrl: '/images/project-2.webp',
     icon: <FaRulerVertical size={32} />,
     features: ['Opsi aman untuk anak-anak', 'Desain dekoratif atau minimalis', 'Varian dalam dan luar ruangan', 'Konstruksi sesuai kode']
   },
   { 
     name: 'Tower Air', 
     description: 'Solusi penyimpanan air yang tahan lama dan andal untuk properti residensial atau komersial. Tower air kami dirancang untuk umur panjang dengan bahan tahan korosi dan dukungan struktural yang tepat.', 
-    imageUrl: '/images/placeholder.svg',
+    imageUrl: '/images/project-6.webp',
     icon: <FaWater size={32} />,
     features: ['Kustomisasi kapasitas', 'Perawatan anti-korosi', 'Opsi ditinggikan atau tingkat tanah', 'Titik akses pemeliharaan']
   },
@@ -116,7 +116,7 @@ const ServicesPage = () => {
       <SEO 
         title="Layanan"
         description="Jelajahi rangkaian lengkap layanan pengerjaan logam kami termasuk pintu besi, pagar, teralis jendela, kanopi, dan banyak lagi."
-        canonicalUrl="https://brave-beach-0ec172500.1.azurestaticapps.net/services"
+        canonicalUrl="https://wareng-jaya-teknik.vercel.app/services"
         keywords={['pintu besi', 'pagar', 'teralis jendela', 'kanopi', 'konstruksi logam', 'tangga spiral', 'railing tangga', 'tower air']}
       />
       <div className={`min-h-screen ${isDark ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'}`}>
@@ -126,7 +126,7 @@ const ServicesPage = () => {
             <div 
               className="absolute inset-0 bg-cover bg-center" 
               style={{
-                backgroundImage: "url('/images/services-hero.jpg')", 
+                backgroundImage: "url('/images/hero-service.jpg')", 
                 filter: isDark ? 'brightness(0.4)' : 'brightness(0.7)'
               }}
             ></div>
@@ -171,41 +171,41 @@ const ServicesPage = () => {
             variants={staggerContainer}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, amount: 0.1 }}
-          >
-            {services.map((service, index) => (
-              <motion.div 
-                key={index} 
-                className={`rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${isDark ? 'bg-gray-800 hover:bg-gray-700' : 'bg-white hover:bg-gray-50'}`}
-                variants={fadeInUp}
-              >
-                <div className="h-48 overflow-hidden relative">
-                  <img 
+                viewport={{ once: true, amount: 0.1 }}
+                >
+              {services.map((service, index) => (
+                <motion.div 
+                  key={index} 
+                  className={`rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${isDark ? 'bg-gray-800 hover:bg-gray-700' : 'bg-white hover:bg-gray-50'}`}
+                  variants={fadeInUp}
+                  >
+                  <div className="h-48 overflow-hidden relative">
+                    <img 
                     src={service.imageUrl} 
                     alt={service.name} 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className={`absolute top-0 right-0 p-3 ${isDark ? 'bg-blue-500/80' : 'bg-blue-600'} text-white rounded-bl-lg`}>
+                    />
+                    <div className={`absolute top-0 right-0 p-3 ${isDark ? 'bg-blue-500/80' : 'bg-blue-600'} text-white rounded-bl-lg`}>
                     {service.icon}
+                    </div>
                   </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold mb-3">{service.name}</h3>
-                  <p className={`mb-4 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>{service.description}</p>
-                  <ul className="space-y-2 mb-4">
+                  <div className="p-6">
+                    <h3 className="text-2xl font-bold mb-3">{service.name}</h3>
+                    <p className={`mb-4 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>{service.description}</p>
+                    <ul className="space-y-2 mb-4">
                     {service.features.map((feature, i) => (
                       <li key={i} className="flex items-start">
-                        <span className={`mr-2 mt-1 text-blue-500`}>•</span>
-                        <span>{feature}</span>
+                      <span className={`mr-2 mt-1 text-blue-500`}>•</span>
+                      <span>{feature}</span>
                       </li>
                     ))}
-                  </ul>
-                  <button className={`w-full py-2 rounded-lg font-medium transition-colors ${isDark ? 'bg-blue-500 hover:bg-blue-400 text-white' : 'bg-blue-100 hover:bg-blue-200 text-blue-700'}`}>
+                    </ul>
+                    <Link to="/contact" className={`block text-center w-full py-2 rounded-lg font-medium transition-colors ${isDark ? 'bg-blue-500 hover:bg-blue-400 text-white' : 'bg-blue-100 hover:bg-blue-200 text-blue-700'}`}>
                     Minta Penawaran
-                  </button>
-                </div>
-              </motion.div>
-            ))}
+                    </Link>
+                  </div>
+                </motion.div>
+              ))}
           </motion.div>
 
           {/* Our Process Section */}

@@ -31,7 +31,7 @@ const HomePage = () => {
       <SEO 
         title="Beranda"
         description="Wareng Jaya Teknik - Mitra terpercaya Anda dalam fabrikasi logam. Kami menyediakan solusi teknik berkualitas tinggi untuk semua kebutuhan teknis Anda."
-        canonicalUrl="https://brave-beach-0ec172500.1.azurestaticapps.net/"
+        canonicalUrl="https://wareng-jaya-teknik.vercel.app/"
         keywords={['fabrikasi logam', 'solusi teknik', 'jasa pengelasan', 'layanan teknis', 'Wareng Jaya Teknik']}
       />
       <div className={isDark ? 'text-white' : 'text-gray-900'}>
