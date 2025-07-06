@@ -8,6 +8,8 @@ import AboutUsPage from './pages/AboutUsPage';
 import ServicesPage from './pages/ServicesPage';
 import ProjectGalleryPage from './pages/ProjectGalleryPage';
 import ContactPage from './pages/ContactPage';
+import BlogPage from './pages/BlogPage';
+import BlogPostPage from './pages/BlogPostPage';
 import StructuredData from './components/StructuredData';
 import ScrollToTop from './components/ScrollToTop';
 
@@ -16,7 +18,6 @@ function App() {
   
   return (
     <Router>
-      <StructuredData />
       <ScrollToTop />
       <div className={`min-h-screen flex flex-col ${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'} transition-colors duration-200`}>
         <Header />
@@ -27,10 +28,13 @@ function App() {
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/gallery" element={<ProjectGalleryPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/:slug" element={<BlogPostPage />} />
           </Routes>
         </main>
         <Footer />
       </div>
+      <StructuredData />
     </Router>
   );
 }

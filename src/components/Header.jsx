@@ -81,6 +81,7 @@ const Header = () => {
               { path: "/about", label: "Tentang Kami" },
               { path: "/services", label: "Layanan" },
               { path: "/gallery", label: "Galeri" },
+              { path: "/blog", label: "Blog" },
               { path: "/contact", label: "Kontak" }
             ].map((item) => (
               <li key={item.path}>
@@ -136,6 +137,7 @@ const Header = () => {
               { path: "/about", label: "Tentang Kami" },
               { path: "/services", label: "Layanan" },
               { path: "/gallery", label: "Galeri" },
+              { path: "/blog", label: "Blog" },
               { path: "/contact", label: "Kontak" }
             ].map((item, index) => (
               <motion.li 
