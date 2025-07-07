@@ -12,6 +12,7 @@ import BlogPage from './pages/BlogPage';
 import BlogPostPage from './pages/BlogPostPage';
 import StructuredData from './components/StructuredData';
 import ScrollToTop from './components/ScrollToTop';
+import WhatsAppButton from './components/WhatsAppButton';
 
 function App() {
   const { theme } = useContext(ThemeContext);
@@ -34,6 +35,7 @@ function App() {
         </main>
         <Footer />
       </div>
+      <WhatsAppButton />
       <StructuredData />
     </Router>
   );

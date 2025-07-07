@@ -22,26 +22,26 @@ const StructuredData = ({ blogPost, data }) => {
     "url": "https://wareng-jaya-teknik.vercel.app/",
     "logo": "https://wareng-jaya-teknik.vercel.app/favicon.svg",
     "description": "Jasa pembuatan kanopi, teralis, pagar, railing, tangga dan konstruksi baja berkualitas dengan pengalaman lebih dari 10 tahun di bidang pengerjaan logam dan konstruksi.",
-    "telephone": "+6281234567890",
+    "telephone": "+6281398427309",
     "email": "info@warengjayateknik.com",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Jl. Kaliurang KM 13.5",
-      "addressLocality": "Sleman",
-      "addressRegion": "DI Yogyakarta",
-      "postalCode": "55584",
+      "streetAddress": "Jl. Raya Kalisuren, Kp. Kandang Panjang",
+      "addressLocality": "Bogor",
+      "addressRegion": "Jawa Barat",
+      "postalCode": "16320",
       "addressCountry": "ID"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "-7.6894264",
-      "longitude": "110.4160642"
+      "latitude": "-6.475744000773417",
+      "longitude": "106.75157628256285"
     },
     "priceRange": "$$",
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "dayOfWeek": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
         "opens": "08:00",
         "closes": "17:00"
       }
