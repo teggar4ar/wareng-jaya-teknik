@@ -1,6 +1,6 @@
 # Website Wareng Jaya Teknik
 
-![Banner Wareng Jaya Teknik](public/images/hero.png)
+![Banner Wareng Jaya Teknik](public/images/welding.webp)
 
 ## Tentang Proyek Ini
 
@@ -50,7 +50,7 @@ Wareng Jaya Teknik adalah website bengkel las yang dibangun dengan React dan Vit
 1. **Klon repositori**
 
    ```bash
-   git clone https://github.com/yourusername/wareng-jaya-teknik.git
+   git clone https://github.com/teggar4ar/wareng-jaya-teknik.git
    cd wareng-jaya-teknik
    ```
 
