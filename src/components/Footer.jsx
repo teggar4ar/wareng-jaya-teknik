@@ -19,6 +19,7 @@ const Footer = () => {
     { name: 'Tentang Kami', path: '/about' },
     { name: 'Layanan', path: '/services' },
     { name: 'Galeri', path: '/gallery' },
+    { name: 'Blog', path: '/blog' },
     { name: 'Kontak', path: '/contact' },
   ];
 

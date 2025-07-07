@@ -160,7 +160,7 @@ const ProjectGalleryPage = () => {
     <>
       <SEO 
         title="Galeri Proyek"
-        description="Jelajahi galeri proyek yang telah selesai yang menampilkan keahlian kami dalam fabrikasi logam, pintu, pagar, dan pengerjaan logam khusus lainnya."
+        description="Jelajahi galeri proyek yang telah selesai yang menampilkan keahlian kami dalam fabrikasi logam, pintu, pagar, kanopi, dan pengerjaan logam khusus lainnya."
         canonicalUrl="https://wareng-jaya-teknik.vercel.app/gallery"
         keywords={['galeri proyek', 'portofolio pengerjaan logam', 'proyek yang telah selesai', 'contoh fabrikasi logam khusus']}
         ogType="article"
@@ -173,7 +173,7 @@ const ProjectGalleryPage = () => {
               className="absolute inset-0 bg-cover bg-center" 
               style={{
                 backgroundImage: "url('/images/gallery/hero-gallery.jpg')", 
-                filter: isDark ? 'brightness(0.4)' : 'brightness(0.7)'
+                filter: isDark ? 'brightness(1.4)' : 'brightness(0.7)'
               }}
             ></div>
             <div className={`absolute inset-0 ${isDark ? 'bg-gradient-to-r from-black/70 to-gray-900/70' : 'bg-gradient-to-r from-blue-500/30 to-gray-900/50'}`}></div>

@@ -80,7 +80,7 @@ const AboutUsPage = () => {
               className="absolute inset-0 bg-cover bg-center" 
               style={{
                 backgroundImage: "url('/images/hero-about.jpg')", 
-                filter: isDark ? 'brightness(0.4)' : 'brightness(0.7)'
+                filter: isDark ? 'brightness(1.5)' : 'brightness(0.7)'
               }}
             ></div>
             <div className={`absolute inset-0 ${isDark ? 'bg-gradient-to-r from-black/70 to-gray-900/70' : 'bg-gradient-to-r from-blue-500/30 to-gray-900/50'}`}></div>

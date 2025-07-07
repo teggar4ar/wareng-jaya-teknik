@@ -53,10 +53,16 @@ const Breadcrumbs = ({ currentPage, blogPost }) => {
       name = currentPage;
     }
     
+    // Mark the last item as current and potentially truncate long titles
+    const isCurrent = index === paths.length - 1;
+    const shouldTruncate = isCurrent && name.length > 30;
+    
     breadcrumbItems.push({
       name,
       path: accumulatedPath,
-      position: index + 2 // Home is position 1
+      position: index + 2, // Home is position 1
+      current: isCurrent,
+      isTruncated: shouldTruncate
     });
   });
   
@@ -76,25 +82,30 @@ const Breadcrumbs = ({ currentPage, blogPost }) => {
     return null; // Don't show breadcrumbs on home page
   }
   
+  // Get the last two items for mobile view (Home and current page)
+  const simplifiedBreadcrumbs = breadcrumbItems.length > 2 ? 
+    [breadcrumbItems[0], { 
+      name: '...', 
+      isEllipsis: true 
+    }, breadcrumbItems[breadcrumbItems.length - 1]] : 
+    breadcrumbItems;
+  
   return (
     <>
       <StructuredData data={breadcrumbStructuredData} />
       
       <nav 
-        className={`py-3 px-4 ${isDark ? 'bg-gray-800' : 'bg-gray-50'} border-b ${isDark ? 'border-gray-700' : 'border-gray-200'}`}
+        className={`py-2 px-3 sm:py-3 sm:px-4 ${isDark ? 'bg-gray-800' : 'bg-gray-50'} border-b ${isDark ? 'border-gray-700' : 'border-gray-200'}`}
         aria-label="Breadcrumb"
       >
-        <div className="container mx-auto">
-          <ol 
-            className="flex flex-wrap items-center gap-x-1 text-xs sm:text-sm text-gray-500 dark:text-gray-400"
-            // Improved spacing and wrapping for mobile
-            style={{ overflowWrap: 'break-word', wordBreak: 'break-word' }}
-          >
+        <div className="container mx-auto overflow-x-auto scrollbar-hide">
+          {/* Desktop breadcrumbs (hidden on very small screens) */}
+          <ol className="hidden sm:flex flex-wrap items-center text-sm text-gray-500 dark:text-gray-400">
             {breadcrumbItems.map((item, index) => (
-              <li key={index} className="flex items-center">
+              <li key={index} className="flex items-center max-w-full">
                 {/* Add separator between items (except for the first item) */}
                 {index > 0 && (
-                  <span className="mx-1 inline-flex items-center text-gray-400 dark:text-gray-500" aria-hidden="true">
+                  <span className="mx-1.5 inline-flex items-center text-gray-400 dark:text-gray-500" aria-hidden="true">
                     <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
@@ -103,26 +114,59 @@ const Breadcrumbs = ({ currentPage, blogPost }) => {
                 
                 {/* Each breadcrumb item */}
                 {item.current ? (
-                  // Current page (not a link)
                   <span 
-                    className={`font-medium truncate ${isDark ? 'text-white' : 'text-gray-900'}`}
-                    // Limit the width of the last item on mobile if it's a blog title
-                    style={item.isTruncated ? { 
-                      maxWidth: '180px',
-                      display: 'inline-block',
-                      whiteSpace: 'nowrap',
-                      overflow: 'hidden',
-                      textOverflow: 'ellipsis',
-                    } : {}}
+                    className={`font-medium ${isDark ? 'text-white' : 'text-gray-900'} ${item.isTruncated ? 'truncate' : ''}`}
+                    style={item.isTruncated ? { maxWidth: '240px' } : {}}
                     aria-current="page"
                   >
                     {item.name}
                   </span>
                 ) : (
-                  // Link to previous page
                   <Link
                     to={item.path}
-                    className={`hover:text-blue-600 dark:hover:text-blue-400 truncate transition-colors flex items-center`}
+                    className={`hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center`}
+                  >
+                    {index === 0 && (
+                      <svg className="mr-1 h-3 w-3" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L10 4.414l6.293 6.293a1 1 0 001.414-1.414l-7-7z" />
+                      </svg>
+                    )}
+                    {item.name}
+                  </Link>
+                )}
+              </li>
+            ))}
+          </ol>
+
+          {/* Mobile breadcrumbs (visible only on small screens) */}
+          <ol className="flex sm:hidden items-center text-xs whitespace-nowrap text-gray-500 dark:text-gray-400">
+            {simplifiedBreadcrumbs.map((item, index) => (
+              <li key={index} className="flex items-center">
+                {/* Add separator between items (except for the first item) */}
+                {index > 0 && (
+                  <span className="mx-1 inline-flex items-center text-gray-400 dark:text-gray-500" aria-hidden="true">
+                    <svg className="h-2.5 w-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </span>
+                )}
+                
+                {/* Each breadcrumb item */}
+                {item.isEllipsis ? (
+                  <span className="text-gray-400 dark:text-gray-500">...</span>
+                ) : item.current ? (
+                  <span 
+                    className={`font-medium truncate ${isDark ? 'text-white' : 'text-gray-900'}`}
+                    style={{ maxWidth: '160px' }}
+                    aria-current="page"
+                    title={item.name}
+                  >
+                    {item.name}
+                  </span>
+                ) : (
+                  <Link
+                    to={item.path}
+                    className={`hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center`}
                   >
                     {index === 0 && (
                       <svg className="mr-1 h-3 w-3" fill="currentColor" viewBox="0 0 20 20">
