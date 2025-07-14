@@ -1,19 +1,22 @@
-import React, { useContext } from 'react';
+import React, { useContext, Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ThemeContext } from './contexts/ThemeContext';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import HomePage from './pages/HomePage';
-import AboutUsPage from './pages/AboutUsPage';
-import ServicesPage from './pages/ServicesPage';
-import ProjectGalleryPage from './pages/ProjectGalleryPage';
-import ContactPage from './pages/ContactPage';
-import BlogPage from './pages/BlogPage';
-import BlogPostPage from './pages/BlogPostPage';
 import StructuredData from './components/StructuredData';
 import ScrollToTop from './components/ScrollToTop';
 import WhatsAppButton from './components/WhatsAppButton';
 import AnalyticsTracker from './components/AnalyticsTracker';
+import LoadingSpinner from './components/LoadingSpinner';
+
+// Lazy-loaded page components
+const HomePage = lazy(() => import('./pages/HomePage'));
+const AboutUsPage = lazy(() => import('./pages/AboutUsPage'));
+const ServicesPage = lazy(() => import('./pages/ServicesPage'));
+const ProjectGalleryPage = lazy(() => import('./pages/ProjectGalleryPage'));
+const ContactPage = lazy(() => import('./pages/ContactPage'));
+const BlogPage = lazy(() => import('./pages/BlogPage'));
+const BlogPostPage = lazy(() => import('./pages/BlogPostPage'));
 
 function App() {
   const { theme } = useContext(ThemeContext);
@@ -25,15 +28,17 @@ function App() {
         <AnalyticsTracker />
         <Header />
         <main className="flex-grow pt-16 md:pt-20">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/about" element={<AboutUsPage />} />
-            <Route path="/services" element={<ServicesPage />} />
-            <Route path="/gallery" element={<ProjectGalleryPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="/blog" element={<BlogPage />} />
-            <Route path="/blog/:slug" element={<BlogPostPage />} />
-          </Routes>
+          <Suspense fallback={<LoadingSpinner />}>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/about" element={<AboutUsPage />} />
+              <Route path="/services" element={<ServicesPage />} />
+              <Route path="/gallery" element={<ProjectGalleryPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/blog" element={<BlogPage />} />
+              <Route path="/blog/:slug" element={<BlogPostPage />} />
+            </Routes>
+          </Suspense>
         </main>
         <Footer />
       </div>
