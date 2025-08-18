@@ -6,7 +6,7 @@ import { getAllPosts } from './nodeBlogUtils.js'; // Menggunakan kembali utilita
 function generateBlogData() {
   // Dapatkan semua data postingan (termasuk konten)
   // Pass true for includeDrafts and true for useFileModifiedDate to always use file modification dates
-  const allPosts = getAllPosts(true, true);
+  const allPosts = getAllPosts(true, false);
 
   // Tentukan path untuk file output di dalam folder /src
   const outputPath = path.join(process.cwd(), 'src', 'data', 'blogPosts.js');
