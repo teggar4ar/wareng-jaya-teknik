@@ -8,7 +8,7 @@ import { getAllPosts } from './nodeBlogUtils.js';
  * discover and index all pages, including dynamic blog posts
  */
 function generateSitemap() {
-  const baseUrl = 'https://wareng-jaya-teknik.vercel.app';
+  const baseUrl = 'https://warengjayateknik.my.id';
   const currentDate = new Date().toISOString();
 
   // 1. Definisikan rute statis

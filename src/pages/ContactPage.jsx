@@ -52,7 +52,7 @@ const ContactPage = () => {
       <SEO 
         title="Hubungi Kami"
         description="Hubungi Wareng Jaya Teknik untuk penawaran, pertanyaan, atau untuk mendiskusikan kebutuhan proyek Anda. Kami tersedia melalui WhatsApp selama jam kerja."
-        canonicalUrl="https://wareng-jaya-teknik.vercel.app/contact"
+        canonicalUrl="https://warengjayateknik.my.id/contact"
         keywords={['kontak Wareng Jaya Teknik', 'kontak layanan teknik', 'penawaran fabrikasi logam', 'kontak WhatsApp']}
       />
       <div className={`min-h-screen py-16 px-6 ${isDark ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'}`}>

@@ -161,7 +161,7 @@ const ProjectGalleryPage = () => {
       <SEO 
         title="Galeri Proyek"
         description="Jelajahi galeri proyek yang telah selesai yang menampilkan keahlian kami dalam fabrikasi logam, pintu, pagar, kanopi, dan pengerjaan logam khusus lainnya."
-        canonicalUrl="https://wareng-jaya-teknik.vercel.app/gallery"
+        canonicalUrl="https://warengjayateknik.my.id/gallery"
         keywords={['galeri proyek', 'portofolio pengerjaan logam', 'proyek yang telah selesai', 'contoh fabrikasi logam khusus']}
         ogType="article"
       />

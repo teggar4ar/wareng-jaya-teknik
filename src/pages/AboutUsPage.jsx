@@ -69,7 +69,7 @@ const AboutUsPage = () => {
       <SEO 
         title="Tentang Kami"
         description="Pelajari tentang sejarah, misi, visi Wareng Jaya Teknik, dan tim berbakat di balik keunggulan teknik kami."
-        canonicalUrl="https://wareng-jaya-teknik.vercel.app/about"
+        canonicalUrl="https://warengjayateknik.my.id/about"
         keywords={['tentang Wareng Jaya Teknik', 'tim teknik', 'sejarah perusahaan', 'ahli fabrikasi logam']}
       />
       <div className={`min-h-screen w-full overflow-x-hidden ${isDark ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'}`}>

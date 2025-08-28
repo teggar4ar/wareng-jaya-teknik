@@ -2,7 +2,7 @@
 /**
  * This file is auto-generated during the build process.
  * Do not edit it directly.
- * Generated on: 2025-08-18T14:26:55.277Z
+ * Generated on: 2025-08-28T16:00:51.606Z
  */
 export const allBlogPosts = [
   {
