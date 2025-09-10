@@ -9,9 +9,11 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "generate-sitemap": "node scripts/generate-sitemap.js",
-    "generate-data": "node scripts/generate-blog-data.js"
+    "generate-data": "node scripts/generate-blog-data.js",
+    "test-article": "node scripts/generate-article.js test"
   },
   "dependencies": {
+    "@google/generative-ai": "^0.21.0",
     "autoprefixer": "^10.4.21",
     "date-fns": "^4.1.0",
     "framer-motion": "^12.23.0",
