@@ -140,7 +140,7 @@ const AboutUsPage = () => {
                 </p>
                 <h2 className={`text-4xl font-bold mb-6 mt-10 inline-block relative after:content-[''] after:block after:w-1/2 after:h-1 after:bg-blue-500 after:mt-2`}>Visi Kami</h2>
                 <p className="text-lg leading-relaxed">
-                  Menjadi bengkel logam paling terpercaya dan inovatif di wilayah ini, dikenal karena keahlian pengerjaan, keandalan, dan dedikasi kami dalam mendorong batas-batas desain.
+                  Menjadi bengkel las paling terpercaya dan inovatif di Tajurhalang, dikenal karena keahlian pengerjaan, keandalan, dan dedikasi kami dalam mendorong batas-batas desain.
                 </p>
               </div>
             </div>
