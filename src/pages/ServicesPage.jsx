@@ -16,7 +16,7 @@ const SERVICES = [
   {
     name: 'Kanopi',
     description:
-      'Kanopi tahan cuaca untuk carport, teras, dan area outdoor. Dirancang sesuai ukuran lokasi dengan pilihan rangka dan atap yang menyesuaikan kebutuhan serta anggaran Anda.',
+      'Kanopi untuk carport, teras, atau halaman belakang. Kami ukur dulu lokasinya, lalu Anda pilih rangka dan atap yang cocok dengan anggaran.',
     image: '/images/project-8.webp',
     alt: 'Kanopi besi dengan atap tahan cuaca hasil pengerjaan bengkel',
     specs: [
@@ -29,7 +29,7 @@ const SERVICES = [
   {
     name: 'Pagar & Gerbang',
     description:
-      'Pagar dan gerbang besi yang kokoh untuk keamanan sekaligus tampilan properti Anda — dari model minimalis hingga klasik, termasuk gerbang dorong dan lipat.',
+      'Pagar dan gerbang besi untuk rumah atau usaha. Modelnya bebas: minimalis, klasik, gerbang dorong, atau lipat.',
     image: '/images/project-7.webp',
     alt: 'Pagar besi minimalis hasil pengerjaan bengkel',
     specs: [
@@ -42,7 +42,7 @@ const SERVICES = [
   {
     name: 'Teralis',
     description:
-      'Teralis jendela dan pintu yang mengamankan rumah tanpa mengorbankan tampilan. Dibuat presisi mengikuti ukuran kusen, dengan pola menyesuaikan gaya bangunan.',
+      'Teralis jendela dan pintu supaya rumah lebih aman. Kami buat pas dengan ukuran kusen, polanya bisa disesuaikan dengan gaya rumah.',
     image: '/images/project-5.webp',
     alt: 'Teralis jendela besi dengan pola dekoratif',
     specs: [
@@ -55,7 +55,7 @@ const SERVICES = [
   {
     name: 'Railing',
     description:
-      'Railing tangga dan balkon yang aman dan rapi dalam pengerjaan — pilihan material besi maupun stainless untuk interior dan eksterior.',
+      'Railing tangga dan balkon dari besi atau stainless. Bisa untuk dalam maupun luar rumah.',
     image: '/images/project-2.webp',
     alt: 'Railing tangga besi desain minimalis',
     specs: [
@@ -68,7 +68,7 @@ const SERVICES = [
   {
     name: 'Konstruksi Baja',
     description:
-      'Konstruksi baja untuk kebutuhan rumah tinggal hingga usaha: rangka bangunan, mezzanine, gudang, hingga tower air dengan struktur yang diperhitungkan.',
+      'Rangka bangunan, mezzanine, gudang, sampai tower air. Strukturnya kami hitung dulu sebelum dikerjakan.',
     image: '/images/project-9.webp',
     alt: 'Konstruksi rangka baja untuk bangunan',
     specs: [
@@ -81,7 +81,7 @@ const SERVICES = [
   {
     name: 'Pintu Besi',
     description:
-      'Pintu besi dan pintu lipat (harmonika) dengan berbagai model — untuk rumah, ruko, dan gudang — kokoh sekaligus rapi tampilannya.',
+      'Pintu besi dan pintu lipat (harmonika) untuk rumah, ruko, atau gudang. Kuat, dan tampilannya tetap rapi.',
     image: '/images/project-4.webp',
     alt: 'Pintu besi kokoh untuk keamanan rumah',
     specs: [
@@ -94,7 +94,7 @@ const SERVICES = [
   {
     name: 'Tangga Spiral',
     description:
-      'Tangga spiral hemat ruang, dibuat sesuai tinggi lantai dan lebar area — cocok untuk rumah dengan lahan terbatas maupun akses servis.',
+      'Tangga spiral untuk lahan yang sempit. Dibuat mengikuti tinggi lantai dan lebar area yang tersedia.',
     image: '/images/project-10.webp',
     alt: 'Tangga spiral besi hemat ruang',
     specs: [
@@ -107,7 +107,7 @@ const SERVICES = [
   {
     name: 'Tower Air',
     description:
-      'Struktur penopang toren air yang kuat dan tahan lama untuk rumah maupun usaha, dengan ketinggian dan kapasitas menyesuaikan kebutuhan.',
+      'Penopang toren air untuk rumah atau usaha. Tingginya menyesuaikan tekanan air yang Anda butuhkan.',
     image: '/images/project-6.webp',
     alt: 'Tower penopang toren air dari rangka besi',
     specs: [
@@ -124,7 +124,7 @@ const ServicesPage = () => {
     <>
       <SEO
         title="Layanan"
-        description="Jelajahi rangkaian lengkap layanan pengerjaan logam kami termasuk pintu besi, pagar, teralis jendela, kanopi, dan banyak lagi."
+        description="Layanan bengkel las Wareng Jaya Teknik: kanopi, pagar, teralis, railing, pintu besi, tangga spiral, tower air, dan konstruksi baja."
         canonicalUrl="https://warengjayateknik.my.id/services"
         keywords={['pintu besi', 'pagar', 'teralis jendela', 'kanopi', 'konstruksi logam', 'tangga spiral', 'railing tangga', 'tower air']}
       />
@@ -139,8 +139,8 @@ const ServicesPage = () => {
             Apa yang Kami Kerjakan
           </h1>
           <p className="mt-4 max-w-2xl text-base text-ink-muted md:text-lg">
-            Semua dikerjakan langsung oleh bengkel kami di Tajurhalang — dari
-            pengukuran, fabrikasi, sampai pemasangan di lokasi Anda.
+            Semua dikerjakan di bengkel kami sendiri di Tajurhalang. Kami yang
+            ukur, kami yang buat, kami juga yang pasang.
           </p>
         </Container>
       </section>
@@ -210,8 +210,8 @@ const ServicesPage = () => {
               Butuh yang Lain? Tanyakan Saja.
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-base text-paper/70">
-              Pengerjaan las custom lainnya juga kami layani — kirim foto atau
-              sketsa kebutuhan Anda, kami bantu hitung.
+              Di luar daftar ini pun bisa. Kirim saja foto atau sketsanya lewat
+              WhatsApp, nanti kami hitung.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button

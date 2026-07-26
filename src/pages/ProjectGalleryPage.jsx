@@ -14,7 +14,7 @@ const PROJECTS = [
   {
     id: 1,
     title: 'Gerbang Lipat Besi',
-    description: 'Gerbang lipat besi untuk akses masuk properti.',
+    description: 'Gerbang lipat besi untuk pintu masuk rumah.',
     category: 'Pagar & Gerbang',
     src: '/images/gallery/lipat.jpg',
     width: 1200,
@@ -23,7 +23,7 @@ const PROJECTS = [
   {
     id: 2,
     title: 'Teralis Jendela',
-    description: 'Teralis pelindung jendela dengan pola dekoratif.',
+    description: 'Teralis jendela dengan pola dekoratif.',
     category: 'Teralis',
     src: '/images/gallery/teralis.jpg',
     width: 800,
@@ -32,7 +32,7 @@ const PROJECTS = [
   {
     id: 3,
     title: 'Kanopi Rumah',
-    description: 'Kanopi rangka besi untuk perlindungan cuaca area rumah.',
+    description: 'Kanopi rangka besi untuk halaman rumah.',
     category: 'Kanopi',
     src: '/images/gallery/kanopi.jpg',
     width: 1200,
@@ -59,7 +59,7 @@ const PROJECTS = [
   {
     id: 6,
     title: 'Pintu Teralis',
-    description: 'Pintu teralis yang menggabungkan keamanan dan tampilan.',
+    description: 'Pintu teralis, aman tapi tetap enak dilihat.',
     category: 'Pintu Besi',
     src: '/images/gallery/pintu.jpg',
     width: 800,
@@ -126,9 +126,9 @@ const ProjectGalleryPage = () => {
     <>
       <SEO
         title="Galeri Proyek"
-        description="Jelajahi galeri proyek yang telah selesai yang menampilkan keahlian kami dalam fabrikasi logam, pintu, pagar, kanopi, dan pengerjaan logam khusus lainnya."
+        description="Foto-foto hasil pengerjaan Wareng Jaya Teknik: pintu besi, pagar, kanopi, teralis, railing, dan konstruksi baja."
         canonicalUrl="https://warengjayateknik.my.id/gallery"
-        keywords={['galeri proyek', 'portofolio pengerjaan logam', 'proyek yang telah selesai', 'contoh fabrikasi logam khusus']}
+        keywords={['galeri proyek', 'hasil pengerjaan bengkel las', 'foto kanopi', 'foto pagar besi']}
         ogType="article"
       />
 
@@ -142,8 +142,8 @@ const ProjectGalleryPage = () => {
             Hasil Kerja Kami
           </h1>
           <p className="mt-4 max-w-2xl text-base text-ink-muted md:text-lg">
-            Dokumentasi proyek yang sudah kami kerjakan — klik foto untuk
-            melihat lebih besar.
+            Beberapa pekerjaan yang sudah kami selesaikan. Klik fotonya kalau
+            mau lihat lebih besar.
           </p>
         </Container>
       </section>
@@ -215,7 +215,7 @@ const ProjectGalleryPage = () => {
                 Tidak Ada Proyek
               </h2>
               <p className="mt-2 text-sm text-ink-muted">
-                Saat ini tidak ada proyek dalam kategori "{filterCategory}".
+                Belum ada foto untuk kategori "{filterCategory}".
               </p>
               <Button
                 variant="outline"
@@ -252,8 +252,8 @@ const ProjectGalleryPage = () => {
               Ingin Hasil Seperti Ini?
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-base text-paper/70">
-              Kirim foto lokasi atau referensi desain Anda — kami bantu ukur
-              dan beri penawaran.
+              Kirim foto lokasi atau contoh desain yang Anda suka. Nanti kami
+              bantu ukur dan buatkan penawarannya.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button

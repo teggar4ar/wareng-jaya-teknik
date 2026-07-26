@@ -10,19 +10,19 @@ const WA_NUMBER = '6281398427309';
 
 const FAQS = [
   {
-    question: 'Area mana saja yang Anda layani?',
+    question: 'Area mana saja yang dilayani?',
     answer:
-      'Kami melayani Tajurhalang, Bojonggede, Citayam, Cibinong, Depok, dan wilayah Bogor sekitarnya. Untuk lokasi di luar itu, silakan tanyakan dulu via WhatsApp.',
+      'Tajurhalang, Bojonggede, Citayam, Cibinong, Depok, dan wilayah Bogor sekitarnya. Kalau lokasi Anda di luar itu, tanyakan dulu lewat WhatsApp — biasanya masih bisa diatur.',
   },
   {
-    question: 'Seberapa cepat Anda dapat memberikan penawaran?',
+    question: 'Berapa lama penawaran dikirim?',
     answer:
-      'Untuk pekerjaan standar, penawaran biasanya kami kirim dalam 24-48 jam setelah survei atau setelah menerima ukuran dan foto lokasi.',
+      'Untuk pekerjaan standar, biasanya 1-2 hari setelah survei, atau setelah kami terima ukuran dan foto lokasi.',
   },
   {
-    question: 'Apakah survei dan pengukuran berbayar?',
+    question: 'Survei dan pengukuran bayar tidak?',
     answer:
-      'Untuk area layanan kami, survei dan pengukuran tidak dipungut biaya. Anda baru membayar setelah penawaran disepakati.',
+      'Tidak, selama masih di area layanan kami. Anda baru bayar setelah penawaran disepakati.',
   },
 ];
 
@@ -87,9 +87,9 @@ const ContactPage = () => {
     <>
       <SEO
         title="Hubungi Kami"
-        description="Hubungi Wareng Jaya Teknik untuk penawaran, pertanyaan, atau untuk mendiskusikan kebutuhan proyek Anda. Kami tersedia melalui WhatsApp selama jam kerja."
+        description="Hubungi Wareng Jaya Teknik untuk tanya harga atau diskusi rencana proyek Anda. Kami bisa dihubungi lewat WhatsApp setiap hari, jam 08.00-17.00."
         canonicalUrl="https://warengjayateknik.my.id/contact"
-        keywords={['kontak Wareng Jaya Teknik', 'kontak layanan teknik', 'penawaran fabrikasi logam', 'kontak WhatsApp']}
+        keywords={['kontak Wareng Jaya Teknik', 'kontak bengkel las', 'tanya harga las', 'kontak WhatsApp']}
       />
 
       {/* Page header */}
@@ -102,8 +102,8 @@ const ContactPage = () => {
             Hubungi Kami
           </h1>
           <p className="mt-4 max-w-2xl text-base text-ink-muted md:text-lg">
-            Cara tercepat adalah lewat WhatsApp — atau kirim pesan lewat
-            formulir dan kami balas secepatnya.
+            Paling cepat lewat WhatsApp. Bisa juga lewat formulir di bawah,
+            nanti kami balas.
           </p>
         </Container>
       </section>
@@ -197,7 +197,7 @@ const ContactPage = () => {
           <Reveal delay={0.1}>
             <SectionHeading index="02" label="Formulir" title="Kirim Pesan" />
             <p className="mt-4 text-sm text-ink-muted">
-              Pesan dari formulir ini akan dibuka di WhatsApp Anda — tinggal
+              Isi formulir ini, lalu pesannya terbuka di WhatsApp Anda. Tinggal
               tekan kirim.
             </p>
             <form onSubmit={handleSubmit} noValidate className="mt-8 space-y-6">
@@ -264,7 +264,7 @@ const ContactPage = () => {
                   aria-invalid={Boolean(errors.message)}
                   aria-describedby={errors.message ? 'message-error' : undefined}
                   className={inputClasses('message')}
-                  placeholder="Ceritakan kebutuhan Anda — jenis pekerjaan, ukuran, dan lokasi..."
+                  placeholder="Mau buat apa? Tulis jenis pekerjaan, perkiraan ukuran, dan lokasinya..."
                 ></textarea>
                 {errors.message && (
                   <p id="message-error" className="mt-2 font-mono text-xs text-accent">
@@ -279,7 +279,7 @@ const ContactPage = () => {
 
               <p aria-live="polite" className="font-mono text-sm text-ink-muted">
                 {submitted &&
-                  'Pesan Anda sudah disiapkan di WhatsApp. Jika jendela tidak terbuka, hubungi kami langsung di +62 813-9842-7309.'}
+                  'Pesan Anda sudah disiapkan di WhatsApp. Kalau jendelanya tidak terbuka, hubungi kami langsung di +62 813-9842-7309.'}
               </p>
             </form>
           </Reveal>
@@ -290,7 +290,7 @@ const ContactPage = () => {
       <section className="border-y border-line bg-surface py-16 md:py-24">
         <Container>
           <Reveal>
-            <SectionHeading index="03" label="FAQ" title="Pertanyaan yang Sering Diajukan" />
+            <SectionHeading index="03" label="FAQ" title="Yang Sering Ditanyakan" />
           </Reveal>
           <div className="mt-10 divide-y divide-line border-y border-line">
             {FAQS.map((faq, index) => {
@@ -334,7 +334,7 @@ const ContactPage = () => {
       <section className="bg-paper py-16 md:py-24">
         <Container>
           <Reveal>
-            <SectionHeading index="04" label="Lokasi" title="Temukan Bengkel Kami" />
+            <SectionHeading index="04" label="Lokasi" title="Lokasi Bengkel Kami" />
           </Reveal>
           <div className="mt-10 h-96 w-full overflow-hidden border border-line">
             <iframe

@@ -21,7 +21,7 @@ const StructuredData = ({ blogPost, data }) => {
     "image": "https://warengjayateknik.my.id/images/hero-new.webp",
     "url": "https://warengjayateknik.my.id/",
     "logo": "https://warengjayateknik.my.id/favicon.svg",
-    "description": "Jasa pembuatan kanopi, teralis, pagar, railing, tangga dan konstruksi baja berkualitas dengan pengalaman lebih dari 10 tahun di bidang pengerjaan logam dan konstruksi.",
+    "description": "Bengkel las di Tajurhalang, Bogor. Menerima pembuatan kanopi, teralis, pagar, railing, tangga, dan konstruksi baja.",
     "telephone": "+6281398427309",
     "email": "info@warengjayateknik.com",
     "address": {

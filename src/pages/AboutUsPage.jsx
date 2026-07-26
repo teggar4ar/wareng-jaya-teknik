@@ -10,22 +10,22 @@ const WORK_VALUES = [
   {
     title: 'Ukur Dulu, Baru Hitung',
     description:
-      'Kami survei dan ukur langsung di lokasi sebelum memberi harga — penawaran yang Anda terima sesuai kondisi nyata, bukan perkiraan.',
+      'Kami tidak kasih harga dari perkiraan. Lokasi kami datangi dan ukur dulu, baru penawaran keluar.',
   },
   {
     title: 'Material Sesuai Kesepakatan',
     description:
-      'Jenis dan ketebalan material kami tulis jelas di penawaran, dan itu yang kami pakai saat pengerjaan.',
+      'Jenis dan ketebalan material tertulis di penawaran. Itu yang kami pakai, tidak diganti diam-diam.',
   },
   {
     title: 'Pengerjaan Rapi',
     description:
-      'Sambungan las digerinda halus, finishing cat merata, dan area kerja kami bersihkan sebelum serah terima.',
+      'Sambungan las digerinda halus dan cat diratakan. Sebelum serah terima, area kerja kami bersihkan.',
   },
   {
     title: 'Garansi Hasil Las',
     description:
-      'Kalau ada sambungan yang bermasalah setelah pemasangan, kami datang dan perbaiki.',
+      'Kalau ada sambungan bermasalah setelah pemasangan, kabari kami. Kami datang dan perbaiki.',
   },
 ];
 
@@ -43,7 +43,7 @@ const AboutUsPage = () => {
     <>
       <SEO
         title="Tentang Kami"
-        description="Pelajari tentang Wareng Jaya Teknik, bengkel las di Tajurhalang, Bogor — cara kami bekerja dan area yang kami layani."
+        description="Kenali Wareng Jaya Teknik, bengkel las di Tajurhalang, Bogor: cara kami bekerja dan area yang kami layani."
         canonicalUrl="https://warengjayateknik.my.id/about"
         keywords={['tentang Wareng Jaya Teknik', 'bengkel las Tajurhalang', 'bengkel las Bogor', 'jasa las']}
       />
@@ -59,8 +59,8 @@ const AboutUsPage = () => {
           </h1>
           <p className="mt-4 max-w-2xl text-base text-ink-muted md:text-lg">
             Wareng Jaya Teknik adalah bengkel las di Tajurhalang, Kabupaten
-            Bogor — melayani pembuatan kanopi, pagar, teralis, railing, pintu
-            besi, dan konstruksi baja.
+            Bogor. Kami membuat kanopi, pagar, teralis, railing, pintu besi,
+            dan konstruksi baja.
           </p>
         </Container>
       </section>
@@ -72,15 +72,16 @@ const AboutUsPage = () => {
             <SectionHeading index="01" label="Cerita Kami" title="Dikerjakan Langsung, Bukan Diperantarai" />
             <div className="mt-6 space-y-4 text-base leading-relaxed text-ink-muted">
               <p>
-                Semua pesanan dikerjakan langsung di bengkel kami — dari
-                pemotongan, pengelasan, sampai finishing. Anda berkomunikasi
-                langsung dengan orang yang mengerjakan, tanpa perantara,
-                sehingga detail permintaan tidak hilang di tengah jalan.
+                Semua pesanan dikerjakan di bengkel kami sendiri, dari potong,
+                las, sampai finishing. Anda bicara langsung dengan orang yang
+                mengerjakan. Tidak ada perantara, jadi detail permintaan tidak
+                hilang di tengah jalan.
               </p>
               <p>
-                Kami melayani rumah tinggal, ruko, hingga kebutuhan usaha di
-                Tajurhalang dan sekitarnya. Skala pekerjaan menyesuaikan: dari
-                teralis satu jendela sampai konstruksi baja untuk bangunan.
+                Pelanggan kami macam-macam: rumah tinggal, ruko, sampai tempat
+                usaha di Tajurhalang dan sekitarnya. Pesanan kecil seperti
+                teralis satu jendela pun kami terima, begitu juga konstruksi
+                baja untuk bangunan.
               </p>
             </div>
           </Reveal>
@@ -152,8 +153,8 @@ const AboutUsPage = () => {
           <Reveal delay={0.1} className="md:order-1">
             <SectionHeading index="03" label="Area Layanan" title="Melayani Bogor & Sekitarnya" />
             <p className="mt-6 text-base leading-relaxed text-ink-muted">
-              Bengkel kami berada di Jl. Raya Kalisuren, Tajurhalang. Untuk
-              survei dan pemasangan, kami rutin melayani area berikut:
+              Bengkel kami ada di Jl. Raya Kalisuren, Tajurhalang. Untuk survei
+              dan pemasangan, area yang biasa kami datangi:
             </p>
             <ul className="mt-6 grid grid-cols-2 gap-3 font-mono text-sm text-ink">
               {SERVICE_AREAS.map((area) => (
@@ -176,8 +177,8 @@ const AboutUsPage = () => {
               Mau Lihat Cara Kami Bekerja?
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-base text-paper/70">
-              Lihat hasil pengerjaan kami, atau langsung diskusikan kebutuhan
-              Anda lewat WhatsApp.
+              Lihat-lihat dulu hasil pengerjaan kami, atau langsung saja tanya
+              lewat WhatsApp.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button

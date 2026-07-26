@@ -30,37 +30,37 @@ const SERVICES = [
     icon: FaWarehouse,
     title: 'Kanopi',
     description:
-      'Kanopi tahan cuaca untuk carport, teras, dan area outdoor dengan berbagai pilihan atap.',
+      'Kanopi untuk carport, teras, atau halaman. Atapnya bisa spandek, alderon, polikarbonat, atau kaca.',
   },
   {
     icon: FaShieldAlt,
     title: 'Pagar & Gerbang',
     description:
-      'Pagar dan gerbang besi yang kokoh untuk keamanan sekaligus tampilan properti Anda.',
+      'Pagar dan gerbang besi yang kuat. Modelnya mengikuti selera Anda, dari minimalis sampai klasik.',
   },
   {
     icon: FaBorderAll,
     title: 'Teralis',
     description:
-      'Teralis jendela dan pintu dengan desain yang menyesuaikan gaya bangunan Anda.',
+      'Teralis jendela dan pintu, dibuat pas dengan ukuran kusen dan gaya rumah Anda.',
   },
   {
     icon: FaRulerCombined,
     title: 'Railing',
     description:
-      'Railing tangga dan balkon yang aman, presisi, dan rapi dalam pengerjaan.',
+      'Railing tangga dan balkon yang kuat dipegang dan rapi sambungannya.',
   },
   {
     icon: FaIndustry,
     title: 'Konstruksi Baja',
     description:
-      'Konstruksi baja untuk kebutuhan rumah tinggal, komersial, hingga tower air.',
+      'Rangka baja untuk rumah, ruko, gudang, sampai tower air.',
   },
   {
     icon: FaDoorOpen,
     title: 'Pintu Besi',
     description:
-      'Pintu besi dan pintu lipat dengan berbagai model serta finishing anti karat.',
+      'Pintu besi dan pintu lipat berbagai model, dicat anti karat supaya awet.',
   },
 ];
 
@@ -86,17 +86,17 @@ const PROCESS_STEPS = [
   {
     title: 'Survei & Ukur',
     description:
-      'Kami datang ke lokasi untuk mengukur dan memahami kebutuhan Anda.',
+      'Kami datang ke lokasi, ukur langsung, dan dengarkan apa yang Anda mau.',
   },
   {
     title: 'Penawaran',
     description:
-      'Anda menerima rincian material dan harga yang transparan sebelum pengerjaan.',
+      'Rincian material dan harga kami kirim dulu. Tidak ada biaya tersembunyi.',
   },
   {
     title: 'Pengerjaan & Garansi',
     description:
-      'Pengerjaan rapi sesuai kesepakatan, dengan garansi hasil las.',
+      'Dikerjakan sesuai kesepakatan. Hasil las kami garansi.',
   },
 ];
 
@@ -121,8 +121,8 @@ const HomePage = () => {
               Las, Kanopi &amp; Konstruksi Baja
             </h1>
             <p className="mt-6 max-w-lg text-base text-ink-muted md:text-lg">
-              Pengerjaan las yang rapi dan kokoh untuk rumah maupun usaha Anda —
-              dikerjakan langsung oleh bengkel kami di Tajurhalang.
+              Butuh kanopi, pagar, atau rangka baja? Kami kerjakan sendiri di
+              bengkel kami di Tajurhalang, dari ukur sampai pasang.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Button
@@ -289,8 +289,8 @@ const HomePage = () => {
               Punya Proyek? Diskusikan Gratis.
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-base text-paper/70">
-              Ceritakan kebutuhan Anda — kami bantu ukur, hitung, dan beri penawaran
-              tanpa biaya.
+              Ceritakan saja rencananya. Kami bantu ukur dan hitung, penawarannya
+              gratis.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button

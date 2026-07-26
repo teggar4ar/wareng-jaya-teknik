@@ -5,7 +5,7 @@ import { motion, useReducedMotion } from 'framer-motion';
 const WhatsAppButton = () => {
   const reduceMotion = useReducedMotion();
   const phoneNumber = '6281398427309';
-  const message = 'Halo, saya tertarik dengan layanan dari Wareng Jaya Teknik. Bisa minta informasi lebih lanjut?';
+  const message = 'Halo, saya mau tanya soal layanan Wareng Jaya Teknik.';
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   return (

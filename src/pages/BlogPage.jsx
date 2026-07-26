@@ -165,7 +165,7 @@ const BlogPage = () => {
     <>
       <SEO
         title="Blog - Artikel & Tips Seputar Konstruksi dan Pengerjaan Logam"
-        description="Kumpulan artikel, tips, dan panduan lengkap seputar konstruksi, pengerjaan logam, pembuatan kanopi, teralis, pagar, dan berbagai layanan teknik yang kami tawarkan."
+        description="Artikel dan tips dari bengkel kami seputar konstruksi, pengerjaan logam, kanopi, teralis, dan pagar."
         canonicalUrl={`${window.location.origin}/blog${location.search}`}
         keywords={['blog konstruksi', 'tips pengerjaan logam', 'artikel kanopi', 'panduan teralis', 'blog bengkel las']}
       />
@@ -184,8 +184,8 @@ const BlogPage = () => {
             Artikel & Panduan
           </h1>
           <p className="mt-4 max-w-2xl text-base text-ink-muted md:text-lg">
-            Tips dan panduan seputar konstruksi, pengerjaan logam, kanopi,
-            teralis, dan pagar dari bengkel kami.
+            Kami tulis dari pengalaman di bengkel: soal kanopi, teralis, pagar,
+            dan pengerjaan logam lainnya.
           </p>
 
           {/* Search */}
@@ -482,8 +482,8 @@ const BlogPage = () => {
                     Tidak Ada Hasil
                   </h2>
                   <p className="mt-2 text-base text-ink-muted">
-                    Tidak ada artikel yang sesuai. Coba ubah filter atau kata
-                    kunci pencarian Anda.
+                    Tidak ada artikel yang cocok. Coba ganti filter atau kata
+                    kuncinya.
                   </p>
                   <button
                     type="button"
@@ -499,8 +499,7 @@ const BlogPage = () => {
                     Belum Ada Artikel
                   </h2>
                   <p className="mt-2 text-base text-ink-muted">
-                    Silakan kembali lagi nanti untuk melihat konten terbaru dari
-                    kami.
+                    Artikel sedang kami siapkan. Mampir lagi nanti, ya.
                   </p>
                 </>
               )}

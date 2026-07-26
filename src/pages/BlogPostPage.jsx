@@ -545,8 +545,8 @@ const BlogPostPage = () => {
               Butuh Jasa Las & Konstruksi?
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-base text-paper/70">
-              Konsultasikan kebutuhan kanopi, pagar, teralis, atau konstruksi
-              baja Anda — gratis, tanpa komitmen.
+              Mau buat kanopi, pagar, teralis, atau konstruksi baja? Tanya-tanya
+              dulu saja, gratis.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button
