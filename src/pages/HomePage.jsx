@@ -1,484 +1,320 @@
-import React, { useContext } from 'react';
-import { ThemeContext } from '../contexts/ThemeContext';
-import { motion } from 'framer-motion';
-import { FaTools, FaDoorOpen, FaWrench, FaHardHat, FaIndustry, FaShieldAlt, FaWhatsapp } from 'react-icons/fa';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import {
+  FaWhatsapp,
+  FaWarehouse,
+  FaShieldAlt,
+  FaBorderAll,
+  FaRulerCombined,
+  FaIndustry,
+  FaDoorOpen,
+} from 'react-icons/fa';
 import SEO from '../components/SEO';
+import Container from '../components/ui/Container';
+import Button from '../components/ui/Button';
+import Card from '../components/ui/Card';
+import SectionHeading from '../components/ui/SectionHeading';
+import Reveal from '../components/ui/Reveal';
+
+const MARQUEE_SERVICES = [
+  'Kanopi',
+  'Pagar',
+  'Teralis',
+  'Railing',
+  'Konstruksi Baja',
+  'Pintu Besi',
+];
+
+const SERVICES = [
+  {
+    icon: FaWarehouse,
+    title: 'Kanopi',
+    description:
+      'Kanopi untuk carport, teras, atau halaman. Atapnya bisa spandek, alderon, polikarbonat, atau kaca.',
+  },
+  {
+    icon: FaShieldAlt,
+    title: 'Pagar & Gerbang',
+    description:
+      'Pagar dan gerbang besi yang kuat. Modelnya mengikuti selera Anda, dari minimalis sampai klasik.',
+  },
+  {
+    icon: FaBorderAll,
+    title: 'Teralis',
+    description:
+      'Teralis jendela dan pintu, dibuat pas dengan ukuran kusen dan gaya rumah Anda.',
+  },
+  {
+    icon: FaRulerCombined,
+    title: 'Railing',
+    description:
+      'Railing tangga dan balkon yang kuat dipegang dan rapi sambungannya.',
+  },
+  {
+    icon: FaIndustry,
+    title: 'Konstruksi Baja',
+    description:
+      'Rangka baja untuk rumah, ruko, gudang, sampai tower air.',
+  },
+  {
+    icon: FaDoorOpen,
+    title: 'Pintu Besi',
+    description:
+      'Pintu besi dan pintu lipat berbagai model, dicat anti karat supaya awet.',
+  },
+];
+
+const FEATURED_PROJECTS = [
+  {
+    title: 'Pintu Lipat Besi Modern',
+    caption: 'Pintu lipat besi untuk rumah pribadi',
+    image: '/images/project-1.webp',
+  },
+  {
+    title: 'Railing Tangga Minimalis',
+    caption: 'Railing tangga desain minimalis',
+    image: '/images/project-2.webp',
+  },
+  {
+    title: 'Kanopi Outdoor',
+    caption: 'Kanopi area outdoor hunian',
+    image: '/images/project-3.webp',
+  },
+];
+
+const PROCESS_STEPS = [
+  {
+    title: 'Survei & Ukur',
+    description:
+      'Kami datang ke lokasi, ukur langsung, dan dengarkan apa yang Anda mau.',
+  },
+  {
+    title: 'Penawaran',
+    description:
+      'Rincian material dan harga kami kirim dulu. Tidak ada biaya tersembunyi.',
+  },
+  {
+    title: 'Pengerjaan & Garansi',
+    description:
+      'Dikerjakan sesuai kesepakatan. Hasil las kami garansi.',
+  },
+];
 
 const HomePage = () => {
-  const { theme } = useContext(ThemeContext);
-  const isDark = theme === 'dark';
-  
-  // Animation variants
-  const fadeIn = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.6 } }
-  };
-  
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
-  };
-  
-  // Add a pulse animation for the WhatsApp icon
-  const pulseAnimation = {
-    scale: [1, 1.2, 1],
-    transition: { duration: 1.5, repeat: Infinity }
-  };
-  
   return (
     <>
-      <SEO 
+      <SEO
         title="Beranda"
-        description="Wareng Jaya Teknik - Mitra terpercaya Anda dalam fabrikasi logam. Kami menyediakan solusi teknik berkualitas tinggi untuk semua kebutuhan teknis Anda."
+        description="Wareng Jaya Teknik - Bengkel las di Tajurhalang, Bogor. Melayani pembuatan kanopi, pagar, teralis, railing, pintu besi, dan konstruksi baja."
         canonicalUrl="https://warengjayateknik.my.id/"
-        keywords={['fabrikasi logam', 'solusi teknik', 'jasa pengelasan', 'layanan teknis', 'Wareng Jaya Teknik']}
+        keywords={['bengkel las', 'kanopi', 'pagar besi', 'teralis', 'konstruksi baja', 'Tajurhalang', 'Bogor', 'Wareng Jaya Teknik']}
       />
-      <div className={isDark ? 'text-white' : 'text-gray-900'}>
-        {/* Hero Section - Enhanced version */}
-        <section className="relative flex items-center justify-center min-h-screen overflow-hidden -mt-16 md:-mt-20">
-          {/* Background Image with improved effect */}
-          <div className="absolute inset-0 z-0">
-            <motion.div
-              initial={{ scale: 1.05 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 2.2, ease: "easeOut" }}
-              className="h-full w-full"
-            >
-              <img 
-                src="/images/hero-new.webp" 
-                alt="Fabrikasi logam pengelasan dengan percikan api" 
-                className="w-full h-full object-cover"
-                loading="eager"
-                width="1920"
-                height="1080"
-                onError={(e) => {e.target.onerror = null; e.target.src = '/images/fallback-hero.jpg'}}
-              />
-              <div className={`absolute inset-0 ${isDark ? 'bg-gradient-to-b from-black/70 to-black/50' : 'bg-gradient-to-b from-black/50 to-black/40'}`}></div>
-            </motion.div>
-          </div>
-          
-          {/* Hero Content - Simplified and enhanced */}
-          <div className="relative z-10 container mx-auto px-6 md:px-12 grid md:grid-cols-5 gap-12 items-center">
-            <motion.div 
-              className="md:col-span-3 text-center md:text-left"
-              initial="hidden"
-              animate="visible"
-              variants={fadeIn}
-            >
-              <motion.h1 
-                className="text-5xl md:text-6xl lg:text-6xl font-bold text-white leading-tight tracking-tight"
-                variants={fadeInUp}
-              >
-                <span className="block drop-shadow-lg">Keunggulan Teknik</span> 
-                <span className="block drop-shadow-lg">dalam Pengerjaan Logam</span>
-              </motion.h1>
-              
-              <motion.p 
-                className="text-xl md:text-2xl mt-8 text-gray-100 font-medium max-w-xl mx-auto md:mx-0"
-                variants={fadeInUp}
-              >
-                Keahlian presisi dan solusi inovatif untuk semua kebutuhan fabrikasi logam Anda sejak 2005.
-              </motion.p>
-              
-              <motion.div 
-                className="mt-10 flex flex-col sm:flex-row gap-5 justify-center md:justify-start"
-                variants={fadeInUp}
-              >
-                <a 
-                  href="https://wa.me/6281398427309" 
-                  className="group relative inline-flex items-center justify-center rounded-lg bg-green-600 px-8 py-3.5 font-bold text-lg shadow-md transition-all duration-300 ease-out hover:shadow-xl hover:shadow-green-500/30 hover:-translate-y-1 hover:scale-105 text-white overflow-hidden"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <motion.div 
-                    animate={pulseAnimation} 
-                    className="mr-2 group-hover:rotate-12 transition-transform duration-300 relative z-10"
-                  >
-                    <FaWhatsapp size={20}/>
-                  </motion.div>
-                  <span className="relative z-10 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-left after:scale-x-0 after:bg-white after:transition-transform after:duration-300 after:ease-in-out group-hover:after:origin-bottom-left group-hover:after:scale-x-100">
-                    Hubungi Kami Sekarang
-                  </span>
-                </a>
-                
-                <Link 
-                  to="/services"
-                  className="group relative inline-flex items-center justify-center overflow-hidden rounded-lg border-2 border-white p-0.5 font-bold text-lg transition-all duration-300 ease-out hover:border-opacity-80"
-                >
-                  <span className="relative flex items-center justify-center rounded-md px-8 py-3.5 transition-all duration-300 ease-out text-white group-hover:bg-white group-hover:text-gray-900">
-                    Jelajahi Layanan
-                    <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </span>
-                </Link>
-              </motion.div>
-            </motion.div>
-            
-            {/* Why Choose Us section */}
-            <motion.div 
-              className="md:col-span-2 hidden md:block"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-            >
-              <div className="backdrop-blur-md bg-white/10 rounded-2xl shadow-2xl overflow-hidden border border-white/20 mt-18">
-                <div className="p-2">
-                  <div className="bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-xl p-6">
-                    <h3 className="text-2xl font-bold mb-2">Mengapa Memilih Kami?</h3>
-                    <p className="text-blue-100 mb-6">Kami menyediakan layanan terbaik dengan:</p>
-                    
-                    <div className="space-y-4">
-                      {[
-                        { text: "Pengalaman 15+ Tahun", icon: "⏱️" },
-                        { text: "Profesional Bersertifikat", icon: "🏆" },
-                        { text: "Material Berkualitas", icon: "✓" },
-                        { text: "Pengiriman Proyek Tepat Waktu", icon: "📅" },
-                        { text: "Harga Bersaing", icon: "💰" }
-                      ].map((item, index) => (
-                        <motion.div 
-                          key={index}
-                          className="flex items-center bg-white/10 p-3 rounded-lg"
-                          initial={{ opacity: 0, x: 20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: 0.6 + (index * 0.1) }}
-                        >
-                          <span className="flex items-center justify-center h-8 w-8 rounded-full bg-white text-blue-600 mr-3 text-sm">
-                            {item.icon}
-                          </span>
-                          <span className="font-medium">{item.text}</span>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
 
-          {/* Enhanced scroll indicator */}
-          <motion.div 
-            className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
-            animate={{ y: [0, 12, 0] }}
-            transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
-          >
-            <div className="flex flex-col items-center">
-              <span className="text-white text-sm mb-2 opacity-80">Scroll</span>
-              <div className="w-8 h-12 rounded-full border-2 border-white/50 flex justify-center">
-                <motion.div 
-                  className="w-1.5 h-1.5 rounded-full bg-white mt-2"
-                  animate={{ y: [0, 24, 0] }}
-                  transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
-                />
-              </div>
+      {/* Hero */}
+      <section className="border-b border-line bg-paper py-16 md:py-24">
+        <Container className="grid items-center gap-10 md:grid-cols-2">
+          <Reveal>
+            <p className="font-mono text-sm font-medium uppercase tracking-widest text-accent">
+              Bengkel Las — Tajurhalang, Bogor
+            </p>
+            <h1 className="mt-4 font-display text-4xl font-bold uppercase leading-tight tracking-tight text-ink md:text-5xl lg:text-6xl text-balance">
+              Las, Kanopi &amp; Konstruksi Baja
+            </h1>
+            <p className="mt-6 max-w-lg text-base text-ink-muted md:text-lg">
+              Butuh kanopi, pagar, atau rangka baja? Kami kerjakan sendiri di
+              bengkel kami di Tajurhalang, dari ukur sampai pasang.
+            </p>
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+              <Button
+                variant="whatsapp"
+                size="lg"
+                href="https://wa.me/6281398427309"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaWhatsapp size={20} aria-hidden="true" />
+                Hubungi via WhatsApp
+              </Button>
+              <Button variant="outline" size="lg" to="/gallery">
+                Lihat Hasil Kerja
+              </Button>
             </div>
-          </motion.div>
-        </section>
+          </Reveal>
+          <Reveal delay={0.1} className="relative">
+            <div
+              className="absolute -bottom-3 -right-3 h-full w-full border border-accent"
+              aria-hidden="true"
+            ></div>
+            <img
+              src="/images/hero-new.webp"
+              alt="Tukang las sedang mengelas rangka besi dengan percikan api"
+              className="relative aspect-[4/3] w-full object-cover"
+              loading="eager"
+              width="1920"
+              height="1080"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = '/images/placeholder.svg';
+              }}
+            />
+          </Reveal>
+        </Container>
+      </section>
 
-        {/* About Us Section */}
-        <section className={`py-20 ${isDark ? 'bg-gray-800' : 'bg-gray-50'}`}>
-          <div className="container mx-auto px-4">
-            <motion.div 
-              className="max-w-4xl mx-auto text-center mb-16"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="text-4xl font-bold mb-6">Tentang Wareng Jaya Teknik</h2>
-              <p className="text-lg">
-                Sejak 2005, Wareng Jaya Teknik telah menyediakan solusi fabrikasi logam berkualitas tinggi untuk klien 
-                residensial dan komersial di seluruh Indonesia. Dengan tim pengrajin terampil dan peralatan modern kami, 
-                kami memberikan hasil luar biasa yang tahan uji waktu.
-              </p>
-            </motion.div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-              {[
-                { title: "Proyek", value: "500+", description: "Selesai" },
-                { title: "Pengalaman", value: "15+", description: "Tahun" },
-                { title: "Klien", value: "350+", description: "Puas" },
-                { title: "Tim", value: "25+", description: "Ahli" }
-              ].map((stat, index) => (
-                <motion.div 
-                  key={index}
-                  className={`p-8 rounded-lg shadow-lg ${isDark ? 'bg-gray-700' : 'bg-white'}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
-                  whileHover={{ y: -5, transition: { duration: 0.2 } }}
-                >
-                  <p className="text-5xl font-bold mb-2 text-blue-600">{stat.value}</p>
-                  <p className="text-xl font-semibold">{stat.title}</p>
-                  <p className="text-gray-500">{stat.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
+      {/* Services marquee band */}
+      <section className="bg-ink py-6">
+        <Container>
+          <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 md:gap-x-8">
+            {MARQUEE_SERVICES.map((service, index) => (
+              <li
+                key={service}
+                className="flex items-center gap-x-6 font-display text-lg font-semibold uppercase tracking-wide text-paper md:gap-x-8 md:text-xl"
+              >
+                {index > 0 && (
+                  <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true"></span>
+                )}
+                {service}
+              </li>
+            ))}
+          </ul>
+        </Container>
+      </section>
 
-        {/* Services Overview */}
-        <section className={`py-20 ${isDark ? 'bg-gray-900' : 'bg-white'}`}>
-          <div className="container mx-auto px-4">
-            <motion.div 
-              className="text-center mb-16"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="text-4xl font-bold mb-4">Layanan Kami</h2>
-              <p className="text-lg max-w-3xl mx-auto text-gray-600">
-                Kami menawarkan berbagai layanan fabrikasi logam yang disesuaikan untuk memenuhi kebutuhan spesifik Anda.
-              </p>
-            </motion.div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                { 
-                  icon: <FaDoorOpen size={48} className="text-blue-500 mb-4 mx-auto" />,
-                  title: "Pintu Logam", 
-                  description: "Pintu keamanan dengan berbagai gaya dan finishing yang dirancang khusus untuk cocok dengan estetika properti Anda." 
-                },
-                { 
-                  icon: <FaShieldAlt size={48} className="text-blue-500 mb-4 mx-auto" />,
-                  title: "Pagar & Gerbang", 
-                  description: "Solusi pagar yang tahan lama dan elegan yang memberikan keamanan sambil meningkatkan penampilan properti Anda." 
-                },
-                { 
-                  icon: <FaIndustry size={48} className="text-blue-500 mb-4 mx-auto" />,
-                  title: "Kanopi", 
-                  description: "Kanopi tahan cuaca yang memberikan tempat berlindung dan menambah daya tarik arsitektur pada bangunan Anda." 
-                },
-                { 
-                  icon: <FaWrench size={48} className="text-blue-500 mb-4 mx-auto" />,
-                  title: "Struktur Baja", 
-                  description: "Struktur baja khusus untuk aplikasi perumahan, komersial, dan industri." 
-                },
-                { 
-                  icon: <FaTools size={48} className="text-blue-500 mb-4 mx-auto" />,
-                  title: "Perbaikan Logam", 
-                  description: "Layanan perbaikan ahli untuk memperbaiki komponen logam yang rusak dan memperpanjang umur pakainya." 
-                },
-                { 
-                  icon: <FaHardHat size={48} className="text-blue-500 mb-4 mx-auto" />,
-                  title: "Proyek Khusus", 
-                  description: "Solusi fabrikasi logam yang dibuat khusus sesuai dengan spesifikasi dan kebutuhan unik Anda." 
-                }
-              ].map((service, index) => (
-                <motion.div 
-                  key={index}
-                  className={`p-8 rounded-lg shadow-lg text-center ${isDark ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-50 hover:bg-gray-100'} transition-all duration-300`}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
-                  whileHover={{ 
-                    y: -10,
-                    boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-                  }}
-                >
-                  {service.icon}
-                  <h3 className="text-2xl font-bold mb-3">{service.title}</h3>
-                  <p className={isDark ? "text-gray-300" : "text-gray-600"}>{service.description}</p>
-                  <Link 
-                    to="/services" 
-                    className="inline-block mt-4 text-blue-500 hover:text-blue-700 font-medium"
-                  >
-                    Pelajari lebih lanjut →
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
+      {/* Services */}
+      <section className="bg-paper py-16 md:py-24">
+        <Container>
+          <Reveal>
+            <SectionHeading index="01" label="Layanan" title="Apa yang Kami Kerjakan" />
+          </Reveal>
+          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+            {SERVICES.map((service, index) => {
+              const Icon = service.icon;
+              return (
+                <Reveal key={service.title} delay={index * 0.05}>
+                  <Card hover className="h-full">
+                    <Link to="/services" className="flex h-full flex-col p-6">
+                      <div className="flex items-start justify-between">
+                        <Icon size={28} className="text-accent" aria-hidden="true" />
+                        <span className="font-mono text-sm text-ink-muted">
+                          {String(index + 1).padStart(2, '0')}
+                        </span>
+                      </div>
+                      <h3 className="mt-4 font-display text-xl font-semibold uppercase tracking-tight text-ink">
+                        {service.title}
+                      </h3>
+                      <p className="mt-2 text-sm leading-relaxed text-ink-muted">
+                        {service.description}
+                      </p>
+                    </Link>
+                  </Card>
+                </Reveal>
+              );
+            })}
           </div>
-        </section>
-        
-        {/* Featured Work */}
-        <section className={`py-20 ${isDark ? 'bg-gray-800' : 'bg-gray-50'}`}>
-          <div className="container mx-auto px-4">
-            <motion.div 
-              className="text-center mb-16"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+        </Container>
+      </section>
+
+      {/* Featured work */}
+      <section className="border-y border-line bg-surface py-16 md:py-24">
+        <Container>
+          <Reveal className="flex flex-wrap items-end justify-between gap-4">
+            <SectionHeading index="02" label="Hasil Kerja" title="Proyek Terbaru" />
+            <Link
+              to="/gallery"
+              className="inline-flex min-h-11 items-center font-mono text-sm font-medium uppercase tracking-wider text-accent hover:underline"
             >
-              <h2 className="text-4xl font-bold mb-4">Proyek Unggulan</h2>
-              <p className="text-lg max-w-3xl mx-auto text-gray-600">
-                Lihat beberapa karya terbaru kami yang menunjukkan kualitas pengerjaan dan perhatian terhadap detail.
-              </p>
-            </motion.div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[
-                {
-                  id: 1,
-                  title: "Pintu Lipat Besi Modern",
-                  description: "Desain pintu lipat besi dengan sentuhan modern untuk rumah pribadi",
-                  image: "/images/project-1.webp"
-                },
-                {
-                  id: 2,
-                  title: "Railing Tangga Minimalis",
-                  description: "Railing tangga dengan desain modern dan fungsional untuk keamanan",
-                  image: "/images/project-2.webp"
-                },
-                {
-                  id: 3,
-                  title: "Kanopi Outdoor Estetis",
-                  description: "Kanopi dengan desain estetis untuk area outdoor yang nyaman",
-                  image: "/images/project-3.webp"
-                }
-              ].map((project, index) => (
-                <motion.div 
-                  key={index}
-                  className="overflow-hidden rounded-lg shadow-lg group relative"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.2, duration: 0.5 }}
-                  whileHover={{ y: -5 }}
-                >
-                  <img 
-                    src={project.image} 
-                    alt={project.title} 
-                    className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                    onError={(e) => {e.target.onerror = null; e.target.src = '/images/placeholder.svg'}}
+              Semua proyek →
+            </Link>
+          </Reveal>
+          <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
+            {FEATURED_PROJECTS.map((project, index) => (
+              <Reveal key={project.title} delay={index * 0.05}>
+                <figure>
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="aspect-[4/3] w-full border border-line object-cover"
+                    loading="lazy"
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = '/images/placeholder.svg';
+                    }}
                   />
-                  {/* Always visible gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70 md:opacity-0 md:group-hover:opacity-70 transition-opacity duration-300"></div>
-                  
-                  {/* Project title and description - visible by default on mobile */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform md:translate-y-8 md:group-hover:translate-y-0 transition-transform duration-300">
-                    <h3 className="text-xl font-bold">{project.title}</h3>
-                    <p className="mt-2 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
-                      {project.description}
+                  <figcaption className="mt-3">
+                    <p className="font-display text-lg font-semibold uppercase tracking-tight text-ink">
+                      {project.title}
                     </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-            
-            <div className="text-center mt-12">
-              <Link 
-                to="/gallery" 
-                className={`inline-block px-8 py-4 rounded-md font-bold ${
-                  isDark 
-                    ? 'bg-blue-600 hover:bg-blue-700 text-white' 
-                    : 'bg-blue-500 hover:bg-blue-600 text-white'
-                } transition duration-300`}
-              >
-                Lihat Semua Proyek
-              </Link>
-            </div>
+                    <p className="font-mono text-xs text-ink-muted">{project.caption}</p>
+                  </figcaption>
+                </figure>
+              </Reveal>
+            ))}
           </div>
-        </section>
-        
-        {/* Testimonials */}
-        <section className={`py-20 ${isDark ? 'bg-gray-900' : 'bg-white'}`}>
-          <div className="container mx-auto px-4">
-            <motion.div 
-              className="text-center mb-16"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="text-4xl font-bold mb-4">Apa Kata Klien Kami</h2>
-              <p className="text-lg max-w-3xl mx-auto text-gray-600">
-                Jangan hanya percaya kata-kata kami. Inilah yang dikatakan klien puas kami tentang pekerjaan kami.
-              </p>
-            </motion.div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                {
-                  name: "Budi Santoso",
-                  position: "Pemilik Rumah",
-                  quote: "Wareng Jaya Teknik memasang pintu keamanan dan teralis jendela khusus untuk rumah saya. Kualitas pekerjaan sangat luar biasa, dan mereka menyelesaikan proyek lebih cepat dari jadwal.",
-                  image: "/images/profile.webp"
-                },
-                {
-                  name: "PT. Graha Mitra",
-                  position: "Pengembang Properti",
-                  quote: "Kami telah bekerja sama dengan Wareng Jaya Teknik dalam berbagai proyek perumahan. Perhatian mereka terhadap detail dan komitmen terhadap kualitas menjadikan mereka mitra terpercaya untuk fabrikasi logam.",
-                  image: "/images/profile.webp"
-                },
-                {
-                  name: "Ahmad Rizki",
-                  position: "Pemilik Restoran",
-                  quote: "Railing dan elemen dekoratif logam yang mereka buat untuk restoran kami telah menerima banyak pujian dari pelanggan. Layanan profesional dari awal hingga akhir.",
-                  image: "/images/profile.webp"
-                }
-              ].map((testimonial, index) => (
-                <motion.div 
-                  key={index}
-                  className={`p-8 rounded-lg shadow-lg ${isDark ? 'bg-gray-800' : 'bg-gray-50'}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
-                >
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 rounded-full overflow-hidden mr-4">
-                      <img 
-                        src={testimonial.image} 
-                        alt={testimonial.name}
-                        className="w-full h-full object-cover"
-                        onError={(e) => {e.target.onerror = null; e.target.src = '/images/avatar-placeholder.jpg'}}
-                      />
-                    </div>
-                    <div>
-                      <h3 className="font-bold">{testimonial.name}</h3>
-                      <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-500'}`}>{testimonial.position}</p>
-                    </div>
-                  </div>
-                  <p className={`italic ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>"{testimonial.quote}"</p>
-                  <div className="flex mt-4">
-                    {[...Array(5)].map((_, i) => (
-                      <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24">
-                        <path d="M12 17.27L18.18 21L16.54 13.97L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.97L5.82 21L12 17.27Z" />
-                      </svg>
-                    ))}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
+        </Container>
+      </section>
 
-        {/* Call to Action */}
-        <section className={`py-16 ${isDark ? 'bg-blue-900' : 'bg-blue-600'} text-white`}>
-          <div className="container mx-auto px-4">
-            <div className="flex flex-col md:flex-row items-center justify-between">
-              <motion.div 
-                className="mb-8 md:mb-0"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
+      {/* Cara kerja */}
+      <section className="bg-paper py-16 md:py-24">
+        <Container>
+          <Reveal>
+            <SectionHeading index="03" label="Cara Kerja" title="Prosesnya Sederhana" />
+          </Reveal>
+          <ol className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-6">
+            {PROCESS_STEPS.map((step, index) => (
+              <Reveal as="li" key={step.title} delay={index * 0.05}>
+                <div className="flex items-center gap-4">
+                  <span className="font-mono text-3xl font-medium text-accent">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                  <span className="h-px flex-1 bg-line" aria-hidden="true"></span>
+                </div>
+                <h3 className="mt-4 font-display text-xl font-semibold uppercase tracking-tight text-ink">
+                  {step.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink-muted">
+                  {step.description}
+                </p>
+              </Reveal>
+            ))}
+          </ol>
+        </Container>
+      </section>
+
+      {/* Final CTA */}
+      <div className="stripe" aria-hidden="true"></div>
+      <section className="bg-ink py-16 md:py-24">
+        <Container className="text-center">
+          <Reveal>
+            <h2 className="font-display text-3xl font-bold uppercase tracking-tight text-paper md:text-5xl text-balance">
+              Punya Proyek? Diskusikan Gratis.
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl text-base text-paper/70">
+              Ceritakan saja rencananya. Kami bantu ukur dan hitung, penawarannya
+              gratis.
+            </p>
+            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <Button
+                variant="whatsapp"
+                size="lg"
+                href="https://wa.me/6281398427309"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <h2 className="text-3xl font-bold mb-2">Siap Memulai Proyek Anda?</h2>
-                <p className="text-xl">Hubungi kami hari ini untuk konsultasi dan penawaran gratis.</p>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 }}
+                <FaWhatsapp size={20} aria-hidden="true" />
+                Chat WhatsApp
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                href="tel:+6281398427309"
+                className="border-paper/40 text-paper hover:border-accent hover:text-accent"
               >
-                <Link 
-                  to="/contact" 
-                  className="bg-white text-blue-600 hover:bg-blue-50 font-bold py-4 px-8 rounded-md transition duration-300 text-center inline-block"
-                >
-                  Hubungi Kami
-                </Link>
-              </motion.div>
+                Telepon Kami
+              </Button>
             </div>
-          </div>
-        </section>
-      </div>
+          </Reveal>
+        </Container>
+      </section>
     </>
   );
 };

@@ -4,14 +4,15 @@ import { FaSun, FaMoon } from 'react-icons/fa';
 
 const ThemeToggle = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
-  
+
   return (
     <button
+      type="button"
       onClick={toggleTheme}
-      className="p-2 rounded-full bg-gray-700 text-yellow-400 dark:bg-gray-200 dark:text-gray-800 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
-      aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+      className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-btn border border-line bg-surface text-ink transition-colors duration-150 hover:border-accent hover:text-accent"
+      aria-label={theme === 'dark' ? 'Ganti ke mode terang' : 'Ganti ke mode gelap'}
     >
-      {theme === 'dark' ? <FaSun size={20} /> : <FaMoon size={20} />}
+      {theme === 'dark' ? <FaSun size={18} aria-hidden="true" /> : <FaMoon size={18} aria-hidden="true" />}
     </button>
   );
 };
