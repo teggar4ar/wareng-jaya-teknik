@@ -1,327 +1,241 @@
-import React, { useContext, useEffect } from 'react';
-import { ThemeContext } from '../contexts/ThemeContext';
-import { motion } from 'framer-motion';
-import { FaDoorOpen, FaShieldAlt, FaWindowRestore, FaWarehouse, FaIndustry, 
-  FaStepForward, FaRulerVertical, FaWater, FaTools, FaClock, FaAward, FaHandshake } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { FaWhatsapp } from 'react-icons/fa';
 import SEO from '../components/SEO';
+import Container from '../components/ui/Container';
+import Button from '../components/ui/Button';
+import Reveal from '../components/ui/Reveal';
 
-const services = [
-  { 
-    name: 'Pintu Besi', 
-    description: 'Pintu keamanan yang dirancang khusus sesuai spesifikasi Anda. Pintu besi kami menggabungkan kekuatan superior dengan tampilan estetis, tersedia dalam berbagai finishing dan desain untuk melengkapi properti Anda.', 
-    imageUrl: '/images/project-4.webp',
-    icon: <FaDoorOpen size={32} />,
-    features: ['Desain yang dapat disesuaikan', 'Pilihan keamanan tinggi', 'Tahan cuaca', 'Tersedia dalam berbagai finishing']
+const WA_NUMBER = '6281398427309';
+
+const waLink = (serviceName) =>
+  `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(
+    `Halo, saya ingin bertanya tentang layanan ${serviceName}.`
+  )}`;
+
+const SERVICES = [
+  {
+    name: 'Kanopi',
+    description:
+      'Kanopi tahan cuaca untuk carport, teras, dan area outdoor. Dirancang sesuai ukuran lokasi dengan pilihan rangka dan atap yang menyesuaikan kebutuhan serta anggaran Anda.',
+    image: '/images/project-8.webp',
+    alt: 'Kanopi besi dengan atap tahan cuaca hasil pengerjaan bengkel',
+    specs: [
+      'Rangka: besi hollow / baja ringan',
+      'Atap: spandek / alderon / polikarbonat / kaca',
+      'Finishing: cat anti karat / duco',
+      'Ukuran dibuat sesuai lokasi',
+    ],
   },
-  { 
-    name: 'Pagar & Gerbang', 
-    description: 'Lindungi dan tingkatkan properti Anda dengan solusi pagar khusus kami. Dari pagar dekoratif yang mewah hingga penghalang keamanan yang kuat, kami menciptakan batas yang tahan lama dan menarik.', 
-    imageUrl: '/images/project-7.webp',
-    icon: <FaShieldAlt size={32} />,
-    features: ['Ketinggian dan desain kustom', 'Fokus dekoratif atau keamanan', 'Perawatan anti-korosi', 'Opsi gerbang otomatis']
+  {
+    name: 'Pagar & Gerbang',
+    description:
+      'Pagar dan gerbang besi yang kokoh untuk keamanan sekaligus tampilan properti Anda — dari model minimalis hingga klasik, termasuk gerbang dorong dan lipat.',
+    image: '/images/project-7.webp',
+    alt: 'Pagar besi minimalis hasil pengerjaan bengkel',
+    specs: [
+      'Material: besi hollow / plat / galvanis',
+      'Model: minimalis / klasik / kombinasi',
+      'Opsi: gerbang dorong, lipat, atau ayun',
+      'Finishing: cat duco / powder coating',
+    ],
   },
-  { 
-    name: 'Teralis Jendela', 
-    description: 'Amankan jendela Anda tanpa mengorbankan gaya. Teralis jendela kami menawarkan perlindungan sambil meningkatkan daya tarik estetika properti Anda dengan desain dekoratif atau minimalis.', 
-    imageUrl: '/images/project-5.webp',
-    icon: <FaWindowRestore size={32} />,
-    features: ['Dibuat khusus untuk jendela mana pun', 'Tersedia pola dekoratif', 'Opsi pelepasan cepat untuk keamanan', 'Finishing powder coating']
+  {
+    name: 'Teralis',
+    description:
+      'Teralis jendela dan pintu yang mengamankan rumah tanpa mengorbankan tampilan. Dibuat presisi mengikuti ukuran kusen, dengan pola menyesuaikan gaya bangunan.',
+    image: '/images/project-5.webp',
+    alt: 'Teralis jendela besi dengan pola dekoratif',
+    specs: [
+      'Material: besi tempa / hollow / nako',
+      'Pola: minimalis / dekoratif / klasik',
+      'Dibuat presisi sesuai ukuran kusen',
+      'Finishing: cat anti karat / duco',
+    ],
   },
-  { 
-    name: 'Kanopi', 
-    description: 'Tambahkan tempat berlindung dan ketertarikan arsitektur dengan kanopi logam khusus kami. Dirancang untuk bertahan dari elemen sambil memberikan perlindungan dari matahari dan hujan.', 
-    imageUrl: '/images/project-8.webp',
-    icon: <FaWarehouse size={32} />,
-    features: ['Konstruksi tahan cuaca', 'Ukuran dan bentuk khusus', 'Pencahayaan terintegrasi opsional', 'Berbagai material atap']
+  {
+    name: 'Railing',
+    description:
+      'Railing tangga dan balkon yang aman dan rapi dalam pengerjaan — pilihan material besi maupun stainless untuk interior dan eksterior.',
+    image: '/images/project-2.webp',
+    alt: 'Railing tangga besi desain minimalis',
+    specs: [
+      'Material: besi hollow / stainless steel',
+      'Untuk tangga, balkon, dan void',
+      'Model minimalis atau kombinasi kayu',
+      'Pemasangan interior & eksterior',
+    ],
   },
-  { 
-    name: 'Konstruksi Logam', 
-    description: 'Dari dukungan struktural hingga elemen dekoratif, konstruksi logam khusus kami dirancang untuk ketahanan dan presisi. Kami bekerja dengan berbagai logam untuk menciptakan apa yang Anda butuhkan.', 
-    imageUrl: '/images/project-9.webp',
-    icon: <FaIndustry size={32} />,
-    features: ['Analisis struktural', 'Rekayasa khusus', 'Beberapa pilihan logam', 'Pemasangan di lokasi']
+  {
+    name: 'Konstruksi Baja',
+    description:
+      'Konstruksi baja untuk kebutuhan rumah tinggal hingga usaha: rangka bangunan, mezzanine, gudang, hingga tower air dengan struktur yang diperhitungkan.',
+    image: '/images/project-9.webp',
+    alt: 'Konstruksi rangka baja untuk bangunan',
+    specs: [
+      'Rangka bangunan, mezzanine, gudang',
+      'Tower air / toren dengan struktur kokoh',
+      'Material: baja WF / CNP / siku / pipa',
+      'Pengerjaan dan pemasangan di lokasi',
+    ],
   },
-  { 
-    name: 'Tangga Spiral', 
-    description: 'Hemat ruang dengan tangga spiral elegan kami. Dibuat khusus sesuai spesifikasi Anda, tangga spiral kami menggabungkan bentuk dan fungsi dengan keahlian pengerjaan yang luar biasa.', 
-    imageUrl: '/images/project-10.webp',
-    icon: <FaStepForward size={32} />,
-    features: ['Desain hemat ruang', 'Railing dan pijakan kustom', 'Opsi dalam atau luar ruangan', 'Berbagai pilihan finishing']
+  {
+    name: 'Pintu Besi',
+    description:
+      'Pintu besi dan pintu lipat (harmonika) dengan berbagai model — untuk rumah, ruko, dan gudang — kokoh sekaligus rapi tampilannya.',
+    image: '/images/project-4.webp',
+    alt: 'Pintu besi kokoh untuk keamanan rumah',
+    specs: [
+      'Model: swing / lipat / dorong',
+      'Material: plat besi / hollow / kombinasi',
+      'Untuk rumah, ruko, dan gudang',
+      'Finishing: cat duco / anti karat',
+    ],
   },
-  { 
-    name: 'Railing Tangga', 
-    description: 'Tingkatkan keamanan dan gaya dengan railing tangga khusus kami. Tersedia dalam berbagai desain dari minimalis modern hingga gaya tradisional yang mewah untuk cocok dengan preferensi estetika Anda.', 
-    imageUrl: '/images/project-2.webp',
-    icon: <FaRulerVertical size={32} />,
-    features: ['Opsi aman untuk anak-anak', 'Desain dekoratif atau minimalis', 'Varian dalam dan luar ruangan', 'Konstruksi sesuai kode']
+  {
+    name: 'Tangga Spiral',
+    description:
+      'Tangga spiral hemat ruang, dibuat sesuai tinggi lantai dan lebar area — cocok untuk rumah dengan lahan terbatas maupun akses servis.',
+    image: '/images/project-10.webp',
+    alt: 'Tangga spiral besi hemat ruang',
+    specs: [
+      'Hemat ruang, sesuai tinggi lantai',
+      'Pijakan: plat bordes / kayu',
+      'Railing menyatu, aman digunakan',
+      'Untuk dalam maupun luar ruangan',
+    ],
   },
-  { 
-    name: 'Tower Air', 
-    description: 'Solusi penyimpanan air yang tahan lama dan andal untuk properti residensial atau komersial. Tower air kami dirancang untuk umur panjang dengan bahan tahan korosi dan dukungan struktural yang tepat.', 
-    imageUrl: '/images/project-6.webp',
-    icon: <FaWater size={32} />,
-    features: ['Kustomisasi kapasitas', 'Perawatan anti-korosi', 'Opsi ditinggikan atau tingkat tanah', 'Titik akses pemeliharaan']
+  {
+    name: 'Tower Air',
+    description:
+      'Struktur penopang toren air yang kuat dan tahan lama untuk rumah maupun usaha, dengan ketinggian dan kapasitas menyesuaikan kebutuhan.',
+    image: '/images/project-6.webp',
+    alt: 'Tower penopang toren air dari rangka besi',
+    specs: [
+      'Ketinggian sesuai kebutuhan tekanan air',
+      'Material: besi siku / UNP / pipa',
+      'Kapasitas menyesuaikan ukuran toren',
+      'Finishing cat anti karat',
+    ],
   },
 ];
 
 const ServicesPage = () => {
-  const { theme } = useContext(ThemeContext);
-  const isDark = theme === 'dark';
-  
-  // Animation variants
-  const staggerContainer = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
-  };
-  
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 30 },
-    show: { 
-      opacity: 1, 
-      y: 0,
-      transition: {
-        duration: 0.6
-      }
-    }
-  };
-  
-  // Intersection Observer for scroll animations
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    document.querySelectorAll('.scroll-animate').forEach((el) => {
-      observer.observe(el);
-    });
-
-    return () => observer.disconnect();
-  }, []);
-  
   return (
     <>
-      <SEO 
+      <SEO
         title="Layanan"
         description="Jelajahi rangkaian lengkap layanan pengerjaan logam kami termasuk pintu besi, pagar, teralis jendela, kanopi, dan banyak lagi."
         canonicalUrl="https://warengjayateknik.my.id/services"
         keywords={['pintu besi', 'pagar', 'teralis jendela', 'kanopi', 'konstruksi logam', 'tangga spiral', 'railing tangga', 'tower air']}
       />
-      <div className={`min-h-screen ${isDark ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'}`}>
-        {/* Hero Section */}
-        <div className="relative h-[50vh] flex items-center justify-center overflow-hidden">
-          <div className="absolute inset-0 z-0">
-            <div 
-              className="absolute inset-0 bg-cover bg-center" 
-              style={{
-                backgroundImage: "url('/images/hero-service.jpg')", 
-                filter: isDark ? 'brightness(1.4)' : 'brightness(0.7)'
-              }}
-            ></div>
-            <div className={`absolute inset-0 ${isDark ? 'bg-gradient-to-r from-black/70 to-gray-900/70' : 'bg-gradient-to-r from-blue-500/30 to-gray-900/50'}`}></div>
-          </div>
-          
-          <div className="relative z-10 text-center px-4 max-w-5xl">
-            <motion.h1 
-              className="text-5xl md:text-7xl font-bold mb-6 text-white drop-shadow-lg"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7 }}
-            >
-              Layanan Kami
-            </motion.h1>
-            <motion.p 
-              className="text-xl md:text-2xl text-gray-100 max-w-3xl mx-auto"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.5, duration: 0.7 }}
-            >
-              Solusi pengerjaan logam presisi yang dibuat dengan keahlian dan perhatian terhadap detail
-            </motion.p>
-          </div>
-        </div>
 
-        <div className="container mx-auto px-4 py-16">
-          {/* Service Introduction */}
-          <div className="scroll-animate opacity-0 max-w-4xl mx-auto text-center mb-16">
-            <h2 className={`text-4xl font-bold mb-6 inline-block relative after:content-[''] after:block after:w-24 after:h-1 after:bg-blue-500 after:mt-2 after:mx-auto`}>
-              Layanan Fabrikasi Logam Komprehensif
+      {/* Page header */}
+      <section className="border-b border-line bg-paper py-12 md:py-16">
+        <Container>
+          <p className="font-mono text-sm font-medium uppercase tracking-widest text-accent">
+            Layanan
+          </p>
+          <h1 className="mt-3 font-display text-4xl font-bold uppercase tracking-tight text-ink md:text-5xl text-balance">
+            Apa yang Kami Kerjakan
+          </h1>
+          <p className="mt-4 max-w-2xl text-base text-ink-muted md:text-lg">
+            Semua dikerjakan langsung oleh bengkel kami di Tajurhalang — dari
+            pengukuran, fabrikasi, sampai pemasangan di lokasi Anda.
+          </p>
+        </Container>
+      </section>
+
+      {/* Services zigzag rows */}
+      <section className="bg-paper py-16 md:py-24">
+        <Container className="space-y-16 md:space-y-24">
+          {SERVICES.map((service, index) => (
+            <Reveal
+              as="article"
+              key={service.name}
+              className="grid items-center gap-8 md:grid-cols-2 md:gap-12"
+            >
+              <div className={`relative ${index % 2 === 1 ? 'md:order-2' : ''}`}>
+                <div
+                  className="absolute -bottom-3 -right-3 h-full w-full border border-accent"
+                  aria-hidden="true"
+                ></div>
+                <img
+                  src={service.image}
+                  alt={service.alt}
+                  className="relative aspect-[4/3] w-full border border-line object-cover"
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = '/images/placeholder.svg';
+                  }}
+                />
+              </div>
+              <div className={index % 2 === 1 ? 'md:order-1' : ''}>
+                <p className="font-mono text-sm font-medium text-accent">
+                  {String(index + 1).padStart(2, '0')}
+                </p>
+                <h2 className="mt-2 font-display text-2xl font-semibold uppercase tracking-tight text-ink md:text-3xl">
+                  {service.name}
+                </h2>
+                <p className="mt-4 text-base leading-relaxed text-ink-muted">
+                  {service.description}
+                </p>
+                <ul className="mt-6 space-y-2 border-l-2 border-accent pl-4 font-mono text-sm text-ink">
+                  {service.specs.map((spec) => (
+                    <li key={spec}>{spec}</li>
+                  ))}
+                </ul>
+                <Button
+                  variant="whatsapp"
+                  className="mt-8"
+                  href={waLink(service.name)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaWhatsapp size={18} aria-hidden="true" />
+                  Tanya {service.name}
+                </Button>
+              </div>
+            </Reveal>
+          ))}
+        </Container>
+      </section>
+
+      {/* Final CTA */}
+      <div className="stripe" aria-hidden="true"></div>
+      <section className="bg-ink py-16 md:py-24">
+        <Container className="text-center">
+          <Reveal>
+            <h2 className="font-display text-3xl font-bold uppercase tracking-tight text-paper md:text-4xl text-balance">
+              Butuh yang Lain? Tanyakan Saja.
             </h2>
-            <p className="text-lg">
-              Di Wareng Jaya Teknik, kami mengkhususkan diri dalam mengubah logam menjadi solusi fungsional, tahan lama, dan estetis untuk aplikasi perumahan, komersial, dan industri. 
-              Tim pengrajin terampil kami menggabungkan teknik tradisional dengan teknologi modern untuk memberikan hasil yang luar biasa.
+            <p className="mx-auto mt-4 max-w-xl text-base text-paper/70">
+              Pengerjaan las custom lainnya juga kami layani — kirim foto atau
+              sketsa kebutuhan Anda, kami bantu hitung.
             </p>
-          </div>
-
-          {/* Services Grid */}
-          <motion.div 
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-24"
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="show"
-                viewport={{ once: true, amount: 0.1 }}
-                >
-              {services.map((service, index) => (
-                <motion.div 
-                  key={index} 
-                  className={`rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${isDark ? 'bg-gray-800 hover:bg-gray-700' : 'bg-white hover:bg-gray-50'}`}
-                  variants={fadeInUp}
-                  >
-                  <div className="h-48 overflow-hidden relative">
-                    <img 
-                    src={service.imageUrl} 
-                    alt={service.name} 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className={`absolute top-0 right-0 p-3 ${isDark ? 'bg-blue-500/80' : 'bg-blue-600'} text-white rounded-bl-lg`}>
-                    {service.icon}
-                    </div>
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-2xl font-bold mb-3">{service.name}</h3>
-                    <p className={`mb-4 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>{service.description}</p>
-                    <ul className="space-y-2 mb-4">
-                    {service.features.map((feature, i) => (
-                      <li key={i} className="flex items-start">
-                      <span className={`mr-2 mt-1 text-blue-500`}>•</span>
-                      <span>{feature}</span>
-                      </li>
-                    ))}
-                    </ul>
-                    <Link to="/contact" className={`block text-center w-full py-2 rounded-lg font-medium transition-colors ${isDark ? 'bg-blue-500 hover:bg-blue-400 text-white' : 'bg-blue-100 hover:bg-blue-200 text-blue-700'}`}>
-                    Minta Penawaran
-                    </Link>
-                  </div>
-                </motion.div>
-              ))}
-          </motion.div>
-
-          {/* Our Process Section */}
-          <div className="scroll-animate opacity-0 mb-24">
-            <h2 className={`text-4xl font-bold text-center mb-12 inline-block relative after:content-[''] after:block after:w-24 after:h-1 after:bg-blue-500 after:mt-2 after:mx-auto`}>
-              Proses Kami
-            </h2>
-            
-            <div className={`relative py-8 px-4 md:px-12 rounded-xl ${isDark ? 'bg-gray-800' : 'bg-gray-50'}`}>
-              
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-                {[
-                  { 
-                    title: "Konsultasi", 
-                    description: "Kami mendiskusikan kebutuhan, anggaran, dan timeline untuk memahami kebutuhan proyek Anda secara penuh.", 
-                    icon: <FaHandshake size={32} className={`${isDark ? 'text-blue-400' : 'text-blue-500'}`} />
-                  },
-                  { 
-                    title: "Desain & Perencanaan", 
-                    description: "Tim kami membuat desain terperinci dan spesifikasi yang disesuaikan dengan kebutuhan proyek Anda.", 
-                    icon: <FaTools size={32} className={`${isDark ? 'text-blue-400' : 'text-blue-500'}`} />
-                  },
-                  { 
-                    title: "Fabrikasi", 
-                    description: "Kami membuat setiap komponen dengan presisi menggunakan material dan teknik berkualitas.", 
-                    icon: <FaIndustry size={32} className={`${isDark ? 'text-blue-400' : 'text-blue-500'}`} />
-                  },
-                  { 
-                    title: "Pemasangan", 
-                    description: "Tim terampil kami memasang logam khusus Anda dengan memperhatikan detail dan kualitas.", 
-                    icon: <FaAward size={32} className={`${isDark ? 'text-blue-400' : 'text-blue-500'}`} />
-                  }
-                ].map((step, index) => (
-                  <div key={index} className="relative">
-                    <div className={`w-14 h-14 mx-auto mb-4 rounded-full flex items-center justify-center ${isDark ? 'bg-gray-700' : 'bg-white'} border-4 ${isDark ? 'border-blue-500' : 'border-blue-500'} relative z-10`}>
-                      {step.icon}
-                    </div>
-                    <div className={`text-center ${isDark ? 'bg-gray-700/50' : 'bg-white'} p-5 rounded-lg shadow-md`}>
-                      <h3 className="text-xl font-bold mb-2">{step.title}</h3>
-                      <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>{step.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <Button
+                variant="whatsapp"
+                size="lg"
+                href={`https://wa.me/${WA_NUMBER}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaWhatsapp size={20} aria-hidden="true" />
+                Chat WhatsApp
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                to="/gallery"
+                className="border-paper/40 text-paper hover:border-accent hover:text-accent"
+              >
+                Lihat Hasil Kerja
+              </Button>
             </div>
-          </div>
-          
-          {/* Benefits Section */}
-          <div className="scroll-animate opacity-0 mb-24 max-w-5xl mx-auto">
-            <h2 className={`text-4xl font-bold text-center mb-12 inline-block relative after:content-[''] after:block after:w-24 after:h-1 after:bg-blue-500 after:mt-2 after:mx-auto`}>
-              Mengapa Memilih Kami
-            </h2>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                {
-                  title: "Kualitas Pengerjaan",
-                  description: "Setiap proyek dilaksanakan dengan presisi dan perhatian terhadap detail oleh pekerja logam terampil kami.",
-                  icon: <FaAward size={42} />
-                },
-                {
-                  title: "Pengiriman Tepat Waktu",
-                  description: "Kami menghargai waktu Anda dan berusaha menyelesaikan semua proyek dalam kerangka waktu yang disepakati.",
-                  icon: <FaClock size={42} />
-                },
-                {
-                  title: "Kustomisasi",
-                  description: "Setiap bagian disesuaikan dengan kebutuhan spesifik Anda, memastikan kesesuaian yang sempurna untuk kebutuhan Anda.",
-                  icon: <FaTools size={42} />
-                }
-              ].map((benefit, index) => (
-                <div 
-                  key={index} 
-                  className={`p-6 rounded-lg text-center ${isDark ? 'bg-gray-800' : 'bg-white'} shadow-lg hover:-translate-y-1 transition-all duration-300`}
-                >
-                  <div className={`mx-auto w-16 h-16 mb-4 flex items-center justify-center rounded-full ${isDark ? 'text-blue-400 bg-blue-900/20' : 'text-blue-500 bg-blue-100'}`}>
-                    {benefit.icon}
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">{benefit.title}</h3>
-                  <p className={isDark ? 'text-gray-300' : 'text-gray-600'}>{benefit.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-          
-          {/* Call to Action */}
-          <div className="scroll-animate opacity-0">
-            <div className={`p-8 md:p-12 rounded-xl text-center ${isDark ? 'bg-gradient-to-br from-blue-900/40 to-gray-800' : 'bg-gradient-to-br from-blue-50 to-blue-100'}`}>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Siap Memulai Proyek Anda?</h2>
-              <p className="text-lg mb-8 max-w-2xl mx-auto">
-                Hubungi kami hari ini untuk mendiskusikan kebutuhan Anda dan dapatkan penawaran gratis. Kami siap mewujudkan visi Anda.
-              </p>
-              <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Link to="/contact" className={`px-8 py-4 rounded-lg font-bold transition-all duration-300 ${isDark ? 'bg-blue-500 hover:bg-blue-400 text-white' : 'bg-blue-600 hover:bg-blue-700 text-white'}`}>
-                  Hubungi Kami
-                </Link>
-                <Link to="/gallery" className={`px-8 py-4 rounded-lg font-bold transition-all duration-300 ${isDark ? 'bg-gray-700 hover:bg-gray-600 text-white' : 'border-2 border-blue-600 hover:bg-blue-50 text-blue-600'}`}>
-                  Lihat Proyek Kami
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      {/* Add global CSS for animations */}
-      <style jsx global>{`
-        .animate-fade-in {
-          animation: fadeIn 1s forwards;
-        }
-        
-        @keyframes fadeIn {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-      `}</style>
+          </Reveal>
+        </Container>
+      </section>
     </>
   );
 };
