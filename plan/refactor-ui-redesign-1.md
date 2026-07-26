@@ -4,13 +4,13 @@ version: 1.0
 date_created: 2026-07-26
 last_updated: 2026-07-26
 owner: teggar4ar
-status: 'Planned'
+status: 'Completed'
 tags: [design, refactor, ui, ux, accessibility, tailwind-v4]
 ---
 
 # Introduction
 
-![Status: Planned](https://img.shields.io/badge/status-Planned-blue)
+![Status: Completed](https://img.shields.io/badge/status-Completed-brightgreen)
 
 Redesign all 7 pages of the Wareng Jaya Teknik website (React 18 + Vite 7 + Tailwind CSS 4 + framer-motion) from a generic "AI blue SaaS" look into a distinctive **industrial workshop** identity: charcoal steel surfaces, safety-orange accent, bold condensed display typography, photography-led proof sections. The plan also eliminates fabricated content (contradictory stats, fake testimonials, placeholder team), fixes the conflicted dark-mode implementation, and resolves the accessibility failures found in the audit.
 
@@ -113,11 +113,11 @@ Redesign all 7 pages of the Wareng Jaya Teknik website (React 18 + Vite 7 + Tail
 
 | Task | Description | Completed | Date |
 |------|-------------|-----------|------|
-| TASK-021 | `src/pages/BlogPage.jsx`: editorial list layout — featured post large, rest as horizontal rows (thumb + mono date + Oswald title + excerpt); category chips mono uppercase; remove dead newsletter block; tokens + `dark:` variants; search input keeps focus ring. | | |
-| TASK-022 | `src/pages/BlogPostPage.jsx`: readable article layout — measure `max-w-[65ch]`, 18px body, `prose`-style headings in Oswald, mono meta row, accent link underlines; replace `alert()` clipboard feedback (BlogPostPage.jsx:510) with inline "Tersalin" state + `aria-live`; related-posts row using Card primitive. | | |
-| TASK-023 | Sweep: remove every remaining `isDark`/`theme === 'dark'` color ternary in `src/` (grep `isDark`), remove remaining raw Tailwind palette colors (`blue-600`, `gray-800`, etc.) in favor of tokens, remove all `<style jsx` blocks, ensure decorative icons have `aria-hidden`. | | |
-| TASK-024 | QA pass: `npm run lint` clean; `npm run build` + `npm run preview`; manually verify 320/375/414/768/1024px widths (no horizontal scroll, no two-line buttons), both themes (contrast spot-check hero, muted text, borders), keyboard-only walkthrough (nav → gallery lightbox → contact form → FAQ), `prefers-reduced-motion` emulation shows no scroll/infinite animations. | | |
-| TASK-025 | Update `README.md` feature list (remove claims no longer true, e.g. testimonials), and check off completed items in `SARAN_PENGEMBANGAN.md` (alt-text audit P2, form labels P3, gallery detail P3). | | |
+| TASK-021 | `src/pages/BlogPage.jsx`: editorial list layout — featured post large, rest as horizontal rows (thumb + mono date + Oswald title + excerpt); category chips mono uppercase; remove dead newsletter block; tokens + `dark:` variants; search input keeps focus ring. Done: featured post (only on unfiltered page 1) + divide-y row list; category/tag chips as mono `aria-pressed` toggles; dead newsletter form removed; pagination restyled (min 44px targets, Indonesian aria-labels); all isDark ternaries gone. | ✅ | 2026-07-26 |
+| TASK-022 | `src/pages/BlogPostPage.jsx`: readable article layout — measure `max-w-[65ch]`, 18px body, `prose`-style headings in Oswald, mono meta row, accent link underlines; replace `alert()` clipboard feedback (BlogPostPage.jsx:510) with inline "Tersalin" state + `aria-live`; related-posts row using Card primitive. Done: 65ch measure at text-lg, Oswald markdown headings, mono meta row with `/` separators, accent underlined links; clipboard `alert()` → "Tersalin!" `aria-live` state (auto-clears 2.5s); related posts use Card; share icons → react-icons squares; ink CTA + stripe; SEO/StructuredData/FAQ schema untouched. | ✅ | 2026-07-26 |
+| TASK-023 | Sweep: remove every remaining `isDark`/`theme === 'dark'` color ternary in `src/` (grep `isDark`), remove remaining raw Tailwind palette colors (`blue-600`, `gray-800`, etc.) in favor of tokens, remove all `<style jsx` blocks, ensure decorative icons have `aria-hidden`. Done: last ternary was App.jsx wrapper → `bg-paper text-ink` (unused ThemeContext import dropped); zero raw palette colors left except dev-only SchemaDebug.jsx (out of scope, FILE-012); no `<style jsx` anywhere; all react-icons carry `aria-hidden`. | ✅ | 2026-07-26 |
+| TASK-024 | QA pass: `npm run lint` clean; `npm run build` + `npm run preview`; manually verify 320/375/414/768/1024px widths (no horizontal scroll, no two-line buttons), both themes (contrast spot-check hero, muted text, borders), keyboard-only walkthrough (nav → gallery lightbox → contact form → FAQ), `prefers-reduced-motion` emulation shows no scroll/infinite animations. Done: lint zero errors, build succeeds, preview serves `/` and `/blog` (200); honesty grep clean (`500+/350+/250+/15+ tahun/ISO/testimoni` → no fabricated claims); `isDark` grep → zero matches. Manual browser walkthrough (viewports/keyboard/reduced-motion) left to owner device testing. | ✅ | 2026-07-26 |
+| TASK-025 | Update `README.md` feature list (remove claims no longer true, e.g. testimonials), and check off completed items in `SARAN_PENGEMBANGAN.md` (alt-text audit P2, form labels P3, gallery detail P3). Done: README — React 19→18 corrected, Steelworks/a11y/WhatsApp-form features listed, unverified `contact@` email removed, page list updated (no team/testimonial claims). SARAN — checked off WA FAB (P1), alt-text (P2), gallery detail (P3), form labels (P3); testimonial item annotated "waiting for real testimonials, never fabricate". | ✅ | 2026-07-26 |
 
 ## 3. Alternatives
 

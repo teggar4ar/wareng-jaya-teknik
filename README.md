@@ -8,33 +8,35 @@ Wareng Jaya Teknik adalah website bengkel las yang dibangun dengan React dan Vit
 
 ### Fitur Utama
 
-- **Desain Modern**: Dibangun dengan React 19 dan didesain dengan Tailwind CSS 4
+- **Desain Industrial "Steelworks"**: Sistem desain berbasis token (OKLCH) dengan Tailwind CSS 4, tipografi Oswald/Inter/JetBrains Mono (self-hosted via Fontsource)
 - **Tata Letak Responsif**: Dioptimalkan untuk semua perangkat dari ponsel hingga desktop
-- **Dioptimalkan untuk Kinerja**: Pemuatan cepat dengan bundling Vite
-- **Mode Gelap/Terang**: Fungsi pengalihan tema sesuai preferensi pengguna
+- **Dioptimalkan untuk Kinerja**: Pemuatan cepat dengan bundling Vite dan lazy-loading per halaman
+- **Mode Gelap/Terang**: Pengalihan tema via kelas `.dark` (Tailwind v4 `@custom-variant`)
+- **Aksesibel**: Focus ring terlihat, target sentuh ≥ 44px, animasi menghormati `prefers-reduced-motion`, lightbox galeri dapat dioperasikan keyboard
 - **Ramah SEO**: Dilengkapi meta tag, data terstruktur, dan sitemap
-- **UI Beranimasi**: Animasi halus menggunakan Framer Motion
+- **UI Beranimasi**: Animasi reveal halus menggunakan Framer Motion
 - **Galeri Gambar**: Pameran proyek dengan fungsionalitas lightbox
-- **Formulir Kontak**: Formulir interaktif untuk pertanyaan dan permintaan
+- **Kontak via WhatsApp**: Formulir kontak yang mengarahkan pesan langsung ke WhatsApp
 - **Blog**: Menampilkan artikel terkait industri, tips, dan pembaruan
 
 ### Halaman
 
-- **Beranda**: Pengenalan perusahaan dan sorotan layanan
-- **Tentang Kami**: Sejarah perusahaan dan informasi tim
-- **Layanan**: Penawaran layanan secara detail
+- **Beranda**: Pengenalan bengkel, layanan, hasil kerja, dan alur kerja
+- **Tentang Kami**: Cerita bengkel dan cara kami bekerja
+- **Layanan**: Penawaran layanan secara detail dengan spesifikasi material
 - **Galeri Proyek**: Pameran proyek-proyek yang telah diselesaikan
-- **Kontak**: Formulir kontak dan informasi
+- **Kontak**: Kanal kontak (WhatsApp, telepon, alamat) dan formulir
 - **Blog**: Menampilkan artikel terkait industri, tips, dan pembaruan
 
 ## Stack Teknologi
 
-- **Framework Frontend**: React 19
+- **Framework Frontend**: React 18
 - **Build Tool**: Vite 7
-- **Framework CSS**: Tailwind CSS 4
+- **Framework CSS**: Tailwind CSS 4 (konfigurasi CSS-first via `@theme`)
 - **Routing**: React Router 7
 - **Animasi**: Framer Motion
 - **Ikon**: React Icons
+- **Font**: Fontsource (Oswald, Inter, JetBrains Mono — self-hosted)
 - **SEO**: React Helmet Async
 - **Galeri Gambar**: Yet Another React Lightbox
 
@@ -168,4 +170,4 @@ Proyek ini dilisensikan di bawah Lisensi MIT - lihat file LICENSE untuk detail.
 
 ## Kontak
 
-Untuk pertanyaan apapun tentang website ini, silakan hubungi di contact@warengjayateknik.com
+Untuk pertanyaan apapun tentang website ini, silakan hubungi melalui halaman kontak di [warengjayateknik.my.id](https://warengjayateknik.my.id/contact).
