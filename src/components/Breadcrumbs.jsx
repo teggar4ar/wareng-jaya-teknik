@@ -70,7 +70,7 @@ const Breadcrumbs = ({ currentPage, blogPost }) => {
   const breadcrumbStructuredData = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
-    'itemListElement': breadcrumbItems.map((item, index) => ({
+    'itemListElement': breadcrumbItems.map((item) => ({
       '@type': 'ListItem',
       'position': item.position,
       'name': item.name,

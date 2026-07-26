@@ -87,7 +87,6 @@ const BlogPostPage = () => {
     
     // Find question headings
     while ((match = questionRegex.exec(content)) !== null) {
-      const questionText = match[2].trim();
       const questionIndex = match.index;
       
       // If we've seen a question before, extract the answer between the last question and this one

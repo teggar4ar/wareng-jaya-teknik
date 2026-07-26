@@ -10,10 +10,10 @@ import remarkHtml from 'remark-html';
  */
 
 /**
-Â * Parse markdown content with frontmatter (Client-side version)
+Â * Parse markdown content with frontmatter (Client-side version)
  * This function can be used if raw markdown content is passed to the client.
-Â * @param {string} fileContents - Raw markdown file contents
-Â */
+Â * @param {string} fileContents - Raw markdown file contents
+Â */
 export function parseMarkdownWithFrontmatter(fileContents) {
   // Use gray-matter to parse the post metadata section
   const { data, content } = matter(fileContents);
@@ -48,10 +48,10 @@ export function parseMarkdownWithFrontmatter(fileContents) {
 }
 
 /**
-Â * Convert markdown to HTML
-Â * @param {string} markdown - Markdown content
-Â * @returns {Promise<string>} - HTML content
-Â */
+Â * Convert markdown to HTML
+Â * @param {string} markdown - Markdown content
+Â * @returns {Promise<string>} - HTML content
+Â */
 export async function markdownToHtml(markdown) {
   const result = await remark()
     .use(remarkHtml)
@@ -60,14 +60,14 @@ export async function markdownToHtml(markdown) {
 }
 
 /**
-Â * Get related posts based on keywords (Client-side version)
+Â * Get related posts based on keywords (Client-side version)
  * This function expects allPosts to be passed as an argument.
-Â * @param {Array} allPosts - Array of all blog posts (passed from server/build)
-Â * @param {string} currentSlug - Current post slug (to exclude)
-Â * @param {Array} keywords - Keywords to match
-Â * @param {number} limit - Maximum number of posts to return
-Â * @returns {Array} - Array of related post objects
-Â */
+Â * @param {Array} allPosts - Array of all blog posts (passed from server/build)
+Â * @param {string} currentSlug - Current post slug (to exclude)
+Â * @param {Array} keywords - Keywords to match
+Â * @param {number} limit - Maximum number of posts to return
+Â * @returns {Array} - Array of related post objects
+Â */
 export function getRelatedPosts(allPosts, currentSlug, keywords = [], limit = 3) {
   // Filter out current post
   const otherPosts = allPosts.filter(post => post.slug !== currentSlug);
@@ -112,12 +112,12 @@ export function getRelatedPosts(allPosts, currentSlug, keywords = [], limit = 3)
 }
 
 /**
-Â * Search posts by query string (Client-side version)
+Â * Search posts by query string (Client-side version)
  * This function expects allPosts to be passed as an argument.
-Â * @param {Array} allPosts - Array of all blog posts (passed from server/build)
-Â * @param {string} query - The search query
-Â * @returns {Array} Matching posts
-Â */
+Â * @param {Array} allPosts - Array of all blog posts (passed from server/build)
+Â * @param {string} query - The search query
+Â * @returns {Array} Matching posts
+Â */
 export function searchPosts(allPosts, query) {
   if (!query || query.trim() === '') {
     return allPosts;

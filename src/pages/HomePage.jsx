@@ -52,7 +52,7 @@ const HomePage = () => {
                 loading="eager"
                 width="1920"
                 height="1080"
-                onError={(e) => {e.target.onerror = null; e.target.src = '/images/fallback-hero.jpg'}}
+                onError={(e) => {e.target.onerror = null; e.target.src = '/images/placeholder.svg'}}
               />
               <div className={`absolute inset-0 ${isDark ? 'bg-gradient-to-b from-black/70 to-black/50' : 'bg-gradient-to-b from-black/50 to-black/40'}`}></div>
             </motion.div>
@@ -426,7 +426,7 @@ const HomePage = () => {
                         src={testimonial.image} 
                         alt={testimonial.name}
                         className="w-full h-full object-cover"
-                        onError={(e) => {e.target.onerror = null; e.target.src = '/images/avatar-placeholder.jpg'}}
+                        onError={(e) => {e.target.onerror = null; e.target.src = '/images/placeholder.svg'}}
                       />
                     </div>
                     <div>

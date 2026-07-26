@@ -62,7 +62,7 @@ const AboutUsPage = () => {
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [setAwardsCount, setClientCountInView, setExperienceCount, setProjectCountInView]);
   
   return (
     <>

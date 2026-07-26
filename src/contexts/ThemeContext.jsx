@@ -1,17 +1,20 @@
 import React, { createContext, useState, useEffect } from 'react';
 
+// eslint-disable-next-line react-refresh/only-export-components -- context + provider co-located intentionally; consumers import ThemeContext from here
 export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState('light'); // Default to light theme
-  
-  // Effect to load theme from localStorage on initial render
-  useEffect(() => {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      setTheme(savedTheme);
+  const [theme, setTheme] = useState(() => {
+    try {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark' || savedTheme === 'light') {
+        return savedTheme;
+      }
+    } catch {
+      // localStorage unavailable; fall through to default
     }
-  }, []);
+    return 'light';
+  });
 
   // Effect to update document and save preference when theme changes
   useEffect(() => {

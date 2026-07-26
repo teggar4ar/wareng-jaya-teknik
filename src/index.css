@@ -1,1 +1,82 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-paper: oklch(96% 0.005 75);
+  --color-ink: oklch(24% 0.01 260);
+  --color-ink-muted: oklch(45% 0.01 260);
+  --color-accent: oklch(62% 0.19 40);
+  --color-accent-ink: oklch(99% 0 0);
+  --color-surface: oklch(99% 0.002 75);
+  --color-line: oklch(88% 0.005 75);
+  --color-wa: oklch(56% 0.15 150);
+
+  --font-display: "Oswald", "Arial Narrow", sans-serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --radius-btn: 2px;
+  --radius-card: 4px;
+}
+
+@layer base {
+  .dark {
+    --color-paper: oklch(21% 0.01 260);
+    --color-ink: oklch(93% 0.005 75);
+    --color-ink-muted: oklch(72% 0.008 260);
+    --color-accent: oklch(70% 0.18 45);
+    --color-accent-ink: oklch(15% 0.01 260);
+    --color-surface: oklch(26% 0.012 260);
+    --color-line: oklch(32% 0.01 260);
+  }
+
+  html {
+    overflow-x: clip;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    overflow-x: clip;
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 200ms ease-out, color 200ms ease-out;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-style: normal;
+    overflow-wrap: anywhere;
+    min-width: 0;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@utility stripe {
+  height: 4px;
+  background-image: repeating-linear-gradient(
+    45deg,
+    var(--color-accent) 0,
+    var(--color-accent) 8px,
+    transparent 8px,
+    transparent 16px
+  );
+}
