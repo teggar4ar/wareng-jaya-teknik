@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import StructuredData from './StructuredData';
+import { absoluteUrl } from '../config/site';
 
 const PATH_NAMES = {
   blog: 'Blog',
@@ -8,6 +9,7 @@ const PATH_NAMES = {
   services: 'Layanan',
   gallery: 'Galeri',
   contact: 'Kontak',
+  privacy: 'Kebijakan Privasi',
 };
 
 /**
@@ -53,7 +55,7 @@ const Breadcrumbs = ({ currentPage, blogPost }) => {
       '@type': 'ListItem',
       'position': item.position,
       'name': item.name,
-      'item': `${window.location.origin}${item.path}`,
+      'item': absoluteUrl(item.path),
     })),
   };
 

@@ -121,8 +121,14 @@ const HomePage = () => {
               Las, Kanopi &amp; Konstruksi Baja
             </h1>
             <p className="mt-6 max-w-lg text-base text-ink-muted md:text-lg">
-              Butuh kanopi, pagar, atau rangka baja? Kami kerjakan sendiri di
-              bengkel kami di Tajurhalang, dari ukur sampai pasang.
+              Butuh kanopi, pagar, atau rangka baja? Kami kerjakan sendiri di{' '}
+              <Link
+                to="/about"
+                className="text-accent underline decoration-accent/50 underline-offset-2 hover:decoration-accent"
+              >
+                bengkel kami di Tajurhalang
+              </Link>
+              , dari ukur sampai pasang.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Button
@@ -150,8 +156,10 @@ const HomePage = () => {
               alt="Tukang las sedang mengelas rangka besi dengan percikan api"
               className="relative aspect-[4/3] w-full object-cover"
               loading="eager"
-              width="1920"
-              height="1080"
+              fetchpriority="high"
+              decoding="async"
+              width="1200"
+              height="675"
               onError={(e) => {
                 e.target.onerror = null;
                 e.target.src = '/images/placeholder.svg';
@@ -233,6 +241,8 @@ const HomePage = () => {
                   <img
                     src={project.image}
                     alt={project.title}
+                    width="1200"
+                    height="900"
                     className="aspect-[4/3] w-full border border-line object-cover"
                     loading="lazy"
                     onError={(e) => {
@@ -290,7 +300,15 @@ const HomePage = () => {
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-base text-paper/70">
               Ceritakan saja rencananya. Kami bantu ukur dan hitung, penawarannya
-              gratis.
+              gratis. Belum yakin mau mulai dari mana? Baca dulu{' '}
+              <Link to="/blog" className="text-accent underline underline-offset-2">
+                artikel kami
+              </Link>{' '}
+              atau lihat{' '}
+              <Link to="/contact" className="text-accent underline underline-offset-2">
+                cara menghubungi kami
+              </Link>
+              .
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button

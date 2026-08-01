@@ -2,6 +2,7 @@
 title: '5 Tips Merawat Furniture Besi'
 date: '2025-08-18'
 excerpt: 'Pelajari cara merawat furniture besi Anda agar tetap awet dan terlihat baru.'
+description: 'Cara merawat furniture besi agar tetap awet: pembersihan rutin, pencegahan korosi, pengecatan ulang, dan penempatan yang tepat.'
 coverImage: '/images/furniture-besi.webp'
 author: 'Tim Wareng Jaya'
 authorImage: '/images/profile.webp'
@@ -45,7 +46,7 @@ A: Furniture besi cenderung lebih mudah dirawat dan lebih tahan lama, asalkan ti
 
 ---
 
-Ingin tahu lebih banyak tentang perawatan furniture atau jasa las profesional? Baca juga artikel kami tentang [Jasa Las Kanopi Berkualitas](./jasa-las-kanopi-bogor.md) dan [Keunggulan Teralis Modern](./keunggulan-teralis-modern.md) untuk inspirasi dan solusi terbaik bagi hunian Anda.
+Ingin tahu lebih banyak tentang perawatan furniture atau jasa las? Baca juga artikel kami tentang [Jasa Las Kanopi Berkualitas](/blog/jasa-las-kanopi-bogor), [Keunggulan Teralis Modern](/blog/keunggulan-teralis-modern), dan [Furniture Besi Custom](/blog/furniture-custom-besi) untuk inspirasi bagi hunian Anda.
 
-Dengan menerapkan tips di atas, furniture besi Anda akan tetap awet, bebas karat, dan selalu tampil menarik. Jangan ragu untuk berkonsultasi dengan tim Wareng Jaya jika membutuhkan jasa perbaikan atau pembuatan furniture besi custom yang berkualitas dan tahan lama. Perawatan yang tepat adalah kunci agar furniture besi menjadi investasi jangka panjang untuk rumah Anda.
+Dengan menerapkan tips di atas, furniture besi Anda akan tetap awet, bebas karat, dan selalu tampil menarik. Jangan ragu untuk [menghubungi kami](/contact) jika membutuhkan jasa perbaikan atau pembuatan furniture besi custom. Perawatan yang tepat adalah kunci agar furniture besi menjadi investasi jangka panjang untuk rumah Anda.
 

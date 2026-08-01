@@ -1,6 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FaWhatsapp } from 'react-icons/fa';
 import SEO from '../components/SEO';
+import Breadcrumbs from '../components/Breadcrumbs';
 import Container from '../components/ui/Container';
 import Button from '../components/ui/Button';
 import SectionHeading from '../components/ui/SectionHeading';
@@ -48,6 +50,8 @@ const AboutUsPage = () => {
         keywords={['tentang Wareng Jaya Teknik', 'bengkel las Tajurhalang', 'bengkel las Bogor', 'jasa las']}
       />
 
+      <Breadcrumbs currentPage="Tentang Kami" />
+
       {/* Page header */}
       <section className="border-b border-line bg-paper py-12 md:py-16">
         <Container>
@@ -81,7 +85,14 @@ const AboutUsPage = () => {
                 Pelanggan kami macam-macam: rumah tinggal, ruko, sampai tempat
                 usaha di Tajurhalang dan sekitarnya. Pesanan kecil seperti
                 teralis satu jendela pun kami terima, begitu juga konstruksi
-                baja untuk bangunan.
+                baja untuk bangunan. Daftar lengkapnya ada di halaman{' '}
+                <Link
+                  to="/services"
+                  className="text-accent underline decoration-accent/50 underline-offset-2 hover:decoration-accent"
+                >
+                  layanan
+                </Link>
+                .
               </p>
             </div>
           </Reveal>
@@ -93,6 +104,8 @@ const AboutUsPage = () => {
             <img
               src="/images/welding.webp"
               alt="Proses pengelasan rangka besi di bengkel Wareng Jaya Teknik"
+              width="1200"
+              height="900"
               className="relative aspect-[4/3] w-full border border-line object-cover"
               loading="lazy"
               onError={(e) => {
@@ -142,6 +155,8 @@ const AboutUsPage = () => {
             <img
               src="/images/bengkel-bojonggede.webp"
               alt="Hasil pengerjaan bengkel las untuk area Bojonggede dan sekitarnya"
+              width="1200"
+              height="900"
               className="relative aspect-[4/3] w-full border border-line object-cover"
               loading="lazy"
               onError={(e) => {
@@ -164,6 +179,16 @@ const AboutUsPage = () => {
                 </li>
               ))}
             </ul>
+            <p className="mt-6 text-base leading-relaxed text-ink-muted">
+              Di luar area itu masih bisa kami jangkau, tinggal{' '}
+              <Link
+                to="/contact"
+                className="text-accent underline decoration-accent/50 underline-offset-2 hover:decoration-accent"
+              >
+                tanyakan lewat kontak kami
+              </Link>
+              .
+            </p>
           </Reveal>
         </Container>
       </section>

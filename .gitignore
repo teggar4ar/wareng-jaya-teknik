@@ -24,3 +24,4 @@ dist-ssr
 *.sw?
 
 SARAN_PENGEMBANGAN.md
+/.vite-react-ssg-temp

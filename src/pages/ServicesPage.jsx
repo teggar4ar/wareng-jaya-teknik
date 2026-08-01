@@ -1,9 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FaWhatsapp } from 'react-icons/fa';
 import SEO from '../components/SEO';
+import StructuredData from '../components/StructuredData';
+import Breadcrumbs from '../components/Breadcrumbs';
 import Container from '../components/ui/Container';
 import Button from '../components/ui/Button';
 import Reveal from '../components/ui/Reveal';
+import { SITE_URL, absoluteUrl } from '../config/site';
 
 const WA_NUMBER = '6281398427309';
 
@@ -25,6 +29,7 @@ const SERVICES = [
       'Finishing: cat anti karat / duco',
       'Ukuran dibuat sesuai lokasi',
     ],
+    article: { to: '/blog/jasa-kanopi-berkualitas', label: 'Panduan memilih kanopi' },
   },
   {
     name: 'Pagar & Gerbang',
@@ -38,6 +43,7 @@ const SERVICES = [
       'Opsi: gerbang dorong, lipat, atau ayun',
       'Finishing: cat duco / powder coating',
     ],
+    article: { to: '/blog/pagar-besi-modern', label: 'Model pagar besi modern' },
   },
   {
     name: 'Teralis',
@@ -51,6 +57,7 @@ const SERVICES = [
       'Dibuat presisi sesuai ukuran kusen',
       'Finishing: cat anti karat / duco',
     ],
+    article: { to: '/blog/keunggulan-teralis-modern', label: 'Keunggulan teralis modern' },
   },
   {
     name: 'Railing',
@@ -64,6 +71,7 @@ const SERVICES = [
       'Model minimalis atau kombinasi kayu',
       'Pemasangan interior & eksterior',
     ],
+    article: { to: '/blog/railing-tangga-stainless-steel', label: 'Railing stainless untuk tangga' },
   },
   {
     name: 'Konstruksi Baja',
@@ -77,6 +85,7 @@ const SERVICES = [
       'Material: baja WF / CNP / siku / pipa',
       'Pengerjaan dan pemasangan di lokasi',
     ],
+    article: { to: '/blog/konstruksi-baja-ringan-atap', label: 'Konstruksi baja ringan untuk atap' },
   },
   {
     name: 'Pintu Besi',
@@ -90,6 +99,7 @@ const SERVICES = [
       'Untuk rumah, ruko, dan gudang',
       'Finishing: cat duco / anti karat',
     ],
+    article: { to: '/blog/pintu-besi-minimalis-keamanan', label: 'Pintu besi minimalis & keamanan' },
   },
   {
     name: 'Tangga Spiral',
@@ -116,10 +126,45 @@ const SERVICES = [
       'Kapasitas menyesuaikan ukuran toren',
       'Finishing cat anti karat',
     ],
+    article: { to: '/blog/harga-bangun-tower-air-tajurhalang', label: 'Rincian harga tower air' },
   },
 ];
 
+const SERVICE_AREAS = [
+  'Tajurhalang',
+  'Bojonggede',
+  'Citayam',
+  'Cibinong',
+  'Depok',
+  'Bogor',
+];
+
 const ServicesPage = () => {
+  // One Service entity per offering. `provider` is a bare @id reference to the
+  // LocalBusiness node emitted by StructuredData on this same page — repeating
+  // the full business block eight times would create eight rival entities.
+  const servicesSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Layanan Wareng Jaya Teknik',
+    itemListElement: SERVICES.map((service, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'Service',
+        name: service.name,
+        description: service.description,
+        image: absoluteUrl(service.image),
+        serviceType: service.name,
+        provider: { '@id': `${SITE_URL}/#business` },
+        areaServed: SERVICE_AREAS.map((area) => ({
+          '@type': 'Place',
+          name: area,
+        })),
+      },
+    })),
+  };
+
   return (
     <>
       <SEO
@@ -128,6 +173,10 @@ const ServicesPage = () => {
         canonicalUrl="https://warengjayateknik.my.id/services"
         keywords={['pintu besi', 'pagar', 'teralis jendela', 'kanopi', 'konstruksi logam', 'tangga spiral', 'railing tangga', 'tower air']}
       />
+
+      <StructuredData data={servicesSchema} />
+
+      <Breadcrumbs currentPage="Layanan" />
 
       {/* Page header */}
       <section className="border-b border-line bg-paper py-12 md:py-16">
@@ -140,7 +189,14 @@ const ServicesPage = () => {
           </h1>
           <p className="mt-4 max-w-2xl text-base text-ink-muted md:text-lg">
             Semua dikerjakan di bengkel kami sendiri di Tajurhalang. Kami yang
-            ukur, kami yang buat, kami juga yang pasang.
+            ukur, kami yang buat, kami juga yang pasang.{' '}
+            <Link
+              to="/about"
+              className="text-accent underline decoration-accent/50 underline-offset-2 hover:decoration-accent"
+            >
+              Selengkapnya tentang cara kami bekerja
+            </Link>
+            .
           </p>
         </Container>
       </section>
@@ -162,6 +218,8 @@ const ServicesPage = () => {
                 <img
                   src={service.image}
                   alt={service.alt}
+                  width="1200"
+                  height="900"
                   className="relative aspect-[4/3] w-full border border-line object-cover"
                   loading={index === 0 ? 'eager' : 'lazy'}
                   onError={(e) => {
@@ -195,6 +253,17 @@ const ServicesPage = () => {
                   <FaWhatsapp size={18} aria-hidden="true" />
                   Tanya {service.name}
                 </Button>
+                {service.article && (
+                  <p className="mt-4 text-sm text-ink-muted">
+                    Baca dulu:{' '}
+                    <Link
+                      to={service.article.to}
+                      className="text-accent underline decoration-accent/50 underline-offset-2 hover:decoration-accent"
+                    >
+                      {service.article.label}
+                    </Link>
+                  </p>
+                )}
               </div>
             </Reveal>
           ))}
@@ -211,7 +280,11 @@ const ServicesPage = () => {
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-base text-paper/70">
               Di luar daftar ini pun bisa. Kirim saja foto atau sketsanya lewat
-              WhatsApp, nanti kami hitung.
+              WhatsApp, nanti kami hitung. Bisa juga lewat{' '}
+              <Link to="/contact" className="text-accent underline underline-offset-2">
+                halaman kontak
+              </Link>
+              .
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button

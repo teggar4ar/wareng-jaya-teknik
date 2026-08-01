@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Lightbox from 'yet-another-react-lightbox';
 import Captions from 'yet-another-react-lightbox/plugins/captions';
 import Zoom from 'yet-another-react-lightbox/plugins/zoom';
@@ -6,6 +7,7 @@ import 'yet-another-react-lightbox/styles.css';
 import 'yet-another-react-lightbox/plugins/captions.css';
 import { FaWhatsapp } from 'react-icons/fa';
 import SEO from '../components/SEO';
+import Breadcrumbs from '../components/Breadcrumbs';
 import Container from '../components/ui/Container';
 import Button from '../components/ui/Button';
 import Reveal from '../components/ui/Reveal';
@@ -129,8 +131,9 @@ const ProjectGalleryPage = () => {
         description="Foto-foto hasil pengerjaan Wareng Jaya Teknik: pintu besi, pagar, kanopi, teralis, railing, dan konstruksi baja."
         canonicalUrl="https://warengjayateknik.my.id/gallery"
         keywords={['galeri proyek', 'hasil pengerjaan bengkel las', 'foto kanopi', 'foto pagar besi']}
-        ogType="article"
       />
+
+      <Breadcrumbs currentPage="Galeri Proyek" />
 
       {/* Page header */}
       <section className="border-b border-line bg-paper py-12 md:py-16">
@@ -143,7 +146,14 @@ const ProjectGalleryPage = () => {
           </h1>
           <p className="mt-4 max-w-2xl text-base text-ink-muted md:text-lg">
             Beberapa pekerjaan yang sudah kami selesaikan. Klik fotonya kalau
-            mau lihat lebih besar.
+            mau lihat lebih besar. Rincian tiap jenis pengerjaan ada di{' '}
+            <Link
+              to="/services"
+              className="text-accent underline decoration-accent/50 underline-offset-2 hover:decoration-accent"
+            >
+              halaman layanan
+            </Link>
+            .
           </p>
         </Container>
       </section>
@@ -180,13 +190,14 @@ const ProjectGalleryPage = () => {
                 <button
                   type="button"
                   onClick={() => openLightbox(i)}
-                  aria-label={`Lihat foto ${project.title} lebih besar`}
                   className="group block w-full text-left"
                 >
                   <span className="block overflow-hidden border border-line">
                     <img
                       src={project.src}
                       alt={project.title}
+                      width="1200"
+                      height="900"
                       className="aspect-[4/3] w-full object-cover transition-transform duration-150 group-hover:scale-[1.02] motion-reduce:group-hover:scale-100"
                       loading="lazy"
                       onError={(e) => {
@@ -202,6 +213,7 @@ const ProjectGalleryPage = () => {
                     <span className="mt-1 block font-mono text-xs text-ink-muted">
                       {project.category}
                     </span>
+                    <span className="sr-only"> — buka foto lebih besar</span>
                   </span>
                 </button>
               </Reveal>

@@ -1,29 +1,41 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
+import { SITE_URL, absoluteUrl } from '../config/site';
+
+/**
+ * Pages where the LocalBusiness entity belongs.
+ *
+ * The global instance in `Layout.jsx` renders on every route, which used to put
+ * LocalBusiness on blog articles too — competing with the BlogPosting entity and
+ * making Google guess the page's primary subject. Business identity pages only.
+ */
+const BUSINESS_SCHEMA_PATHS = ['/', '/about', '/services', '/gallery', '/contact'];
 
 /**
  * StructuredData component for adding structured data to improve SEO
- * 
+ *
  * @param {Object} props - Component props
  * @param {Object} props.blogPost - Blog post data (optional)
  * @param {Object} props.data - Custom structured data (optional)
  */
 const StructuredData = ({ blogPost, data }) => {
   const location = useLocation();
-  const currentUrl = window.location.origin + location.pathname;
+  const currentUrl = absoluteUrl(location.pathname);
   
   // Base organization/business structured data
   const businessStructuredData = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    // Stable node id so other schema (e.g. Service.provider on /services) can
+    // reference this entity instead of duplicating the whole business block.
+    "@id": `${SITE_URL}/#business`,
     "name": "Wareng Jaya Teknik",
     "image": "https://warengjayateknik.my.id/images/hero-new.webp",
     "url": "https://warengjayateknik.my.id/",
     "logo": "https://warengjayateknik.my.id/favicon.svg",
     "description": "Bengkel las di Tajurhalang, Bogor. Menerima pembuatan kanopi, teralis, pagar, railing, tangga, dan konstruksi baja.",
     "telephone": "+6281398427309",
-    "email": "info@warengjayateknik.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Jl. Raya Kalisuren, Kp. Kandang Panjang",
@@ -62,9 +74,7 @@ const StructuredData = ({ blogPost, data }) => {
     },
     "headline": blogPost.title,
     "description": blogPost.description || blogPost.excerpt,
-    "image": blogPost.coverImage 
-      ? window.location.origin + blogPost.coverImage 
-      : window.location.origin + "/images/placeholder.svg",
+    "image": absoluteUrl(blogPost.coverImage || "/images/placeholder.svg"),
     "author": {
       "@type": "Person",
       "name": blogPost.author || "Tim Wareng Jaya Teknik"
@@ -74,7 +84,7 @@ const StructuredData = ({ blogPost, data }) => {
       "name": "Wareng Jaya Teknik",
       "logo": {
         "@type": "ImageObject",
-        "url": window.location.origin + "/favicon.svg"
+        "url": `${SITE_URL}/favicon.svg`
       }
     },
     "datePublished": blogPost.isoDate || blogPost.date,
@@ -85,13 +95,22 @@ const StructuredData = ({ blogPost, data }) => {
     "articleBody": blogPost.content // Include full content for better indexing
   } : null;
 
+  // Only emit the business entity on the pages that actually represent the
+  // business. Without this it also lands on every blog article.
+  const showBusinessSchema = BUSINESS_SCHEMA_PATHS.includes(
+    location.pathname.replace(/(.)\/$/, '$1')
+  );
+
+  const defaultSchema = data || (showBusinessSchema ? businessStructuredData : null);
+
   return (
     <Helmet>
-      {/* Use custom structured data if provided, otherwise use default business data */}
-      <script type="application/ld+json">
-        {JSON.stringify(data || businessStructuredData)}
-      </script>
-      
+      {defaultSchema && (
+        <script type="application/ld+json">
+          {JSON.stringify(defaultSchema)}
+        </script>
+      )}
+
       {/* If it's a blog post and we're not using custom data, add the blog post structured data */}
       {blogPost && !data && (
         <script type="application/ld+json">

@@ -4,9 +4,18 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Wareng Jaya Teknik, bengkel las di Tajurhalang, Bogor. Menerima pembuatan kanopi, pagar, teralis, railing, pintu besi, dan konstruksi baja." />
-    <meta name="robots" content="index, follow" />
-    <meta name="keywords" content="jasa teknik, layanan teknis, Wareng Jaya Teknik, fabrikasi logam, jasa pengelasan, bengkel las" />
+
+    <!-- Applies the stored theme before first paint so prerendered pages don't flash. -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          document.documentElement.classList.add(t === 'dark' ? 'dark' : 'light');
+        } catch (e) {
+          document.documentElement.classList.add('light');
+        }
+      })();
+    </script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1P9ZH63K0M"></script>
@@ -17,10 +26,12 @@
 
       gtag('config', 'G-1P9ZH63K0M');
     </script>
-    
-    <title>Bengkel Las Wareng Jaya Teknik - Tajurhalang, Bogor</title>
-    <link rel="canonical" href="https://warengjayateknik.my.id/" />
-    <!-- Favicon setup for various devices -->
+
+    <!--
+      Title, description, canonical, robots and social tags are injected per
+      route by src/components/SEO.jsx and baked into each prerendered page.
+      Do not duplicate them here — that produces two of each tag in the output.
+    -->
     <link rel="apple-touch-icon" href="/favicon.svg">
     <link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg">
     <link rel="manifest" href="/site.webmanifest">

@@ -1,5 +1,7 @@
 ---
 title: 'Furniture Custom Besi: Solusi Unik dan Tahan Lama untuk Interior dan Eksterior'
+seoTitle: 'Furniture Custom Besi'
+description: 'Keunggulan furniture custom berbahan besi dan logam untuk ruang berkarakter dengan durabilitas tinggi.'
 date: '2025-09-12'
 excerpt: 'Eksplorasi keunggulan furniture custom berbahan besi dan logam untuk menciptakan ruang dengan karakter unik, durabilitas tinggi, dan nilai estetis yang personal.'
 coverImage: '/images/furniture.jpg'
@@ -108,7 +110,7 @@ Kami menerapkan metodologi produksi yang teliti untuk menghasilkan furniture ber
 
 ### 5. Pemasangan dan Pengiriman
 - Pengiriman dengan packing aman
-- Instalasi oleh tim profesional (jika diperlukan)
+- Instalasi oleh kami (jika diperlukan)
 - Garansi untuk setiap produk
 - Layanan after-sales
 
@@ -123,3 +125,5 @@ Untuk memastikan furniture besi Anda tetap prima dalam jangka panjang:
 - Segera perbaiki goresan pada lapisan cat untuk mencegah korosi
 
 Jika Anda tertarik untuk memiliki furniture besi custom yang unik dan tahan lama, hubungi Wareng Jaya Teknik untuk konsultasi desain dan penawaran. Kami siap mewujudkan visi Anda menjadi karya furniture yang fungsional dan bernilai estetik tinggi.
+
+Baca juga: [5 tips merawat furniture besi](/blog/5-tips-merawat-furniture-besi) agar hasilnya awet. Contoh pengerjaan lain ada di [galeri](/gallery).

@@ -1,5 +1,7 @@
 ---
 title: 'Awning Aluminium Modern: Solusi Teduh yang Elegan untuk Rumah Anda'
+seoTitle: 'Awning Aluminium Modern'
+description: 'Pilihan awning aluminium modern yang menggabungkan perlindungan cuaca dengan desain estetis untuk eksterior rumah.'
 date: '2025-11-15'
 excerpt: 'Pelajari berbagai pilihan awning aluminium modern yang menggabungkan fungsi perlindungan dari cuaca dengan desain estetis untuk meningkatkan tampilan eksterior rumah.'
 coverImage: '/images/awning.jpg'
@@ -89,20 +91,20 @@ Kami hanya menggunakan material berkualitas tinggi untuk setiap awning:
 - Membrane fabric tahan UV dan air
 
 ### Pilihan Finishing
-- Powder coating dengan garansi warna
+- Powder coating
 - Anodized finish untuk tampilan premium
 - Wood grain effect untuk kesan alami
 - Custom color matching dengan fasad rumah
 
 ## Proses Pemasangan Awning Aluminium
 
-Wareng Jaya Teknik menerapkan metodologi instalasi yang teliti dan profesional:
+Wareng Jaya Teknik menerapkan metodologi instalasi yang teliti:
 
 1. **Konsultasi** - Diskusi kebutuhan dan preferensi desain
 2. **Survei Lokasi** - Pengukuran presisi dan analisis struktur
 3. **Desain** - Pembuatan desain 3D untuk visualisasi
 4. **Fabrikasi** - Produksi custom sesuai spesifikasi
-5. **Pemasangan** - Instalasi oleh tim teknis berpengalaman
+5. **Pemasangan** - Instalasi oleh orang yang mengerjakan fabrikasinya
 6. **Quality Control** - Pemeriksaan struktur dan fungsi
 7. **Panduan Perawatan** - Instruksi perawatan dan garansi produk
 
@@ -129,4 +131,6 @@ Untuk memastikan awning aluminium Anda tetap prima dalam jangka panjang:
 - Bersihkan saluran drainase dari daun dan kotoran
 - Untuk awning retractable, hindari pengoperasian saat hujan lebat
 
-Jika Anda tertarik untuk memasang awning aluminium modern di rumah Anda, hubungi Wareng Jaya Teknik untuk konsultasi dan penawaran tanpa biaya. Tim profesional kami siap memberikan solusi yang sesuai dengan kebutuhan dan budget Anda.
+Jika Anda tertarik untuk memasang awning aluminium modern di rumah Anda, hubungi Wareng Jaya Teknik untuk konsultasi dan penawaran tanpa biaya. Kami siap membantu mencari solusi yang sesuai dengan kebutuhan dan budget Anda.
+
+Baca juga: [panduan memilih kanopi](/blog/jasa-kanopi-berkualitas) dan [kisaran harga kanopi di Tajurhalang](/blog/harga-kanopi-tajurhalang). Daftar lengkap pengerjaan kami ada di halaman [layanan](/services).

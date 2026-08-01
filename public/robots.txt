@@ -1,5 +1,10 @@
 User-agent: *
-Disallow: 
+Allow: /
+
+# Filter blog memakai query string dan menyajikan HTML yang sama dengan /blog,
+# jadi judul dan deskripsinya duplikat. Cegah crawler membuang budget ke
+# puluhan varian ini. Halaman /blog sendiri tetap boleh diindeks.
+Disallow: /blog?
 
 # Sitemap location
 Sitemap: https://warengjayateknik.my.id/sitemap.xml

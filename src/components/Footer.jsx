@@ -36,9 +36,9 @@ const Footer = () => {
 
         <div className="mt-12 grid grid-cols-1 gap-10 md:grid-cols-3">
           <div>
-            <h2 className="font-mono text-xs font-medium uppercase tracking-widest text-accent">
+            <p className="font-mono text-xs font-medium uppercase tracking-widest text-accent">
               Kontak
-            </h2>
+            </p>
             <ul className="mt-4 space-y-3 text-sm">
               <li className="flex items-start gap-3">
                 <FaMapMarkerAlt className="mt-0.5 shrink-0 text-accent" aria-hidden="true" />
@@ -75,9 +75,9 @@ const Footer = () => {
           </div>
 
           <nav aria-label="Navigasi footer">
-            <h2 className="font-mono text-xs font-medium uppercase tracking-widest text-accent">
+            <p className="font-mono text-xs font-medium uppercase tracking-widest text-accent">
               Navigasi
-            </h2>
+            </p>
             <ul className="mt-4 space-y-1 text-sm">
               {NAV_LINKS.map((link) => (
                 <li key={link.path}>
@@ -93,9 +93,9 @@ const Footer = () => {
           </nav>
 
           <div>
-            <h2 className="font-mono text-xs font-medium uppercase tracking-widest text-accent">
+            <p className="font-mono text-xs font-medium uppercase tracking-widest text-accent">
               Area Layanan
-            </h2>
+            </p>
             <ul className="mt-4 space-y-3 text-sm">
               {SERVICE_AREAS.map((area) => (
                 <li key={area} className="flex items-center gap-3">
@@ -107,9 +107,15 @@ const Footer = () => {
           </div>
         </div>
 
-        <p className="mt-16 border-t border-paper/15 pt-6 font-mono text-xs text-paper/60">
-          © {new Date().getFullYear()} Wareng Jaya Teknik — Hak cipta dilindungi.
-        </p>
+        <div className="mt-16 flex flex-col gap-3 border-t border-paper/15 pt-6 font-mono text-xs text-paper/60 sm:flex-row sm:items-center sm:justify-between">
+          <p>© {new Date().getFullYear()} Wareng Jaya Teknik — Hak cipta dilindungi.</p>
+          <Link
+            to="/privacy"
+            className="inline-flex min-h-11 items-center hover:text-accent sm:min-h-0"
+          >
+            Kebijakan Privasi
+          </Link>
+        </div>
       </div>
     </footer>
   );
