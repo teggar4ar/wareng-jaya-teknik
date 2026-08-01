@@ -1,5 +1,7 @@
 ---
 title: 'Pintu Besi Minimalis: Keamanan Maksimal dengan Desain Elegan'
+seoTitle: 'Pintu Besi Minimalis'
+description: 'Pilihan pintu besi minimalis yang menggabungkan keamanan dan estetika modern untuk rumah Anda.'
 date: '2025-10-08'
 excerpt: 'Temukan berbagai pilihan pintu besi minimalis yang menggabungkan aspek keamanan dan estetika modern untuk rumah Anda. Solusi keamanan yang tidak mengorbankan gaya.'
 coverImage: '/images/gallery/pintu.jpg'

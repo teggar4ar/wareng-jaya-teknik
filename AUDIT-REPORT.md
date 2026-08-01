@@ -248,16 +248,16 @@ Sisa temuan preview yang masuk Fase 2/3 (bukan regresi): `hero-new.webp` 1.9 MB,
 
 ### Fase 2 — High-impact
 
-4. Buat `public/images/og-default.jpg` (sekarang direferensikan tapi filenya belum ada).
-5. Kompres `hero-new.webp` (2.0 MB) dan 3 hero image lain; tambah `srcset`.
+4. ✅ `public/images/og-default.jpg` dibuat (1200×630, 56 KB) — sebelumnya direferensikan di `SEO.jsx` tapi filenya tidak ada, jadi semua preview share rusak.
+5. ✅ Kompresi & pembersihan gambar. `hero-new.webp` (LCP di Home) diturunkan dari 5824×3264 / 966 KB ke **1200×675 / 92 KB** (WebP q82, Lanczos) — **hemat 90%**; atribut `width`/`height` di `HomePage.jsx` disesuaikan ke dimensi baru agar CLS tetap nol. Enam aset mati dihapus (**1.735 KB**): `hero-service.jpg`, `hero-about.jpg`, `gallery/hero-gallery.jpg`, `konstruksi.webp`, `pro.webp`, `worker.svg` — terverifikasi tidak direferensikan di `src/`, `content/`, `scripts/`, `index.html`, maupun output `dist/`. Total `public/images/`: 5.004 KB → **2.395 KB**. `srcset` **tidak** dikerjakan: satu file berukuran tepat sudah mengambil sebagian besar manfaatnya, sementara varian resolusi butuh dependency baru dan pemeliharaan manual tiap ganti gambar.
 6. ✅ `build.rollupOptions.manualChunks` di `vite.config.js`.
-7. Buat halaman Kebijakan Privasi + link footer.
+7. ✅ Halaman Kebijakan Privasi (`/privacy`) + link footer + entri sitemap.
 8. ✅ Dobel H1 di artikel blog.
 9. ✅ `location.search` dihapus dari canonical `/blog`.
-10. Tambah `width`/`height` pada gambar yang belum punya (21 gambar, penyebab CLS) dan `fetchpriority="high"` + preload untuk hero LCP.
-11. Perpendek title >60 char dan description >160 char di frontmatter artikel blog (masing-masing ~10 artikel).
-12. Perbaiki `aria-controls="tag-list"` di `BlogPage.jsx:265` — menunjuk elemen yang hanya dirender saat `showTags` true, jadi target tidak ada di HTML awal (error a11y di 43 halaman).
-13. Perbaiki mismatch `aria-label` vs teks terlihat di tombol galeri (`ProjectGalleryPage.jsx`) — WCAG 2.5.3 butuh accessible name memuat teks terlihat.
+10. ✅ `width`/`height` pada **semua 81 `<img>`** di output prerender (terverifikasi 0 tanpa `width`), plus `width`/`height` pada iframe Google Maps. Hero LCP diberi `fetchpriority="high"` + `decoding="async"`. `<link rel=preload>` tidak ditambahkan karena hero sudah `loading="eager"` + `fetchpriority="high"` di markup prerender — preload akan jadi request duplikat.
+11. ✅ Title & description dipendekkan. Frontmatter dapat field baru `seoTitle` (untuk `<title>`, pendek) dan `description` (untuk meta, ≤160) yang terpisah dari `title` (H1, tetap panjang & deskriptif untuk pembaca). `BlogPostPage.jsx` memakai `post.seoTitle || post.title`. **Terverifikasi: 21/21 halaman kini ≤60 char title dan ≤160 char description.**
+12. ✅ `aria-controls="tag-list"` di `BlogPage.jsx` — target kini selalu dirender, visibilitas lewat `hidden`/`flex` alih-alih mount kondisional, jadi `aria-controls` menunjuk elemen yang benar-benar ada di HTML awal.
+13. ✅ Mismatch `aria-label` tombol galeri (`ProjectGalleryPage.jsx`) — `aria-label` dihapus, diganti `<span className="sr-only">` sehingga accessible name memuat teks terlihat (WCAG 2.5.3).
 
 ### Fase 3 — Quick wins
 

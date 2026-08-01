@@ -107,9 +107,15 @@ const Footer = () => {
           </div>
         </div>
 
-        <p className="mt-16 border-t border-paper/15 pt-6 font-mono text-xs text-paper/60">
-          © {new Date().getFullYear()} Wareng Jaya Teknik — Hak cipta dilindungi.
-        </p>
+        <div className="mt-16 flex flex-col gap-3 border-t border-paper/15 pt-6 font-mono text-xs text-paper/60 sm:flex-row sm:items-center sm:justify-between">
+          <p>© {new Date().getFullYear()} Wareng Jaya Teknik — Hak cipta dilindungi.</p>
+          <Link
+            to="/privacy"
+            className="inline-flex min-h-11 items-center hover:text-accent sm:min-h-0"
+          >
+            Kebijakan Privasi
+          </Link>
+        </div>
       </div>
     </footer>
   );

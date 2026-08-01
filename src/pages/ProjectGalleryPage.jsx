@@ -179,13 +179,14 @@ const ProjectGalleryPage = () => {
                 <button
                   type="button"
                   onClick={() => openLightbox(i)}
-                  aria-label={`Lihat foto ${project.title} lebih besar`}
                   className="group block w-full text-left"
                 >
                   <span className="block overflow-hidden border border-line">
                     <img
                       src={project.src}
                       alt={project.title}
+                      width="1200"
+                      height="900"
                       className="aspect-[4/3] w-full object-cover transition-transform duration-150 group-hover:scale-[1.02] motion-reduce:group-hover:scale-100"
                       loading="lazy"
                       onError={(e) => {
@@ -201,6 +202,7 @@ const ProjectGalleryPage = () => {
                     <span className="mt-1 block font-mono text-xs text-ink-muted">
                       {project.category}
                     </span>
+                    <span className="sr-only"> — buka foto lebih besar</span>
                   </span>
                 </button>
               </Reveal>

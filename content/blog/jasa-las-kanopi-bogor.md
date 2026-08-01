@@ -1,5 +1,6 @@
 ---
 title: '5 Tips Memilih Jasa Las Kanopi Terbaik di Bogor'
+seoTitle: 'Tips Memilih Jasa Las Kanopi Bogor'
 date: '2025-07-07'
 excerpt: 'Mencari jasa las kanopi di Bogor? Jangan salah pilih! Simak 5 tips penting ini untuk mendapatkan layanan terbaik yang sesuai dengan kebutuhan dan anggaran Anda.'
 coverImage: '/images/kanopi.webp'

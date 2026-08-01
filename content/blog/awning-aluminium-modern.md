@@ -1,5 +1,7 @@
 ---
 title: 'Awning Aluminium Modern: Solusi Teduh yang Elegan untuk Rumah Anda'
+seoTitle: 'Awning Aluminium Modern'
+description: 'Pilihan awning aluminium modern yang menggabungkan perlindungan cuaca dengan desain estetis untuk eksterior rumah.'
 date: '2025-11-15'
 excerpt: 'Pelajari berbagai pilihan awning aluminium modern yang menggabungkan fungsi perlindungan dari cuaca dengan desain estetis untuk meningkatkan tampilan eksterior rumah.'
 coverImage: '/images/awning.jpg'

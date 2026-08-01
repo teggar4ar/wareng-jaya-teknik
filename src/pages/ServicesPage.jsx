@@ -162,6 +162,8 @@ const ServicesPage = () => {
                 <img
                   src={service.image}
                   alt={service.alt}
+                  width="1200"
+                  height="900"
                   className="relative aspect-[4/3] w-full border border-line object-cover"
                   loading={index === 0 ? 'eager' : 'lazy'}
                   onError={(e) => {

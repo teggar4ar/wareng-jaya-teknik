@@ -52,6 +52,11 @@ export const routes = [
         getStaticPaths: () => allBlogPosts.map((post) => `blog/${post.slug}`),
       },
       {
+        path: 'privacy',
+        Component: React.lazy(() => import('./pages/PrivacyPolicyPage')),
+        entry: 'src/pages/PrivacyPolicyPage.jsx',
+      },
+      {
         path: '404',
         Component: React.lazy(() => import('./pages/NotFoundPage')),
         entry: 'src/pages/NotFoundPage.jsx',

@@ -1,5 +1,6 @@
 ---
 title: 'Jasa Pembuatan Kanopi Berkualitas Tinggi untuk Rumah Modern'
+seoTitle: 'Jasa Pembuatan Kanopi Berkualitas'
 date: '2025-06-01'
 excerpt: 'Temukan tips dan panduan lengkap memilih kanopi berkualitas tinggi untuk rumah modern Anda. Kami menawarkan berbagai jenis kanopi dengan garansi terbaik.'
 coverImage: '/images/kanopi.webp'

@@ -1,5 +1,7 @@
 ---
 title: 'Furniture Custom Besi: Solusi Unik dan Tahan Lama untuk Interior dan Eksterior'
+seoTitle: 'Furniture Custom Besi'
+description: 'Keunggulan furniture custom berbahan besi dan logam untuk ruang berkarakter dengan durabilitas tinggi.'
 date: '2025-09-12'
 excerpt: 'Eksplorasi keunggulan furniture custom berbahan besi dan logam untuk menciptakan ruang dengan karakter unik, durabilitas tinggi, dan nilai estetis yang personal.'
 coverImage: '/images/furniture.jpg'

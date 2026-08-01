@@ -261,7 +261,7 @@ const BlogPostPage = () => {
   return (
     <>
       <SEO
-        title={post.title}
+        title={post.seoTitle || post.title}
         description={post.description || post.excerpt}
         canonicalUrl={absoluteUrl(`/blog/${slug}`)}
         ogImage={absoluteUrl(post.coverImage || '/images/placeholder.svg')}

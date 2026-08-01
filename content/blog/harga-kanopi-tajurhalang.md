@@ -1,5 +1,7 @@
 ---
 title: 'Rincian Biaya & Harga Kanopi per Meter di Tajurhalang (Terbaru 2025)'
+seoTitle: 'Harga Kanopi per Meter Tajurhalang'
+description: 'Rincian biaya kanopi di Tajurhalang terbaru 2025: faktor penentu harga dan tips memilih kanopi, tralis, serta gerbang.'
 date: '2025-09-18'
 excerpt: 'Bingung soal harga kanopi di Tajurhalang? Simak rincian biaya terbaru 2025, faktor penentu harga, dan tips mendapatkan kanopi, tralis, serta gerbang berkualitas sesuai anggaran dari Wareng Jaya Teknik.'
 coverImage: '/images/harga-kanopi-tajurhalang.webp'

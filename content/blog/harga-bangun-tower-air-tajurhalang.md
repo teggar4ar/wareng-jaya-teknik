@@ -1,5 +1,7 @@
 ---
 title: 'Harga Bangun Tower Air di Tajurhalang Bogor - Panduan Lengkap 2025'
+seoTitle: 'Harga Tower Air Tajurhalang 2025'
+description: 'Harga dan biaya pembangunan tower air di Tajurhalang Bogor: faktor penentu biaya, estimasi per meter, dan tips memilih jasa.'
 date: '2025-10-30'
 excerpt: 'Panduan lengkap harga dan biaya pembangunan tower air di Tajurhalang Bogor. Ketahui faktor penentu biaya, estimasi harga per meter, dan tips memilih jasa konstruksi tower air berkualitas dari Wareng Jaya Teknik.'
 coverImage: '/images/tower-air-tajurhalang.webp'

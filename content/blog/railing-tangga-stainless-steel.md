@@ -1,6 +1,7 @@
 ---
 title: 'Railing Tangga Stainless Steel: Paduan Keselamatan dan Kemewahan untuk Interior Modern'
-date: '2025-08-05'
+seoTitle: 'Railing Tangga Stainless Steel'
+description: 'Panduan memilih railing tangga stainless steel yang menjamin keselamatan sekaligus meningkatkan nilai estetika interior rumah Anda.'date: '2025-08-05'
 excerpt: 'Panduan lengkap memilih railing tangga stainless steel yang tidak hanya menjamin keselamatan tetapi juga meningkatkan nilai estetika interior rumah Anda.'
 coverImage: '/images/stainless.jpg'
 author: 'Tim Wareng Jaya'

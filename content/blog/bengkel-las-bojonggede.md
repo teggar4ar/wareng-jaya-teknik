@@ -1,5 +1,7 @@
 ---
 title: 'Bengkel Las Bojonggede: Solusi Profesional untuk Kebutuhan Konstruksi Besi Anda'
+seoTitle: 'Bengkel Las Bojonggede'
+description: 'Layanan bengkel las terpercaya di Bojonggede: pengerjaan berkualitas, material premium, dan garansi untuk konstruksi besi.'
 date: '2025-07-14'
 excerpt: 'Wareng Jaya Teknik menyediakan layanan bengkel las terpercaya di Bojonggede dengan pengerjaan berkualitas, material premium, dan garansi jangka panjang untuk berbagai kebutuhan konstruksi besi dan logam.'
 coverImage: '/images/bengkel-bojonggede.webp'

@@ -150,8 +150,10 @@ const HomePage = () => {
               alt="Tukang las sedang mengelas rangka besi dengan percikan api"
               className="relative aspect-[4/3] w-full object-cover"
               loading="eager"
-              width="1920"
-              height="1080"
+              fetchpriority="high"
+              decoding="async"
+              width="1200"
+              height="675"
               onError={(e) => {
                 e.target.onerror = null;
                 e.target.src = '/images/placeholder.svg';
@@ -233,6 +235,8 @@ const HomePage = () => {
                   <img
                     src={project.image}
                     alt={project.title}
+                    width="1200"
+                    height="900"
                     className="aspect-[4/3] w-full border border-line object-cover"
                     loading="lazy"
                     onError={(e) => {

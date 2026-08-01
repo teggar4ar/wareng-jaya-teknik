@@ -1,5 +1,6 @@
 ---
 title: 'Mengenal Jenis-Jenis Konstruksi Baja Ringan untuk Atap Rumah'
+seoTitle: 'Jenis Konstruksi Baja Ringan Atap'
 date: '2025-04-20'
 excerpt: 'Panduan lengkap tentang berbagai jenis konstruksi baja ringan untuk atap rumah, kelebihan dan kekurangannya, serta tips memilih yang tepat untuk kebutuhan Anda.'
 coverImage: '/images/project-9.webp'

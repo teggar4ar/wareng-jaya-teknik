@@ -18,7 +18,8 @@ function generateSitemap() {
     { url: '/services', priority: '0.9', changefreq: 'monthly' },
     { url: '/gallery', priority: '0.8', changefreq: 'monthly' },
     { url: '/blog', priority: '0.9', changefreq: 'weekly' },
-    { url: '/contact', priority: '0.7', changefreq: 'monthly' }
+    { url: '/contact', priority: '0.7', changefreq: 'monthly' },
+    { url: '/privacy', priority: '0.3', changefreq: 'yearly' }
   ];
 
   // 2. Dapatkan dan format rute blog

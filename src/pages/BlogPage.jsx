@@ -165,7 +165,7 @@ const BlogPage = () => {
   return (
     <>
       <SEO
-        title="Blog - Artikel & Tips Seputar Konstruksi dan Pengerjaan Logam"
+        title="Blog Konstruksi dan Pengerjaan Logam"
         description="Artikel dan tips dari bengkel kami seputar konstruksi, pengerjaan logam, kanopi, teralis, dan pagar."
         canonicalUrl={absoluteUrl('/blog')}
         keywords={['blog konstruksi', 'tips pengerjaan logam', 'artikel kanopi', 'panduan teralis', 'blog bengkel las']}
@@ -273,37 +273,38 @@ const BlogPage = () => {
                 />
               </button>
 
-              {showTags && (
-                <div id="tag-list" className="mt-3 flex flex-wrap gap-2">
+              <div
+                id="tag-list"
+                className={`mt-3 flex-wrap gap-2 ${showTags ? 'flex' : 'hidden'}`}
+              >
+                <button
+                  type="button"
+                  onClick={() => setActiveTag('all')}
+                  aria-pressed={activeTag === 'all'}
+                  className={`min-h-11 rounded-btn border px-3 font-mono text-xs uppercase tracking-wider transition-colors duration-150 ${
+                    activeTag === 'all'
+                      ? 'border-accent bg-accent text-accent-ink'
+                      : 'border-line bg-surface text-ink-muted hover:border-accent hover:text-accent'
+                  }`}
+                >
+                  Semua Tag
+                </button>
+                {tags.map((tag) => (
                   <button
+                    key={tag}
                     type="button"
-                    onClick={() => setActiveTag('all')}
-                    aria-pressed={activeTag === 'all'}
+                    onClick={() => setActiveTag(tag)}
+                    aria-pressed={activeTag === tag}
                     className={`min-h-11 rounded-btn border px-3 font-mono text-xs uppercase tracking-wider transition-colors duration-150 ${
-                      activeTag === 'all'
+                      activeTag === tag
                         ? 'border-accent bg-accent text-accent-ink'
                         : 'border-line bg-surface text-ink-muted hover:border-accent hover:text-accent'
                     }`}
                   >
-                    Semua Tag
+                    {tag}
                   </button>
-                  {tags.map((tag) => (
-                    <button
-                      key={tag}
-                      type="button"
-                      onClick={() => setActiveTag(tag)}
-                      aria-pressed={activeTag === tag}
-                      className={`min-h-11 rounded-btn border px-3 font-mono text-xs uppercase tracking-wider transition-colors duration-150 ${
-                        activeTag === tag
-                          ? 'border-accent bg-accent text-accent-ink'
-                          : 'border-line bg-surface text-ink-muted hover:border-accent hover:text-accent'
-                      }`}
-                    >
-                      {tag}
-                    </button>
-                  ))}
-                </div>
-              )}
+                ))}
+              </div>
             </div>
           )}
         </Container>

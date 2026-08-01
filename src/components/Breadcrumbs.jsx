@@ -9,6 +9,7 @@ const PATH_NAMES = {
   services: 'Layanan',
   gallery: 'Galeri',
   contact: 'Kontak',
+  privacy: 'Kebijakan Privasi',
 };
 
 /**

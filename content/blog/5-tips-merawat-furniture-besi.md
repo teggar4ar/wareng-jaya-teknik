@@ -2,6 +2,7 @@
 title: '5 Tips Merawat Furniture Besi'
 date: '2025-08-18'
 excerpt: 'Pelajari cara merawat furniture besi Anda agar tetap awet dan terlihat baru.'
+description: 'Cara merawat furniture besi agar tetap awet: pembersihan rutin, pencegahan korosi, pengecatan ulang, dan penempatan yang tepat.'
 coverImage: '/images/furniture-besi.webp'
 author: 'Tim Wareng Jaya'
 authorImage: '/images/profile.webp'

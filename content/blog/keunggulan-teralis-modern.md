@@ -1,5 +1,6 @@
 ---
 title: '5 Keunggulan Teralis Jendela Modern untuk Keamanan dan Estetika Rumah'
+seoTitle: '5 Keunggulan Teralis Jendela Modern'
 date: '2025-05-15'
 excerpt: 'Pelajari keunggulan teralis jendela modern yang tidak hanya meningkatkan keamanan rumah tetapi juga mempercantik tampilan eksterior dan interior.'
 coverImage: '/images/teralis1.webp'

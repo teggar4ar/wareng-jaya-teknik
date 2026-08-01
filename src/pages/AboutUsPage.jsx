@@ -93,6 +93,8 @@ const AboutUsPage = () => {
             <img
               src="/images/welding.webp"
               alt="Proses pengelasan rangka besi di bengkel Wareng Jaya Teknik"
+              width="1200"
+              height="900"
               className="relative aspect-[4/3] w-full border border-line object-cover"
               loading="lazy"
               onError={(e) => {
@@ -142,6 +144,8 @@ const AboutUsPage = () => {
             <img
               src="/images/bengkel-bojonggede.webp"
               alt="Hasil pengerjaan bengkel las untuk area Bojonggede dan sekitarnya"
+              width="1200"
+              height="900"
               className="relative aspect-[4/3] w-full border border-line object-cover"
               loading="lazy"
               onError={(e) => {

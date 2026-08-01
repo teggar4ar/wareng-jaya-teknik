@@ -340,6 +340,8 @@ const ContactPage = () => {
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d521.5542716748337!2d106.75164242480491!3d-6.475875875630104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69c2975f778335%3A0x85306c23190a4568!2sBengkel%20Las%20Wareng%20Jaya%20Teknik!5e1!3m2!1sid!2sid!4v1751718533131!5m2!1sid!2sid"
               className="h-full w-full"
+              width="1152"
+              height="384"
               style={{ border: 0 }}
               allowFullScreen=""
               loading="lazy"

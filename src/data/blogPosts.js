@@ -2,12 +2,14 @@
 /**
  * This file is auto-generated during the build process.
  * Do not edit it directly.
- * Generated on: 2026-08-01T06:55:19.685Z
+ * Generated on: 2026-08-01T08:06:07.417Z
  */
 export const allBlogPosts = [
   {
     "slug": "awning-aluminium-modern",
     "title": "Awning Aluminium Modern: Solusi Teduh yang Elegan untuk Rumah Anda",
+    "seoTitle": "Awning Aluminium Modern",
+    "description": "Pilihan awning aluminium modern yang menggabungkan perlindungan cuaca dengan desain estetis untuk eksterior rumah.",
     "date": "2025-11-15",
     "excerpt": "Pelajari berbagai pilihan awning aluminium modern yang menggabungkan fungsi perlindungan dari cuaca dengan desain estetis untuk meningkatkan tampilan eksterior rumah.",
     "coverImage": "/images/awning.jpg",
@@ -22,6 +24,8 @@ export const allBlogPosts = [
   {
     "slug": "harga-bangun-tower-air-tajurhalang",
     "title": "Harga Bangun Tower Air di Tajurhalang Bogor - Panduan Lengkap 2025",
+    "seoTitle": "Harga Tower Air Tajurhalang 2025",
+    "description": "Harga dan biaya pembangunan tower air di Tajurhalang Bogor: faktor penentu biaya, estimasi per meter, dan tips memilih jasa.",
     "date": "2025-10-30",
     "excerpt": "Panduan lengkap harga dan biaya pembangunan tower air di Tajurhalang Bogor. Ketahui faktor penentu biaya, estimasi harga per meter, dan tips memilih jasa konstruksi tower air berkualitas dari Wareng Jaya Teknik.",
     "coverImage": "/images/tower-air-tajurhalang.webp",
@@ -36,6 +40,8 @@ export const allBlogPosts = [
   {
     "slug": "pintu-besi-minimalis-keamanan",
     "title": "Pintu Besi Minimalis: Keamanan Maksimal dengan Desain Elegan",
+    "seoTitle": "Pintu Besi Minimalis",
+    "description": "Pilihan pintu besi minimalis yang menggabungkan keamanan dan estetika modern untuk rumah Anda.",
     "date": "2025-10-08",
     "excerpt": "Temukan berbagai pilihan pintu besi minimalis yang menggabungkan aspek keamanan dan estetika modern untuk rumah Anda. Solusi keamanan yang tidak mengorbankan gaya.",
     "coverImage": "/images/gallery/pintu.jpg",
@@ -50,6 +56,8 @@ export const allBlogPosts = [
   {
     "slug": "harga-kanopi-tajurhalang",
     "title": "Rincian Biaya & Harga Kanopi per Meter di Tajurhalang (Terbaru 2025)",
+    "seoTitle": "Harga Kanopi per Meter Tajurhalang",
+    "description": "Rincian biaya kanopi di Tajurhalang terbaru 2025: faktor penentu harga dan tips memilih kanopi, tralis, serta gerbang.",
     "date": "2025-09-18",
     "excerpt": "Bingung soal harga kanopi di Tajurhalang? Simak rincian biaya terbaru 2025, faktor penentu harga, dan tips mendapatkan kanopi, tralis, serta gerbang berkualitas sesuai anggaran dari Wareng Jaya Teknik.",
     "coverImage": "/images/harga-kanopi-tajurhalang.webp",
@@ -64,6 +72,8 @@ export const allBlogPosts = [
   {
     "slug": "furniture-custom-besi",
     "title": "Furniture Custom Besi: Solusi Unik dan Tahan Lama untuk Interior dan Eksterior",
+    "seoTitle": "Furniture Custom Besi",
+    "description": "Keunggulan furniture custom berbahan besi dan logam untuk ruang berkarakter dengan durabilitas tinggi.",
     "date": "2025-09-12",
     "excerpt": "Eksplorasi keunggulan furniture custom berbahan besi dan logam untuk menciptakan ruang dengan karakter unik, durabilitas tinggi, dan nilai estetis yang personal.",
     "coverImage": "/images/furniture.jpg",
@@ -80,6 +90,7 @@ export const allBlogPosts = [
     "title": "5 Tips Merawat Furniture Besi",
     "date": "2025-08-18",
     "excerpt": "Pelajari cara merawat furniture besi Anda agar tetap awet dan terlihat baru.",
+    "description": "Cara merawat furniture besi agar tetap awet: pembersihan rutin, pencegahan korosi, pengecatan ulang, dan penempatan yang tepat.",
     "coverImage": "/images/furniture-besi.webp",
     "author": "Tim Wareng Jaya",
     "authorImage": "/images/profile.webp",
@@ -92,6 +103,8 @@ export const allBlogPosts = [
   {
     "slug": "railing-tangga-stainless-steel",
     "title": "Railing Tangga Stainless Steel: Paduan Keselamatan dan Kemewahan untuk Interior Modern",
+    "seoTitle": "Railing Tangga Stainless Steel",
+    "description": "Panduan memilih railing tangga stainless steel yang menjamin keselamatan sekaligus meningkatkan nilai estetika interior rumah Anda.",
     "date": "2025-08-05",
     "excerpt": "Panduan lengkap memilih railing tangga stainless steel yang tidak hanya menjamin keselamatan tetapi juga meningkatkan nilai estetika interior rumah Anda.",
     "coverImage": "/images/stainless.jpg",
@@ -106,6 +119,8 @@ export const allBlogPosts = [
   {
     "slug": "bengkel-las-bojonggede",
     "title": "Bengkel Las Bojonggede: Solusi Profesional untuk Kebutuhan Konstruksi Besi Anda",
+    "seoTitle": "Bengkel Las Bojonggede",
+    "description": "Layanan bengkel las terpercaya di Bojonggede: pengerjaan berkualitas, material premium, dan garansi untuk konstruksi besi.",
     "date": "2025-07-14",
     "excerpt": "Wareng Jaya Teknik menyediakan layanan bengkel las terpercaya di Bojonggede dengan pengerjaan berkualitas, material premium, dan garansi jangka panjang untuk berbagai kebutuhan konstruksi besi dan logam.",
     "coverImage": "/images/bengkel-bojonggede.webp",
@@ -120,6 +135,7 @@ export const allBlogPosts = [
   {
     "slug": "pagar-besi-modern",
     "title": "Pagar Besi Modern: Kombinasi Keamanan dan Estetika untuk Rumah Anda",
+    "seoTitle": "Pagar Besi Modern",
     "date": "2025-07-10",
     "excerpt": "Temukan berbagai pilihan pagar besi modern yang menggabungkan aspek keamanan dan nilai estetika untuk meningkatkan tampilan eksterior rumah Anda.",
     "coverImage": "/images/gallery/pagar.jpg",
@@ -134,6 +150,7 @@ export const allBlogPosts = [
   {
     "slug": "jasa-las-kanopi-bogor",
     "title": "5 Tips Memilih Jasa Las Kanopi Terbaik di Bogor",
+    "seoTitle": "Tips Memilih Jasa Las Kanopi Bogor",
     "date": "2025-07-07",
     "excerpt": "Mencari jasa las kanopi di Bogor? Jangan salah pilih! Simak 5 tips penting ini untuk mendapatkan layanan terbaik yang sesuai dengan kebutuhan dan anggaran Anda.",
     "coverImage": "/images/kanopi.webp",
@@ -148,6 +165,7 @@ export const allBlogPosts = [
   {
     "slug": "jasa-kanopi-berkualitas",
     "title": "Jasa Pembuatan Kanopi Berkualitas Tinggi untuk Rumah Modern",
+    "seoTitle": "Jasa Pembuatan Kanopi Berkualitas",
     "date": "2025-06-01",
     "excerpt": "Temukan tips dan panduan lengkap memilih kanopi berkualitas tinggi untuk rumah modern Anda. Kami menawarkan berbagai jenis kanopi dengan garansi terbaik.",
     "coverImage": "/images/kanopi.webp",
@@ -162,6 +180,7 @@ export const allBlogPosts = [
   {
     "slug": "keunggulan-teralis-modern",
     "title": "5 Keunggulan Teralis Jendela Modern untuk Keamanan dan Estetika Rumah",
+    "seoTitle": "5 Keunggulan Teralis Jendela Modern",
     "date": "2025-05-15",
     "excerpt": "Pelajari keunggulan teralis jendela modern yang tidak hanya meningkatkan keamanan rumah tetapi juga mempercantik tampilan eksterior dan interior.",
     "coverImage": "/images/teralis1.webp",
@@ -176,6 +195,7 @@ export const allBlogPosts = [
   {
     "slug": "konstruksi-baja-ringan-atap",
     "title": "Mengenal Jenis-Jenis Konstruksi Baja Ringan untuk Atap Rumah",
+    "seoTitle": "Jenis Konstruksi Baja Ringan Atap",
     "date": "2025-04-20",
     "excerpt": "Panduan lengkap tentang berbagai jenis konstruksi baja ringan untuk atap rumah, kelebihan dan kekurangannya, serta tips memilih yang tepat untuk kebutuhan Anda.",
     "coverImage": "/images/project-9.webp",

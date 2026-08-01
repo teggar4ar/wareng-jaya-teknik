@@ -1,5 +1,6 @@
 ---
 title: 'Pagar Besi Modern: Kombinasi Keamanan dan Estetika untuk Rumah Anda'
+seoTitle: 'Pagar Besi Modern'
 date: '2025-07-10'
 excerpt: 'Temukan berbagai pilihan pagar besi modern yang menggabungkan aspek keamanan dan nilai estetika untuk meningkatkan tampilan eksterior rumah Anda.'
 coverImage: '/images/gallery/pagar.jpg'

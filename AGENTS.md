@@ -39,7 +39,9 @@ Marketing website for Wareng Jaya Teknik, a welding workshop (bengkel las) in Ta
 - Markdown `#` headings in blog bodies render as `<h2>` (`BlogPostPage.jsx` `customRenderers`) so each page keeps exactly one `<h1>`. Footer/TOC/share labels use `<p>`, not `<h2>` — they are chrome, not content hierarchy.
 - `vercel.json` sets security headers (CSP, X-Frame-Options, Referrer-Policy) and cache lifetimes. The CSP allowlists Google Tag Manager/Analytics and `google.com` frames for the Maps embed on ContactPage — widen it if new third parties are added.
 - `ServicesPage.jsx` and `AboutUsPage.jsx` contain `<style jsx global>` blocks — a Next.js idiom that doesn't work in Vite (renders as plain global style + React warning). Known issue, slated for removal.
-- Known broken refs: `/images/fallback-hero.jpg` and `/images/avatar-placeholder.jpg` onError fallbacks in `HomePage.jsx` (files don't exist); `/images/og-default.jpg` referenced as the default OG image in `SEO.jsx` (file does not exist yet).
+- Unused assets in `public/images/` were deleted on 1 Aug 2026 (1.7 MB): `hero-about.jpg`, `hero-service.jpg`, `konstruksi.webp`, `pro.webp`, `worker.svg`, `gallery/hero-gallery.jpg`. Verified unreferenced across `src/`, `content/`, `scripts/`, `index.html`, and the built `dist/` output before removal.
+- `hero-new.webp` is the LCP image on Home. Downscaled 1 Aug 2026 from 5824×3264 (966 KB) to **1200×675 (92 KB)**, WebP q82. It renders inside an `aspect-[4/3] object-cover` box at roughly half viewport width on desktop, so anything above ~1200 px wide was wasted bytes. The `width`/`height` attributes in `HomePage.jsx` must match the file's real dimensions — stale values reintroduce CLS. No `srcset` yet; a single right-sized file covers most of the win.
+- Blog frontmatter has three related fields: `title` (the `<h1>`, may be long and descriptive), `seoTitle` (optional, used for `<title>`; keep the rendered `… | Wareng Jaya Teknik` under 60 chars), and `description` (optional, used for meta description; keep ≤160 chars, falls back to `excerpt`). `excerpt` remains the card/teaser text.
 
 ## Content honesty rule
 
