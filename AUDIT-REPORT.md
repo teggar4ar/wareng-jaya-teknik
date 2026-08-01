@@ -221,6 +221,31 @@ Dikerjakan bersamaan karena saling terkait:
 
 Hasil re-audit lokal (`vite preview`, 58 halaman): Links 47→90, Accessibility 54→79, E-E-A-T 71→82, Structured Data & Social Media 100, Core SEO error 19→0. Skor overall lokal masih tertahan karena crawler menandai `http://localhost` sebagai non-HTTPS (58 error semu) dan sitemap menunjuk domain produksi. **Verifikasi ulang setelah deploy.**
 
+#### Verifikasi di preview Vercel (1 Agu 2026) — ✅ terkonfirmasi
+
+Diaudit di deployment preview nyata. Semua target Fase 1 terbukti bekerja di produksi-like environment:
+
+| Cek | Hasil |
+|---|---|
+| Prerender terkirim | 7/7 halaman: marker `data-server-rendered` ada, title unik, H1 tepat 1, 10 OG tag, JSON-LD |
+| Konten di HTML awal | 187–1144 kata (sebelumnya **0**) |
+| 404 nyata | `/halaman-ngawur-123` → **HTTP 404** + `noindex, follow` + halaman bantuan berbahasa Indonesia |
+| Sitemap phantom hilang | `/ads.txt`, `/sitemap_index.xml`, `/llms.txt` → 404 (sebelumnya 200) |
+| `cleanUrls` | `/services.html` → 308 → `/services` |
+| Header keamanan | CSP, X-Frame-Options `SAMEORIGIN`, Referrer-Policy, Permissions-Policy, X-Content-Type-Options, HSTS `includeSubDomains; preload` — semua terkirim |
+| JSON-LD lengkap | 14 tipe schema terdeteksi di artikel blog: BlogPosting, FAQPage, BreadcrumbList, LocalBusiness, dll. |
+| Canonical & OG absolut | Menunjuk `warengjayateknik.my.id`, bukan domain preview — `SITE_URL` bekerja |
+| Hydration | Tidak ada error React #418/#422; kategori Site Integrity 100/100 |
+
+Perbaikan lanjutan setelah temuan preview:
+- **Cache-Control `/assets/*` tidak berlaku.** Vercel menerapkan *semua* rule `headers` yang cocok dan **rule terakhir menang**; catch-all `/(.*)` menimpa `/assets/*`. Urutan dibalik (catch-all pertama, spesifik terakhir) dan `s-maxage` dipindah ke `CDN-Cache-Control` karena `s-maxage` di `Cache-Control` tidak sampai ke browser.
+- **2 broken link** di `content/blog/5-tips-merawat-furniture-besi.md`: link relatif `./file.md` (idiom GitHub, bukan URL web) → diganti path absolut `/blog/slug`.
+
+Sisa temuan preview yang masuk Fase 2/3 (bukan regresi): `hero-new.webp` 1.9 MB, 21 gambar tanpa `width`/`height`, LCP tanpa preload, `aria-controls="tag-list"` menunjuk elemen yang belum dirender, mismatch aria-label di tombol galeri, title/description artikel blog >60/160 char, 43 varian `/blog?tag=` duplikat metadata, `llms.txt` belum ada.
+
+> Catatan: skor overall preview (52) tidak bisa dibandingkan langsung dengan produksi — Vercel mengirim header `X-Robots-Tag: noindex` di semua deployment preview, yang crawler hitung sebagai 56 error "rich schema tapi diblokir indexing". Di produksi header itu tidak ada.
+
+
 ### Fase 2 — High-impact
 
 4. Buat `public/images/og-default.jpg` (sekarang direferensikan tapi filenya belum ada).
@@ -231,26 +256,28 @@ Hasil re-audit lokal (`vite preview`, 58 halaman): Links 47→90, Accessibility 
 9. ✅ `location.search` dihapus dari canonical `/blog`.
 10. Tambah `width`/`height` pada gambar yang belum punya (21 gambar, penyebab CLS) dan `fetchpriority="high"` + preload untuk hero LCP.
 11. Perpendek title >60 char dan description >160 char di frontmatter artikel blog (masing-masing ~10 artikel).
+12. Perbaiki `aria-controls="tag-list"` di `BlogPage.jsx:265` — menunjuk elemen yang hanya dirender saat `showTags` true, jadi target tidak ada di HTML awal (error a11y di 43 halaman).
+13. Perbaiki mismatch `aria-label` vs teks terlihat di tombol galeri (`ProjectGalleryPage.jsx`) — WCAG 2.5.3 butuh accessible name memuat teks terlihat.
 
 ### Fase 3 — Quick wins
 
-12. ✅ Skip link + `id="konten-utama"`.
-13. Buat `public/llms.txt`.
-14. Tambah `Service` schema di `/services`; batasi `LocalBusiness` agar tidak muncul di artikel blog.
-15. Tambah Breadcrumbs ke About/Services/Gallery/Contact.
-16. Byline penulis di artikel blog.
-17. ✅ Tag `viewport` duplikat dihapus.
-18. ✅ H2 chrome di `Footer.jsx` dan `BlogPostPage.jsx` → `<p>`.
-19. Hapus `SchemaDebug.jsx` (dead code).
-20. Tambahkan halaman `/blog?tag=…` ke `robots.txt` sebagai disallow, atau `noindex` — 43 varian query saat ini duplikat title/description `/blog`.
+14. ✅ Skip link + `id="konten-utama"`.
+15. Buat `public/llms.txt`.
+16. Tambah `Service` schema di `/services`; batasi `LocalBusiness` agar tidak muncul di artikel blog.
+17. Tambah Breadcrumbs ke About/Services/Gallery/Contact.
+18. Byline penulis di artikel blog.
+19. ✅ Tag `viewport` duplikat dihapus.
+20. ✅ H2 chrome di `Footer.jsx` dan `BlogPostPage.jsx` → `<p>`.
+21. Hapus `SchemaDebug.jsx` (dead code).
+22. Tambahkan `/blog?tag=…` sebagai disallow di `robots.txt`, atau `noindex` — 43 varian query saat ini duplikat title/description `/blog`.
 
 ### Fase 4 — Konten & jangka panjang
 
-21. **Hapus statistik fabrikasi, testimonial palsu, dan anggota tim placeholder** (keputusan owner di AGENTS.md — belum dieksekusi).
-22. Internal linking kontekstual: artikel blog → halaman layanan, dan antar artikel.
-23. Tambah in-body link ke `/about`, `/blog`, `/contact`.
-24. Focus management pada perpindahan route.
-25. Verifikasi Core Web Vitals lapangan lewat Search Console (PSI API rate-limited saat audit ini).
+23. **Hapus statistik fabrikasi, testimonial palsu, dan anggota tim placeholder** (keputusan owner di AGENTS.md — belum dieksekusi).
+24. Internal linking kontekstual: artikel blog → halaman layanan, dan antar artikel.
+25. Tambah in-body link ke `/about`, `/blog`, `/contact`.
+26. Focus management pada perpindahan route.
+27. Verifikasi Core Web Vitals lapangan lewat Search Console (PSI API rate-limited saat audit ini).
 
 ---
 

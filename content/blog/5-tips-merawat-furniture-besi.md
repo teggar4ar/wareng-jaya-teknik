@@ -45,7 +45,7 @@ A: Furniture besi cenderung lebih mudah dirawat dan lebih tahan lama, asalkan ti
 
 ---
 
-Ingin tahu lebih banyak tentang perawatan furniture atau jasa las profesional? Baca juga artikel kami tentang [Jasa Las Kanopi Berkualitas](./jasa-las-kanopi-bogor.md) dan [Keunggulan Teralis Modern](./keunggulan-teralis-modern.md) untuk inspirasi dan solusi terbaik bagi hunian Anda.
+Ingin tahu lebih banyak tentang perawatan furniture atau jasa las profesional? Baca juga artikel kami tentang [Jasa Las Kanopi Berkualitas](/blog/jasa-las-kanopi-bogor) dan [Keunggulan Teralis Modern](/blog/keunggulan-teralis-modern) untuk inspirasi dan solusi terbaik bagi hunian Anda.
 
 Dengan menerapkan tips di atas, furniture besi Anda akan tetap awet, bebas karat, dan selalu tampil menarik. Jangan ragu untuk berkonsultasi dengan tim Wareng Jaya jika membutuhkan jasa perbaikan atau pembuatan furniture besi custom yang berkualitas dan tahan lama. Perawatan yang tepat adalah kunci agar furniture besi menjadi investasi jangka panjang untuk rumah Anda.
 
