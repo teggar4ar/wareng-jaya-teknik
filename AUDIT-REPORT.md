@@ -313,6 +313,17 @@ Tiga akar masalah, semuanya tidak terlihat di audit crawler sebelumnya:
 
 `vercel.json` diberi rule `/fonts/(.*)` → `max-age=31536000, immutable`.
 
+### 4. Dua error CSP di console setiap page view
+
+Terlihat setelah deploy. GA4 dengan Google signals aktif memicu dua permintaan iklan yang tidak diizinkan CSP:
+
+- `GET https://www.google.co.id/ads/ga-audiences` — pixel remarketing, diblokir `img-src`
+- `POST https://stats.g.doubleclick.net/g/collect` — diblokir `connect-src`
+
+Diverifikasi lewat Chrome headless terhadap produksi: **2 pelanggaran CSP** per page view. Pilihannya melebarkan CSP ke domain iklan, atau mematikan sinyalnya. Yang dipilih: `gtag('config')` kini menyertakan `allow_google_signals: false` dan `allow_ad_personalization_signals: false`. Melebarkan CSP hanya akan membungkam gejalanya dengan cara mengumpulkan data iklan yang situs ini tidak punya kebutuhannya — dan bertentangan dengan `/privacy` yang menyebut Analytics hanya untuk statistik kunjungan.
+
+Diverifikasi ulang terhadap build baru yang disajikan dengan header CSP produksi: **0 pelanggaran CSP**, dan `/g/collect` tetap `204` — analytics masih melapor normal, termasuk pada navigasi SPA.
+
 ### Sisa temuan (belum dikerjakan)
 
 - **`color-contrast` — 6 elemen gagal, a11y tertahan di 96.** Warna aksen `oklch(62% 0.19 40)` = `#df500c` hanya mencapai rasio 3,52:1 di atas `paper`, dan 4,16:1 untuk label mono 12 px di atas `ink`. Tombol WhatsApp 4,33:1. Semuanya di bawah WCAG AA 4,5:1. Ini keputusan desain, bukan bug — token aksen dipakai luas dan menggelapkannya mengubah tampilan seluruh situs. Perlu keputusan owner.

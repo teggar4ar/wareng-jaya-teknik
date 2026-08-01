@@ -29,12 +29,21 @@
       ~141 KB and blocked the main thread for ~280 ms when loaded eagerly, which
       hurt TBT without making the pageview any more accurate. dataLayer is
       seeded first so anything queued before the script lands still gets sent.
+
+      Ads/remarketing signals are switched off. Without this, gtag pings
+      google.co.id/ads/ga-audiences with a tracking pixel, which the CSP blocks
+      (img-src doesn't allow ad domains) and logs an error on every page view.
+      This site runs no ad campaigns, so the audience data has no consumer —
+      and not collecting it keeps the privacy policy honest.
     -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-1P9ZH63K0M');
+      gtag('config', 'G-1P9ZH63K0M', {
+        allow_google_signals: false,
+        allow_ad_personalization_signals: false
+      });
 
       (function () {
         var loaded = false;
