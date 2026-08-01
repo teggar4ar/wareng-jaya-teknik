@@ -86,6 +86,8 @@ Kami mengutamakan kualitas dalam setiap tahap pengerjaan:
 3. **Desain** - Pembuatan sketsa dan desain digital untuk persetujuan
 4. **Fabrikasi** - Pembuatan teralis di workshop dengan kontrol kualitas ketat
 5. **Finishing** - Proses pengecatan atau finishing sesuai pilihan
-6. **Pemasangan** - Instalasi oleh tim profesional kami
+6. **Pemasangan** - Instalasi oleh orang yang mengerjakan fabrikasinya
 
 Jika Anda tertarik untuk memasang teralis jendela modern di rumah Anda, hubungi kami untuk konsultasi dan penawaran tanpa biaya.
+
+Untuk keamanan yang lebih menyeluruh, baca juga soal [pintu besi minimalis](/blog/pintu-besi-minimalis-keamanan) dan [pagar besi modern](/blog/pagar-besi-modern). Daftar pengerjaan kami ada di halaman [layanan](/services).

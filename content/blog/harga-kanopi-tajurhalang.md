@@ -56,7 +56,7 @@ Untuk memberikan gambaran, berikut adalah **estimasi rentang harga** yang umum d
 - **Kanopi Besi Hollow + Atap Polycarbonate:** Mulai dari Rp 500.000 - Rp 800.000 per meter (m²)
 - **Kanopi Besi Hollow + Atap Alderon:** Mulai dari Rp 600.000 - Rp 950.000 per meter (m²)
 
-**Penting:** Harga di atas adalah estimasi untuk desain standar. Harga final akan ditentukan setelah tim kami melakukan survei lokasi dan mengukur kebutuhan spesifik Anda.
+**Penting:** Harga di atas adalah estimasi untuk desain standar. Harga final akan ditentukan setelah kami melakukan survei lokasi dan mengukur kebutuhan spesifik Anda.
 
 ## Bagaimana dengan Harga Tralis dan Pintu Gerbang?
 
@@ -70,7 +70,7 @@ Prinsip yang sama juga berlaku untuk **pembuatan tralis jendela** dan **pintu ge
 Di tengah banyaknya pilihan, kami menawarkan lebih dari sekadar harga.
 1.  **Transparansi Anggaran:** Kami akan jelaskan detail material dan biaya dalam penawaran kami. Tidak ada biaya tersembunyi.
 2.  **Kualitas Material Terjamin:** Kami hanya menggunakan material dengan ketebalan standar industri, bukan besi tipis yang mudah penyok.
-3.  **Survei & Konsultasi Gratis:** Tim kami siap datang ke lokasi Anda di Tajurhalang dan sekitarnya untuk mengukur, berdiskusi, dan memberikan penawaran terbaik tanpa biaya.
+3.  **Survei & Konsultasi Gratis:** Kami siap datang ke lokasi Anda di Tajurhalang dan sekitarnya untuk mengukur, berdiskusi, dan memberikan penawaran terbaik tanpa biaya.
 4.  **Bengkel Lokal Terpercaya:** Lokasi kami yang berada di Desa Tajurhalang membuat proses komunikasi, pengerjaan, dan layanan purna jual menjadi lebih cepat dan mudah.
 
 ### Siap Mendapatkan Penawaran Harga Terbaik?
@@ -81,5 +81,7 @@ Hubungi kami sekarang untuk jadwal survei gratis!
 
 - **WhatsApp:** 081398427309
 - **Telepon:** 081398427309
+
+Baca juga: [panduan memilih kanopi](/blog/jasa-kanopi-berkualitas) dan [teralis jendela modern](/blog/keunggulan-teralis-modern). Rincian tiap pengerjaan ada di halaman [layanan](/services), atau langsung [hubungi kami](/contact).
 
 **Wareng Jaya Teknik - Solusi Las Berkualitas dengan Harga Jujur di Tajurhalang, Bogor.**

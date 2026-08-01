@@ -83,14 +83,16 @@ Beberapa area perumahan memiliki regulasi tentang tinggi, transparansi, dan desa
 
 ## Proses Pengerjaan Pagar Besi di Wareng Jaya Teknik
 
-Kami menerapkan metodologi pengerjaan yang teliti dan profesional:
+Kami menerapkan metodologi pengerjaan yang teliti:
 
 1. **Konsultasi dan Perencanaan** - Diskusi kebutuhan dan preferensi desain
 2. **Pengukuran Presisi** - Survei lokasi untuk mendapatkan dimensi yang akurat
 3. **Desain** - Pembuatan sketsa dan desain digital untuk persetujuan
 4. **Fabrikasi** - Proses produksi di workshop dengan standar kualitas tinggi
 5. **Finishing** - Pengecatan atau finishing sesuai pilihan (powder coating/galvanis/cat)
-6. **Pemasangan** - Instalasi oleh tim profesional dengan pengalaman
+6. **Pemasangan** - Instalasi oleh orang yang mengerjakan fabrikasinya
 7. **Quality Control** - Pemeriksaan akhir dan penyesuaian
 
-Jika Anda tertarik untuk memasang pagar besi modern untuk rumah atau properti Anda, hubungi Wareng Jaya Teknik untuk konsultasi dan penawaran tanpa biaya. Tim profesional kami siap memberikan solusi terbaik sesuai kebutuhan dan budget Anda.
+Jika Anda tertarik untuk memasang pagar besi modern untuk rumah atau properti Anda, hubungi Wareng Jaya Teknik untuk konsultasi dan penawaran tanpa biaya. Kami siap membantu mencari solusi yang sesuai kebutuhan dan budget Anda.
+
+Baca juga: [teralis jendela modern](/blog/keunggulan-teralis-modern) dan [pintu besi minimalis](/blog/pintu-besi-minimalis-keamanan) untuk melengkapi keamanan rumah. Hasil pengerjaan kami bisa dilihat di [galeri](/gallery).

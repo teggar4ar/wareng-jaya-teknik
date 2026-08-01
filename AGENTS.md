@@ -48,10 +48,14 @@ Marketing website for Wareng Jaya Teknik, a welding workshop (bengkel las) in Ta
 
 ## Content honesty rule
 
-Site pages currently contain fabricated stats (contradictory project counts), fake testimonials, and placeholder team members. Owner decision: **remove, don't extend** — never invent new metrics, testimonials, or certifications when editing pages.
+Fabricated stats, fake testimonials, and placeholder team members were removed from pages (Steelworks redesign) and from `content/blog/` (1 Aug 2026). Owner decision: **remove, don't extend** — never invent metrics, testimonials, certifications, warranty terms, or years-in-business when editing pages or writing posts. Three contradictory experience figures (15/13/10+ years) once shipped simultaneously across three articles; `/about` deliberately states no year count. Claims that survive must be verifiable: garansi covers weld joints with no stated term. Material properties (UV resistance, service life, recyclability) are fine — they describe the material, not the business. Prefer the honest positioning already used on `/about`: work is done in-house and the customer talks directly to whoever does it, rather than implying a tiered professional staff.
+
+## Internal linking
+
+Blog markdown links starting with `/` are rendered as router `<Link>` by `BlogPostPage.jsx` `customRenderers.a`; external links get `target="_blank"` + `noopener`. Don't reintroduce a blanket `target="_blank"` — it broke SPA navigation for internal links. Each `SERVICES` entry in `ServicesPage.jsx` may carry an optional `article: { to, label }` that renders a "Baca dulu" link to the supporting post.
 
 ## Active plan
 
 `plan/refactor-ui-redesign-1.md` — approved full UI redesign ("Steelworks" industrial design system: OKLCH tokens, Oswald/Inter/JetBrains Mono, unified dark mode, a11y fixes). Follow it when doing UI work; check off tasks as completed.
 
-`AUDIT-REPORT.md` — full site audit (30 Jul 2026, score 49/100). Phase 1 done; phases 2–4 outstanding.
+`AUDIT-REPORT.md` — full site audit (30 Jul 2026, score 49/100). Phases 1–4 done except field Core Web Vitals verification (PSI API rate-limited; check Search Console after deploy).

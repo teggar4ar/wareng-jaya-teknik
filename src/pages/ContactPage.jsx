@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FaWhatsapp, FaPhone, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
 import SEO from '../components/SEO';
 import Breadcrumbs from '../components/Breadcrumbs';
@@ -106,7 +107,21 @@ const ContactPage = () => {
           </h1>
           <p className="mt-4 max-w-2xl text-base text-ink-muted md:text-lg">
             Paling cepat lewat WhatsApp. Bisa juga lewat formulir di bawah,
-            nanti kami balas.
+            nanti kami balas. Kalau masih menimbang-nimbang, lihat dulu{' '}
+            <Link
+              to="/services"
+              className="text-accent underline decoration-accent/50 underline-offset-2 hover:decoration-accent"
+            >
+              daftar layanan
+            </Link>{' '}
+            atau{' '}
+            <Link
+              to="/gallery"
+              className="text-accent underline decoration-accent/50 underline-offset-2 hover:decoration-accent"
+            >
+              hasil kerja kami
+            </Link>
+            .
           </p>
         </Container>
       </section>

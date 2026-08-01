@@ -101,4 +101,6 @@ Kami di Wareng Jaya Teknik menerapkan metodologi pemasangan standar industri:
 6. **Quality Control** - Pemeriksaan kekuatan, kestabilan, dan presisi
 7. **Pemasangan Penutup Atap** - Instalasi genteng atau material penutup atap lainnya
 
-Jika Anda sedang mempertimbangkan untuk menggunakan konstruksi baja ringan untuk proyek pembangunan atau renovasi rumah, konsultasikan dengan tim ahli kami untuk mendapatkan solusi yang tepat sesuai kebutuhan dan budget Anda.
+Jika Anda sedang mempertimbangkan untuk menggunakan konstruksi baja ringan untuk proyek pembangunan atau renovasi rumah, konsultasikan dengan kami untuk mendapatkan solusi yang tepat sesuai kebutuhan dan budget Anda.
+
+Baca juga: [rincian harga tower air di Tajurhalang](/blog/harga-bangun-tower-air-tajurhalang) sebagai gambaran pengerjaan struktur baja kami, atau lihat cakupan lengkapnya di halaman [layanan](/services).

@@ -36,7 +36,6 @@ const StructuredData = ({ blogPost, data }) => {
     "logo": "https://warengjayateknik.my.id/favicon.svg",
     "description": "Bengkel las di Tajurhalang, Bogor. Menerima pembuatan kanopi, teralis, pagar, railing, tangga, dan konstruksi baja.",
     "telephone": "+6281398427309",
-    "email": "info@warengjayateknik.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Jl. Raya Kalisuren, Kp. Kandang Panjang",

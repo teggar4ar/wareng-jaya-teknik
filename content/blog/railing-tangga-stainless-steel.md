@@ -92,7 +92,7 @@ Wareng Jaya Teknik menerapkan metodologi pemasangan yang teliti:
 3. **Desain** - Pembuatan sketsa dan desain 3D untuk persetujuan
 4. **Fabrikasi** - Produksi komponen di workshop dengan standar tinggi
 5. **Finishing** - Proses finishing sesuai pilihan Anda
-6. **Pemasangan** - Instalasi oleh tim teknisi berpengalaman
+6. **Pemasangan** - Instalasi oleh orang yang mengerjakan fabrikasinya
 7. **Quality Control** - Pemeriksaan akhir untuk memastikan kualitas dan keamanan
 
 ## Perawatan Railing Stainless Steel
@@ -105,3 +105,5 @@ Untuk menjaga railing stainless steel Anda tetap berkilau dan tahan lama:
 - Untuk area outdoor, bersihkan lebih sering untuk mencegah penumpukan debu dan polutan
 
 Jika Anda tertarik untuk memasang railing tangga stainless steel di rumah atau properti Anda, hubungi Wareng Jaya Teknik untuk konsultasi dan penawaran yang disesuaikan dengan kebutuhan Anda.
+
+Kami juga mengerjakan tangga spiral dan railing balkon — rinciannya di halaman [layanan](/services). Untuk contoh hasil jadi, lihat [galeri](/gallery).

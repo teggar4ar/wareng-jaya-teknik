@@ -63,14 +63,32 @@ const customRenderers = {
     />
   ),
   p: ({ node, ...props }) => <p className="mb-5 leading-relaxed" {...props} />,
-  a: ({ node, ...props }) => (
-    <a
-      className="text-accent underline decoration-accent/50 underline-offset-2 transition-colors duration-150 hover:decoration-accent"
-      target="_blank"
-      rel="noopener noreferrer"
-      {...props}
-    />
-  ),
+  // Internal links stay in-tab and go through the router so contextual links
+  // between articles/services don't force a full page reload or open new tabs.
+  a: ({ node, href = '', children, ...props }) => {
+    const linkClass =
+      'text-accent underline decoration-accent/50 underline-offset-2 transition-colors duration-150 hover:decoration-accent';
+
+    if (href.startsWith('/')) {
+      return (
+        <Link to={href} className={linkClass} {...props}>
+          {children}
+        </Link>
+      );
+    }
+
+    return (
+      <a
+        href={href}
+        className={linkClass}
+        target="_blank"
+        rel="noopener noreferrer"
+        {...props}
+      >
+        {children}
+      </a>
+    );
+  },
   ul: ({ node, ...props }) => <ul className="mb-5 list-disc space-y-1 pl-5" {...props} />,
   ol: ({ node, ...props }) => <ol className="mb-5 list-decimal space-y-1 pl-5" {...props} />,
   li: ({ node, ...props }) => <li className="mb-1" {...props} />,

@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Lightbox from 'yet-another-react-lightbox';
 import Captions from 'yet-another-react-lightbox/plugins/captions';
 import Zoom from 'yet-another-react-lightbox/plugins/zoom';
@@ -145,7 +146,14 @@ const ProjectGalleryPage = () => {
           </h1>
           <p className="mt-4 max-w-2xl text-base text-ink-muted md:text-lg">
             Beberapa pekerjaan yang sudah kami selesaikan. Klik fotonya kalau
-            mau lihat lebih besar.
+            mau lihat lebih besar. Rincian tiap jenis pengerjaan ada di{' '}
+            <Link
+              to="/services"
+              className="text-accent underline decoration-accent/50 underline-offset-2 hover:decoration-accent"
+            >
+              halaman layanan
+            </Link>
+            .
           </p>
         </Container>
       </section>

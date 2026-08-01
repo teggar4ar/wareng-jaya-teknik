@@ -61,4 +61,6 @@ Layanan ini memberikan Anda ketenangan pikiran bahwa investasi Anda aman.
 
 Memilih jasa las kanopi di Bogor tidak perlu rumit jika Anda tahu apa yang harus diperhatikan. Dengan mengikuti lima tips di atas, Anda dapat menemukan mitra yang tepat untuk mewujudkan kanopi impian Anda.
 
-Jika Anda berada di area Bogor dan mencari jasa las yang berpengalaman, berkualitas, dan bergaransi, jangan ragu untuk **[menghubungi Wareng Jaya Teknik](/contact)**. Kami siap memberikan konsultasi gratis dan solusi terbaik untuk kebutuhan Anda.
+Jika Anda berada di area Bogor dan mencari jasa las kanopi, jangan ragu untuk **[menghubungi Wareng Jaya Teknik](/contact)**. Kami siap memberikan konsultasi gratis untuk kebutuhan Anda.
+
+Baca juga: [kisaran harga kanopi di Tajurhalang](/blog/harga-kanopi-tajurhalang) dan [panduan memilih kanopi](/blog/jasa-kanopi-berkualitas). Daftar pengerjaan kami ada di halaman [layanan](/services).

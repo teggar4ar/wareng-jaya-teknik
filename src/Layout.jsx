@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import StructuredData from './components/StructuredData';
-import ScrollToTop from './components/ScrollToTop';
+import RouteChangeHandler from './components/RouteChangeHandler';
 import WhatsAppButton from './components/WhatsAppButton';
 import AnalyticsTracker from './components/AnalyticsTracker';
 import { ThemeProvider } from './contexts/ThemeContext';
@@ -15,7 +15,7 @@ import { ThemeProvider } from './contexts/ThemeContext';
 const Layout = () => {
   return (
     <ThemeProvider>
-      <ScrollToTop />
+      <RouteChangeHandler />
       <div className="min-h-screen flex flex-col bg-paper text-ink transition-colors duration-200">
         <AnalyticsTracker />
         <a

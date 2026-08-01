@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FaWhatsapp } from 'react-icons/fa';
 import SEO from '../components/SEO';
 import Breadcrumbs from '../components/Breadcrumbs';
@@ -84,7 +85,14 @@ const AboutUsPage = () => {
                 Pelanggan kami macam-macam: rumah tinggal, ruko, sampai tempat
                 usaha di Tajurhalang dan sekitarnya. Pesanan kecil seperti
                 teralis satu jendela pun kami terima, begitu juga konstruksi
-                baja untuk bangunan.
+                baja untuk bangunan. Daftar lengkapnya ada di halaman{' '}
+                <Link
+                  to="/services"
+                  className="text-accent underline decoration-accent/50 underline-offset-2 hover:decoration-accent"
+                >
+                  layanan
+                </Link>
+                .
               </p>
             </div>
           </Reveal>
@@ -171,6 +179,16 @@ const AboutUsPage = () => {
                 </li>
               ))}
             </ul>
+            <p className="mt-6 text-base leading-relaxed text-ink-muted">
+              Di luar area itu masih bisa kami jangkau, tinggal{' '}
+              <Link
+                to="/contact"
+                className="text-accent underline decoration-accent/50 underline-offset-2 hover:decoration-accent"
+              >
+                tanyakan lewat kontak kami
+              </Link>
+              .
+            </p>
           </Reveal>
         </Container>
       </section>

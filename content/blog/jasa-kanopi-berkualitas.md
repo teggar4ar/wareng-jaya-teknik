@@ -2,7 +2,7 @@
 title: 'Jasa Pembuatan Kanopi Berkualitas Tinggi untuk Rumah Modern'
 seoTitle: 'Jasa Pembuatan Kanopi Berkualitas'
 date: '2025-06-01'
-excerpt: 'Temukan tips dan panduan lengkap memilih kanopi berkualitas tinggi untuk rumah modern Anda. Kami menawarkan berbagai jenis kanopi dengan garansi terbaik.'
+excerpt: 'Temukan tips dan panduan lengkap memilih kanopi untuk rumah modern Anda, dari jenis material sampai perbandingan atap.'
 coverImage: '/images/kanopi.webp'
 author: 'Tim Wareng Jaya'
 authorImage: '/images/profile.webp'
@@ -55,20 +55,22 @@ Material atap polycarbonat memiliki keunggulan:
 Kami mengutamakan kualitas dalam setiap tahap pengerjaan:
 
 1. **Konsultasi Awal** - Kami mendengarkan kebutuhan dan preferensi Anda
-2. **Survei Lokasi** - Tim teknis kami akan mengukur area pemasangan
+2. **Survei Lokasi** - Kami datang dan mengukur area pemasangan
 3. **Desain dan Penawaran** - Kami menyiapkan desain dan estimasi biaya
 4. **Produksi** - Material disiapkan sesuai ukuran dan spesifikasi
-5. **Pemasangan** - Tim profesional kami memasang kanopi dengan presisi
+5. **Pemasangan** - Kami memasang kanopi dengan presisi
 6. **Quality Control** - Pemeriksaan akhir untuk memastikan kualitas terbaik
 
 ## Mengapa Memilih Jasa Kami?
 
-Wareng Jaya Teknik telah berpengalaman lebih dari 13 tahun dalam industri konstruksi dan pengerjaan logam. Keunggulan kami meliputi:
+Wareng Jaya Teknik mengerjakan kanopi untuk rumah dan bangunan usaha di Tajurhalang, Bojonggede, dan sekitar Bogor. Keunggulan kami meliputi:
 
-- **Bahan Berkualitas** - Hanya menggunakan material terbaik
-- **Garansi Pekerjaan** - Kami memberikan garansi untuk setiap pekerjaan
-- **Tim Profesional** - Dikerjakan oleh tenaga ahli berpengalaman
+- **Bahan Sesuai Kesepakatan** - Jenis dan ketebalan material tertulis di penawaran
+- **Garansi Hasil Las** - Kalau ada sambungan bermasalah, kabari kami dan kami perbaiki
+- **Dikerjakan Sendiri** - Tidak dilempar ke pihak lain, Anda bicara langsung dengan yang mengerjakan
 - **Harga Transparan** - Tanpa biaya tersembunyi
 - **Layanan Purnajual** - Dukungan setelah pemasangan
 
 Jika Anda tertarik untuk memasang kanopi di rumah atau bangunan Anda, jangan ragu untuk menghubungi kami untuk konsultasi gratis!
+
+Baca juga: [kisaran harga kanopi di Tajurhalang](/blog/harga-kanopi-tajurhalang) dan [awning aluminium modern](/blog/awning-aluminium-modern) sebagai alternatif. Layanan lengkap kami ada di halaman [layanan](/services).

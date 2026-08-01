@@ -105,7 +105,7 @@ Kami mengutamakan kualitas dalam setiap tahap proses:
 3. **Desain** - Pembuatan desain detail untuk persetujuan
 4. **Fabrikasi** - Produksi dengan standar kualitas tinggi
 5. **Finishing** - Proses pengecatan atau finishing sesuai pilihan
-6. **Instalasi** - Pemasangan oleh tim profesional kami
+6. **Instalasi** - Pemasangan oleh orang yang mengerjakan fabrikasinya
 7. **Quality Control** - Pemeriksaan fungsi dan kualitas
 
 ## Tips Merawat Pintu Besi Minimalis
@@ -118,4 +118,6 @@ Untuk memastikan pintu besi Anda tetap prima dalam jangka panjang:
 - Segera perbaiki goresan pada lapisan cat untuk mencegah korosi
 - Periksa dan kencangkan hardware secara berkala
 
-Jika Anda tertarik untuk meningkatkan keamanan dan estetika rumah dengan pintu besi minimalis, hubungi Wareng Jaya Teknik untuk konsultasi dan penawaran. Tim profesional kami siap membantu Anda menemukan solusi pintu yang sesuai dengan kebutuhan dan gaya arsitektur rumah Anda.
+Jika Anda tertarik untuk meningkatkan keamanan dan estetika rumah dengan pintu besi minimalis, hubungi Wareng Jaya Teknik untuk konsultasi dan penawaran. Kami siap membantu Anda menemukan solusi pintu yang sesuai dengan kebutuhan dan gaya arsitektur rumah Anda.
+
+Baca juga: [pagar besi modern](/blog/pagar-besi-modern) dan [teralis jendela modern](/blog/keunggulan-teralis-modern). Semua jenis pengerjaan kami ada di halaman [layanan](/services).
