@@ -208,6 +208,7 @@ const ServicesPage = () => {
             <Reveal
               as="article"
               key={service.name}
+              priority={index === 0}
               className="grid items-center gap-8 md:grid-cols-2 md:gap-12"
             >
               <div className={`relative ${index % 2 === 1 ? 'md:order-2' : ''}`}>

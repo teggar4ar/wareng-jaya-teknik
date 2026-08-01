@@ -113,7 +113,7 @@ const HomePage = () => {
       {/* Hero */}
       <section className="border-b border-line bg-paper py-16 md:py-24">
         <Container className="grid items-center gap-10 md:grid-cols-2">
-          <Reveal>
+          <Reveal priority>
             <p className="font-mono text-sm font-medium uppercase tracking-widest text-accent">
               Bengkel Las — Tajurhalang, Bogor
             </p>
@@ -146,7 +146,7 @@ const HomePage = () => {
               </Button>
             </div>
           </Reveal>
-          <Reveal delay={0.1} className="relative">
+          <Reveal priority delay={0.1} className="relative">
             <div
               className="absolute -bottom-3 -right-3 h-full w-full border border-accent"
               aria-hidden="true"

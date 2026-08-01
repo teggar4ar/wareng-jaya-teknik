@@ -286,6 +286,43 @@ Verifikasi Fase 4: `npm run lint` bersih, `npm run build` berhasil memprerender 
 
 ---
 
+## Fase 5 — Perbaikan performa pasca-deploy (1 Agu 2026)
+
+PSI di produksi masih **429 lewat API**, tapi laporan yang dibuka owner di pagespeed.web.dev menunjukkan **CrUX belum punya data lapangan** ("Tidak Ada Data") — domain masih terlalu sepi. Jadi item 27 tetap tertunda sampai trafik cukup. Sebagai gantinya Lighthouse 12 dijalankan langsung terhadap **produksi** dan hasilnya buruk di mobile:
+
+| Metrik (mobile) | Sebelum | Sesudah |
+|---|---|---|
+| Performance | **55** | **81** |
+| LCP | 6,2 s | **3,7 s** |
+| TBT | 780 ms | **230 ms** |
+| FCP | 1,8 s | 2,7 s |
+| Speed Index | 4,5 s | 3,0 s |
+| CLS | 0 | 0 |
+| Total transfer | 1.032 KB | **740 KB** |
+| Request | 40 | **28** |
+
+Desktop: **99** (LCP 0,8 s, TBT 40 ms). Accessibility 96, Best Practices 96, SEO 100.
+
+Tiga akar masalah, semuanya tidak terlihat di audit crawler sebelumnya:
+
+1. **`Reveal` menyembunyikan konten above-the-fold di HTML prerender.** Ini penyebab utama. `framer-motion` `initial={{opacity:0}}` ikut terserialisasi jadi `style="opacity:0"` di HTML statis, termasuk pada wrapper `<h1>` dan gambar hero. Jadi meski gambar sudah `fetchpriority="high"` dan selesai diunduh dalam 322 ms, browser tidak melukis apa pun sampai framer-motion hydrate — **LCP render delay 5,2 s dari total 6,2 s**. Prerendering yang kita kerjakan di Fase 1 justru membuat ini kasat mata: HTML-nya ada, tapi tak terlihat. Solusinya prop `priority` di `Reveal` yang mem-bypass `initial` (`initial={false}`), dipakai di hero Home dan baris pertama `/services`. Animasi tetap jalan untuk elemen di bawah fold dan pada navigasi klien.
+
+2. **36 preload font, 403 KB.** `@fontsource/*` yang diimpor di `main.jsx` mendeklarasikan `.woff2` **dan** `.woff` legacy untuk 9 face, lalu Vite menerbitkan `rel=preload` prioritas tinggi untuk **keduanya** — 18 request font yang berebut bandwidth dengan gambar LCP. Font dipindahkan ke `public/fonts/` (woff2 saja, 174 KB) dengan `@font-face` manual di `index.css`, dan hanya 2 face yang dipreload: Oswald 700 (h1) dan Inter 400 (body). Font: 18 request/403 KB → **6 request/116 KB**.
+
+3. **gtag.js 141 KB memblokir main thread 280 ms.** Dipindah dari `<script async>` di `<head>` ke pemuatan lewat `requestIdleCallback` setelah `load` (fallback `setTimeout` 2 s). `dataLayer` dan `gtag('config')` tetap dieksekusi lebih dulu, jadi pageview yang terjadi sebelum skrip mendarat tetap terkirim.
+
+`vercel.json` diberi rule `/fonts/(.*)` → `max-age=31536000, immutable`.
+
+### Sisa temuan (belum dikerjakan)
+
+- **`color-contrast` — 6 elemen gagal, a11y tertahan di 96.** Warna aksen `oklch(62% 0.19 40)` = `#df500c` hanya mencapai rasio 3,52:1 di atas `paper`, dan 4,16:1 untuk label mono 12 px di atas `ink`. Tombol WhatsApp 4,33:1. Semuanya di bawah WCAG AA 4,5:1. Ini keputusan desain, bukan bug — token aksen dipakai luas dan menggelapkannya mengubah tampilan seluruh situs. Perlu keputusan owner.
+- **`charset` (Best Practices 96).** `<meta charset>` ada di `index.html` tapi `react-helmet-async` menyisipkan title/description/OG **sebelum**-nya di output prerender, jadi charset mendarat di offset ~3141 byte, melewati batas 1024 byte. Tidak berdampak nyata karena Vercel mengirim `Content-Type: text/html; charset=utf-8`, tapi bisa dirapikan dengan memaksa urutan tag helmet.
+- **`uses-responsive-images` ~149 KB.** `hero-new.webp` masih 1200 px lebar untuk slot ~half-viewport di mobile; `project-1..3.webp` serupa. Butuh `srcset` — sengaja belum, karena perlu dependency pembuat varian dan pemeliharaan manual (lihat catatan Fase 2 item 5).
+- **`react` chunk 66 KB dengan 30 KB tak terpakai.** Wajar untuk React + Router; tidak ada aksi.
+
+
+---
+
 ## Catatan Metodologi & Batasan
 
 - Crawl `surface` dan `full` (max 200 halaman) menghasilkan temuan identik: sitemap hanya memuat 19 URL, jadi tidak ada halaman tambahan yang belum tercakup.

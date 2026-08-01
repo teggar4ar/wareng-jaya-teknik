@@ -17,14 +17,48 @@
       })();
     </script>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1P9ZH63K0M"></script>
+    <!--
+      Only the two faces used above the fold are preloaded: Oswald 700 (the h1)
+      and Inter 400 (body copy). The rest load via @font-face on demand.
+    -->
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/oswald-latin-700-normal.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-latin-400-normal.woff2" crossorigin />
+
+    <!--
+      Google tag (gtag.js). Loaded after the page is interactive: gtag.js is
+      ~141 KB and blocked the main thread for ~280 ms when loaded eagerly, which
+      hurt TBT without making the pageview any more accurate. dataLayer is
+      seeded first so anything queued before the script lands still gets sent.
+    -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-1P9ZH63K0M');
+
+      (function () {
+        var loaded = false;
+        function loadGtag() {
+          if (loaded) return;
+          loaded = true;
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-1P9ZH63K0M';
+          document.head.appendChild(s);
+        }
+        function schedule() {
+          if ('requestIdleCallback' in window) {
+            requestIdleCallback(loadGtag, { timeout: 4000 });
+          } else {
+            setTimeout(loadGtag, 2000);
+          }
+        }
+        if (document.readyState === 'complete') {
+          schedule();
+        } else {
+          window.addEventListener('load', schedule, { once: true });
+        }
+      })();
     </script>
 
     <!--

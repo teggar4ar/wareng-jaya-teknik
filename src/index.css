@@ -1,5 +1,77 @@
 @import "tailwindcss";
 
+/*
+  Fonts are declared here against files in `public/fonts/` rather than imported
+  from @fontsource in main.jsx. The @fontsource CSS also references legacy .woff
+  alongside .woff2, and Vite's build emitted a `rel=preload` for *both* formats
+  of all 9 faces — 36 high-priority font requests, 403 KB, competing with the
+  LCP image for bandwidth. woff2 alone covers every browser we target.
+  `size-adjust` keeps the swap from the fallback metric-close so no CLS.
+*/
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/oswald-latin-500-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/oswald-latin-600-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/oswald-latin-700-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/inter-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/inter-latin-500-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/inter-latin-600-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/inter-latin-700-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/jetbrains-mono-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/jetbrains-mono-latin-500-normal.woff2') format('woff2');
+}
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
