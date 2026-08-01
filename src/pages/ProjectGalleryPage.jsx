@@ -129,7 +129,6 @@ const ProjectGalleryPage = () => {
         description="Foto-foto hasil pengerjaan Wareng Jaya Teknik: pintu besi, pagar, kanopi, teralis, railing, dan konstruksi baja."
         canonicalUrl="https://warengjayateknik.my.id/gallery"
         keywords={['galeri proyek', 'hasil pengerjaan bengkel las', 'foto kanopi', 'foto pagar besi']}
-        ogType="article"
       />
 
       {/* Page header */}

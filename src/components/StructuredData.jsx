@@ -1,17 +1,18 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
+import { SITE_URL, absoluteUrl } from '../config/site';
 
 /**
  * StructuredData component for adding structured data to improve SEO
- * 
+ *
  * @param {Object} props - Component props
  * @param {Object} props.blogPost - Blog post data (optional)
  * @param {Object} props.data - Custom structured data (optional)
  */
 const StructuredData = ({ blogPost, data }) => {
   const location = useLocation();
-  const currentUrl = window.location.origin + location.pathname;
+  const currentUrl = absoluteUrl(location.pathname);
   
   // Base organization/business structured data
   const businessStructuredData = {
@@ -62,9 +63,7 @@ const StructuredData = ({ blogPost, data }) => {
     },
     "headline": blogPost.title,
     "description": blogPost.description || blogPost.excerpt,
-    "image": blogPost.coverImage 
-      ? window.location.origin + blogPost.coverImage 
-      : window.location.origin + "/images/placeholder.svg",
+    "image": absoluteUrl(blogPost.coverImage || "/images/placeholder.svg"),
     "author": {
       "@type": "Person",
       "name": blogPost.author || "Tim Wareng Jaya Teknik"
@@ -74,7 +73,7 @@ const StructuredData = ({ blogPost, data }) => {
       "name": "Wareng Jaya Teknik",
       "logo": {
         "@type": "ImageObject",
-        "url": window.location.origin + "/favicon.svg"
+        "url": `${SITE_URL}/favicon.svg`
       }
     },
     "datePublished": blogPost.isoDate || blogPost.date,

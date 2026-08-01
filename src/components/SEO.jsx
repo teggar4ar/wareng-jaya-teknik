@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { absoluteUrl } from '../config/site';
 
 /**
  * SEO component for dynamically setting meta tags on each page
@@ -14,6 +15,7 @@ import { Helmet } from 'react-helmet-async';
  * @param {string} props.modifiedTime - ISO date when content was modified
  * @param {string} props.author - Content author name
  * @param {string} props.section - Content section/category
+ * @param {boolean} props.noindex - Exclude the page from search indexes
  */
 const SEO = ({ 
   title,
@@ -25,28 +27,33 @@ const SEO = ({
   publishedTime,
   modifiedTime,
   author,
-  section
+  section,
+  noindex = false
 }) => {
   const siteName = 'Wareng Jaya Teknik';
   const fullTitle = title ? `${title} | ${siteName}` : siteName;
   const keywordString = keywords.join(', ');
-  
+  // Social crawlers reject relative image paths, so always emit an absolute URL.
+  const ogImageUrl = absoluteUrl(ogImage);
+  const canonical = canonicalUrl ? absoluteUrl(canonicalUrl) : undefined;
+
   return (
     <Helmet>
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       {keywordString && <meta name="keywords" content={keywordString} />}
-      <link rel="canonical" href={canonicalUrl} />
-      
-      {/* Viewport meta tag to control layout on mobile browsers */}
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-      
+      {canonical && <link rel="canonical" href={canonical} />}
+
       {/* Open Graph Tags */}
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content={ogType} />
-      <meta property="og:url" content={canonicalUrl} />
-      <meta property="og:image" content={ogImage} />
+      {canonical && <meta property="og:url" content={canonical} />}
+      <meta property="og:image" content={ogImageUrl} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content={fullTitle} />
+      <meta property="og:locale" content="id_ID" />
       <meta property="og:site_name" content={siteName} />
       
       {/* If article, add article specific Open Graph tags */}
@@ -67,10 +74,18 @@ const SEO = ({
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={ogImage} />
-      
+      <meta name="twitter:image" content={ogImageUrl} />
+      <meta name="twitter:image:alt" content={fullTitle} />
+
       {/* Additional SEO enhancements */}
-      <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+      <meta
+        name="robots"
+        content={
+          noindex
+            ? 'noindex, follow'
+            : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
+        }
+      />
       {author && <meta name="author" content={author} />}
     </Helmet>
   );

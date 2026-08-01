@@ -1,13 +1,26 @@
 # AGENTS.md
 
-Marketing website for Wareng Jaya Teknik, a welding workshop (bengkel las) in Tajurhalang, Bogor. React 18 + Vite 7 SPA, Tailwind CSS **v4**, deployed on Vercel. All UI copy is in **Indonesian** — keep it that way.
+Marketing website for Wareng Jaya Teknik, a welding workshop (bengkel las) in Tajurhalang, Bogor. React 18 + Vite 7, prerendered to static HTML with **vite-react-ssg**, Tailwind CSS **v4**, deployed on Vercel. All UI copy is in **Indonesian** — keep it that way.
 
 ## Commands
 
-- `npm run dev` / `npm run build` — both run `generate-data` first (build also runs `generate-sitemap`). Never run bare `vite` if blog content changed.
+- `npm run dev` — runs `generate-data` then plain `vite` (CSR only; prerendering is build-time).
+- `npm run build` — `generate-data` → `generate-sitemap` → `vite-react-ssg build`. Never run bare `vite build`; that produces an unprerendered SPA shell and regresses every SEO fix.
 - `npm run lint` — ESLint flat config; run before finishing work. No typecheck (plain JS/JSX, no TS despite `@types/*` in devDeps).
 - No test suite exists.
 - Windows PowerShell environment — no `&&` chaining.
+
+## Static prerendering (vite-react-ssg) — read before touching routing
+
+- Routes live in `src/App.jsx` as a **plain route-object array** (not JSX `<Routes>`), consumed by `ViteReactSSG` in `src/main.jsx`. `src/Layout.jsx` is the shared shell (`<Outlet />`).
+- Every route is prerendered to real HTML at build time. Blog posts come from `getStaticPaths` on the `blog/:slug` route.
+- **Pinned deps:** `react-router-dom@6.30.1` and `react-helmet-async@1.3.0` (exact). vite-react-ssg requires router v6 (it imports `react-router-dom/server.js`, removed in v7) and its own bundled helmet v1 must dedupe with the app's. Do not upgrade either without verifying `npm run build` still prerenders.
+- **No browser globals at render time.** `window`/`document`/`localStorage` may only be touched inside `useEffect` or event handlers. Use `SITE_URL`/`absoluteUrl()` from `src/config/site.js` for URLs — never `window.location.origin`.
+- Data must be derived synchronously during render (`useMemo`), not fetched in an effect, or the prerendered HTML captures only a loading state. See `BlogPostPage.jsx`.
+- `ThemeProvider` always initialises to `light` to match prerendered markup; the real preference is applied in an effect, and an inline script in `index.html` sets the `<html>` class pre-paint to avoid a flash.
+- `index.html` holds **no** title/description/canonical/social tags — those are per-route via `SEO.jsx`. Adding them back creates duplicate tags in every prerendered page.
+- `vite.config.js` `ssgOptions`: `dirStyle: 'flat'` + `cleanUrls: true` in `vercel.json` gives extensionless URLs and lets Vercel serve `404.html` with a real 404 status. `beastiesOptions: false` (critical-CSS inlining not installed).
+- `build.rollupOptions.output.manualChunks` must stay in **function form** — the SSR pass externalises react/router, which a static object map cannot reference.
 
 ## Generated code — do not edit
 
@@ -22,10 +35,11 @@ Marketing website for Wareng Jaya Teknik, a welding workshop (bengkel las) in Ta
 
 ## Architecture notes
 
-- SPA routes in `src/App.jsx` (all pages lazy-loaded). Vercel rewrites everything to `index.html` (`vercel.json`).
 - SEO is load-bearing: `src/components/SEO.jsx`, `StructuredData.jsx` (JSON-LD, see `SCHEMA_GUIDE.md`), `scripts/generate-sitemap.js` (hardcoded base URL `https://warengjayateknik.my.id`). Don't break these when editing pages.
+- Markdown `#` headings in blog bodies render as `<h2>` (`BlogPostPage.jsx` `customRenderers`) so each page keeps exactly one `<h1>`. Footer/TOC/share labels use `<p>`, not `<h2>` — they are chrome, not content hierarchy.
+- `vercel.json` sets security headers (CSP, X-Frame-Options, Referrer-Policy) and cache lifetimes. The CSP allowlists Google Tag Manager/Analytics and `google.com` frames for the Maps embed on ContactPage — widen it if new third parties are added.
 - `ServicesPage.jsx` and `AboutUsPage.jsx` contain `<style jsx global>` blocks — a Next.js idiom that doesn't work in Vite (renders as plain global style + React warning). Known issue, slated for removal.
-- Known broken refs: `border-primary` class in `LoadingSpinner.jsx` (undefined), `/images/fallback-hero.jpg` and `/images/avatar-placeholder.jpg` onError fallbacks in `HomePage.jsx` (files don't exist).
+- Known broken refs: `/images/fallback-hero.jpg` and `/images/avatar-placeholder.jpg` onError fallbacks in `HomePage.jsx` (files don't exist); `/images/og-default.jpg` referenced as the default OG image in `SEO.jsx` (file does not exist yet).
 
 ## Content honesty rule
 
@@ -34,3 +48,5 @@ Site pages currently contain fabricated stats (contradictory project counts), fa
 ## Active plan
 
 `plan/refactor-ui-redesign-1.md` — approved full UI redesign ("Steelworks" industrial design system: OKLCH tokens, Oswald/Inter/JetBrains Mono, unified dark mode, a11y fixes). Follow it when doing UI work; check off tasks as completed.
+
+`AUDIT-REPORT.md` — full site audit (30 Jul 2026, score 49/100). Phase 1 done; phases 2–4 outstanding.

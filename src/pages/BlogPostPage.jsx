@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import ReactMarkdown from 'react-markdown';
@@ -21,6 +21,7 @@ import Button from '../components/ui/Button';
 import Reveal from '../components/ui/Reveal';
 import { allBlogPosts } from '../data/blogPosts.js';
 import { getRelatedPosts } from '../utils/blogUtils';
+import { absoluteUrl } from '../config/site';
 
 const headingId = (children) =>
   children
@@ -30,8 +31,11 @@ const headingId = (children) =>
     .replace(/[^\w-]/g, '');
 
 const customRenderers = {
+  // Markdown bodies start with a `#` title, but the page already renders the
+  // post title as the single <h1>. Downgrade to <h2> so each page has exactly
+  // one <h1> and the heading hierarchy stays valid.
   h1: ({ node, ...props }) => (
-    <h1
+    <h2
       id={headingId(props.children)}
       className="mt-10 mb-4 border-b border-line pb-2 font-display text-2xl font-semibold uppercase tracking-tight text-ink sm:text-3xl"
       {...props}
@@ -170,64 +174,63 @@ const extractFAQs = (content) => {
   return faqs;
 };
 
+const buildTableOfContents = (content) => {
+  const headingRegex = /^(#{1,6})\s+(.*)$/gm;
+  const tocItems = [];
+  let match;
+
+  while ((match = headingRegex.exec(content)) !== null) {
+    const level = match[1].length;
+    const text = match[2];
+    const id = text.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
+
+    tocItems.push({ text, id, level });
+  }
+
+  return tocItems;
+};
+
 const BlogPostPage = () => {
   const { slug } = useParams();
   const navigate = useNavigate();
 
-  const [post, setPost] = useState(null);
-  const [relatedPosts, setRelatedPosts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [tableOfContents, setTableOfContents] = useState([]);
-  const [faqItems, setFaqItems] = useState([]);
   const [copied, setCopied] = useState(false);
 
+  // Derived synchronously during render: the post data is bundled at build
+  // time, so there is nothing to await. Doing this in an effect instead would
+  // make the prerendered HTML contain only a loading spinner.
+  const post = useMemo(
+    () => allBlogPosts.find((p) => p.slug === slug) || null,
+    [slug]
+  );
+
+  const tableOfContents = useMemo(
+    () => (post ? buildTableOfContents(post.content) : []),
+    [post]
+  );
+
+  const faqItems = useMemo(() => (post ? extractFAQs(post.content) : []), [post]);
+
+  const relatedPosts = useMemo(() => {
+    if (!post) return [];
+    const keywords = post.keywords
+      ? typeof post.keywords === 'string'
+        ? post.keywords.split(',').map((k) => k.trim())
+        : post.keywords
+      : [];
+    return getRelatedPosts(allBlogPosts, slug, keywords, 3);
+  }, [post, slug]);
+
   useEffect(() => {
-    window.scrollTo(0, 0);
     setCopied(false);
+  }, [slug]);
 
-    try {
-      const postData = allBlogPosts.find((p) => p.slug === slug);
-
-      if (!postData) {
-        navigate('/blog', { replace: true });
-        return;
-      }
-
-      setPost(postData);
-
-      const headingRegex = /^(#{1,6})\s+(.*)$/gm;
-      const tocItems = [];
-      let match;
-
-      headingRegex.lastIndex = 0;
-      while ((match = headingRegex.exec(postData.content)) !== null) {
-        const level = match[1].length;
-        const text = match[2];
-        const id = text.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
-
-        tocItems.push({ text, id, level });
-      }
-
-      setTableOfContents(tocItems);
-
-      const keywords = postData.keywords
-        ? typeof postData.keywords === 'string'
-          ? postData.keywords.split(',').map((k) => k.trim())
-          : postData.keywords
-        : [];
-
-      const related = getRelatedPosts(allBlogPosts, slug, keywords, 3);
-      setRelatedPosts(related);
-
-      const faqs = extractFAQs(postData.content);
-      setFaqItems(faqs);
-    } catch (error) {
-      console.error('Error loading blog post:', error);
+  // Unknown slug: only reachable client-side (every real slug is prerendered).
+  useEffect(() => {
+    if (!post) {
       navigate('/blog', { replace: true });
-    } finally {
-      setLoading(false);
     }
-  }, [slug, navigate]);
+  }, [post, navigate]);
 
   const handleCopyLink = async () => {
     try {
@@ -239,16 +242,12 @@ const BlogPostPage = () => {
     }
   };
 
-  if (loading) {
+  if (!post) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-paper">
         <LoadingSpinner />
       </div>
     );
-  }
-
-  if (!post) {
-    return null;
   }
 
   const postCategories = post.categories
@@ -257,13 +256,15 @@ const BlogPostPage = () => {
       : post.categories.split(',').map((c) => c.trim())
     : [];
 
+  const postUrl = absoluteUrl(`/blog/${slug}`);
+
   return (
     <>
       <SEO
         title={post.title}
         description={post.description || post.excerpt}
-        canonicalUrl={`${window.location.origin}/blog/${slug}`}
-        ogImage={post.coverImage ? `${window.location.origin}${post.coverImage}` : `${window.location.origin}/images/placeholder.svg`}
+        canonicalUrl={absoluteUrl(`/blog/${slug}`)}
+        ogImage={absoluteUrl(post.coverImage || '/images/placeholder.svg')}
         ogType="article"
         keywords={post.keywords ? post.keywords.split(',').map((k) => k.trim()) : []}
         publishedTime={post.isoDate}
@@ -362,9 +363,9 @@ const BlogPostPage = () => {
                   aria-label="Daftar isi"
                   className="sticky top-24 rounded-card border border-line bg-surface p-4"
                 >
-                  <h2 className="border-b border-line pb-2 font-display text-base font-semibold uppercase tracking-wide text-ink">
+                  <p className="border-b border-line pb-2 font-display text-base font-semibold uppercase tracking-wide text-ink">
                     Daftar Isi
-                  </h2>
+                  </p>
                   <ul className="mt-3 space-y-1.5">
                     {tableOfContents.map((item, index) => (
                       <li
@@ -420,9 +421,9 @@ const BlogPostPage = () => {
                 {/* Tags */}
                 {post.keywords && (
                   <div className="mt-12 border-t border-line pt-6">
-                    <h2 className="font-mono text-sm font-medium uppercase tracking-widest text-ink-muted">
+                    <p className="font-mono text-sm font-medium uppercase tracking-widest text-ink-muted">
                       Tags
-                    </h2>
+                    </p>
                     <div className="mt-3 flex flex-wrap gap-2">
                       {post.keywords.split(',').map((keyword, index) => (
                         <Link
@@ -439,12 +440,12 @@ const BlogPostPage = () => {
 
                 {/* Share */}
                 <div className="mt-8 border-t border-line pt-6">
-                  <h2 className="font-mono text-sm font-medium uppercase tracking-widest text-ink-muted">
+                  <p className="font-mono text-sm font-medium uppercase tracking-widest text-ink-muted">
                     Bagikan Artikel
-                  </h2>
+                  </p>
                   <div className="mt-3 flex flex-wrap items-center gap-2">
                     <a
-                      href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`}
+                      href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(postUrl)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Bagikan ke Facebook"
@@ -453,7 +454,7 @@ const BlogPostPage = () => {
                       <FaFacebookF size={16} aria-hidden="true" />
                     </a>
                     <a
-                      href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(window.location.href)}`}
+                      href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(postUrl)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Bagikan ke Twitter"
@@ -462,7 +463,7 @@ const BlogPostPage = () => {
                       <FaTwitter size={16} aria-hidden="true" />
                     </a>
                     <a
-                      href={`https://wa.me/?text=${encodeURIComponent(`${post.title} ${window.location.href}`)}`}
+                      href={`https://wa.me/?text=${encodeURIComponent(`${post.title} ${postUrl}`)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Bagikan via WhatsApp"

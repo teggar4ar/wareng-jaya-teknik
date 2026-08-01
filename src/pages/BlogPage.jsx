@@ -8,6 +8,7 @@ import Container from '../components/ui/Container';
 import Reveal from '../components/ui/Reveal';
 import { allBlogPosts } from '../data/blogPosts.js';
 import { searchPosts } from '../utils/blogUtils';
+import { absoluteUrl } from '../config/site';
 
 const POSTS_PER_PAGE = 6;
 
@@ -145,7 +146,7 @@ const BlogPage = () => {
       "itemListElement": currentPosts.map((post, index) => ({
         "@type": "ListItem",
         "position": indexOfFirstPost + index + 1,
-        "url": `${window.location.origin}/blog/${post.slug}`,
+        "url": absoluteUrl(`/blog/${post.slug}`),
         "item": {
           "@type": "BlogPosting",
           "headline": post.title,
@@ -155,7 +156,7 @@ const BlogPage = () => {
             "name": post.author || "Tim Wareng Jaya Teknik"
           },
           "datePublished": post.isoDate || post.date,
-          "image": post.coverImage ? `${window.location.origin}${post.coverImage}` : `${window.location.origin}/images/placeholder.svg`
+          "image": absoluteUrl(post.coverImage || '/images/placeholder.svg')
         }
       }))
     }
@@ -166,7 +167,7 @@ const BlogPage = () => {
       <SEO
         title="Blog - Artikel & Tips Seputar Konstruksi dan Pengerjaan Logam"
         description="Artikel dan tips dari bengkel kami seputar konstruksi, pengerjaan logam, kanopi, teralis, dan pagar."
-        canonicalUrl={`${window.location.origin}/blog${location.search}`}
+        canonicalUrl={absoluteUrl('/blog')}
         keywords={['blog konstruksi', 'tips pengerjaan logam', 'artikel kanopi', 'panduan teralis', 'blog bengkel las']}
       />
 

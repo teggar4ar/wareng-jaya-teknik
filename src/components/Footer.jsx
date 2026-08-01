@@ -36,9 +36,9 @@ const Footer = () => {
 
         <div className="mt-12 grid grid-cols-1 gap-10 md:grid-cols-3">
           <div>
-            <h2 className="font-mono text-xs font-medium uppercase tracking-widest text-accent">
+            <p className="font-mono text-xs font-medium uppercase tracking-widest text-accent">
               Kontak
-            </h2>
+            </p>
             <ul className="mt-4 space-y-3 text-sm">
               <li className="flex items-start gap-3">
                 <FaMapMarkerAlt className="mt-0.5 shrink-0 text-accent" aria-hidden="true" />
@@ -75,9 +75,9 @@ const Footer = () => {
           </div>
 
           <nav aria-label="Navigasi footer">
-            <h2 className="font-mono text-xs font-medium uppercase tracking-widest text-accent">
+            <p className="font-mono text-xs font-medium uppercase tracking-widest text-accent">
               Navigasi
-            </h2>
+            </p>
             <ul className="mt-4 space-y-1 text-sm">
               {NAV_LINKS.map((link) => (
                 <li key={link.path}>
@@ -93,9 +93,9 @@ const Footer = () => {
           </nav>
 
           <div>
-            <h2 className="font-mono text-xs font-medium uppercase tracking-widest text-accent">
+            <p className="font-mono text-xs font-medium uppercase tracking-widest text-accent">
               Area Layanan
-            </h2>
+            </p>
             <ul className="mt-4 space-y-3 text-sm">
               {SERVICE_AREAS.map((area) => (
                 <li key={area} className="flex items-center gap-3">
