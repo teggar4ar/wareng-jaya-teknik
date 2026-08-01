@@ -262,14 +262,17 @@ Sisa temuan preview yang masuk Fase 2/3 (bukan regresi): `hero-new.webp` 1.9 MB,
 ### Fase 3 — Quick wins
 
 14. ✅ Skip link + `id="konten-utama"`.
-15. Buat `public/llms.txt`.
-16. Tambah `Service` schema di `/services`; batasi `LocalBusiness` agar tidak muncul di artikel blog.
-17. Tambah Breadcrumbs ke About/Services/Gallery/Contact.
-18. Byline penulis di artikel blog.
+15. ✅ `public/llms.txt` — **di-generate**, bukan ditulis manual (`scripts/generate-llms-txt.js`, masuk pipeline `npm run build`) supaya daftar artikel tidak pernah menyimpang dari `content/blog/`. Memuat profil bisnis, NAP, area layanan, 7 halaman utama, dan 13 artikel dengan deskripsinya. `vercel.json` memaksa `Content-Type: text/plain; charset=utf-8`.
+16. ✅ `Service` schema di `/services`: `ItemList` berisi 8 `Service` (nama, deskripsi, gambar absolut, `serviceType`, `areaServed` 6 wilayah). `LocalBusiness` diberi `@id` stabil `SITE_URL/#business` dan setiap `Service.provider` hanya mereferensikan `@id` itu — bukan menyalin ulang blok bisnis 8×, yang akan membuat 8 entitas saling bersaing. `LocalBusiness` sekarang **dibatasi ke 5 halaman identitas bisnis** (`/`, `/about`, `/services`, `/gallery`, `/contact`) lewat `BUSINESS_SCHEMA_PATHS` di `StructuredData.jsx`; sebelumnya instance global di `Layout.jsx` menempelkannya juga ke tiap artikel blog sehingga bersaing dengan `BlogPosting`. **Terverifikasi: 13 artikel kini `LocalBusiness=0`, `/services` punya 8 `Service`, ketiga blok JSON-LD parse valid.**
+17. ✅ Breadcrumbs ditambahkan ke About, Services, Gallery, Contact, **dan Privacy** — kelimanya terverifikasi punya `<nav aria-label="Breadcrumb">` + JSON-LD `BreadcrumbList` + `aria-current="page"`.
+18. ✅ Byline penulis: `Oleh <Link rel="author" to="/about">` + `<time dateTime={isoDate}>` menggantikan `<span>` polos, jadi atribusi penulis dan tanggal kini punya makna semantik, bukan cuma teks.
 19. ✅ Tag `viewport` duplikat dihapus.
 20. ✅ H2 chrome di `Footer.jsx` dan `BlogPostPage.jsx` → `<p>`.
-21. Hapus `SchemaDebug.jsx` (dead code).
-22. Tambahkan `/blog?tag=…` sebagai disallow di `robots.txt`, atau `noindex` — 43 varian query saat ini duplikat title/description `/blog`.
+21. ✅ `SchemaDebug.jsx` dihapus (dead code, nol referensi).
+22. ✅ `robots.txt`: `Disallow: /blog?` memblokir semua varian query (tag, category, search, page) dengan satu aturan sekaligus, sementara `/blog` sendiri tetap bisa diindeks. Ini menutup 43 halaman duplikat metadata.
+
+Perbaikan tambahan di luar daftar (temuan audit preview Fase 2):
+- `a11y/label-content-name-mismatch` pada tombol "Salin Link" di artikel blog — teks terlihat "Salin Link" vs `aria-label` "Salin tautan artikel". Pola yang sama seperti tombol galeri: `aria-label` dihapus, diganti `<span className="sr-only">`.
 
 ### Fase 4 — Konten & jangka panjang
 

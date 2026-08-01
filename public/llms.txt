@@ -1,0 +1,48 @@
+# Wareng Jaya Teknik
+
+> Bengkel las (workshop fabrikasi logam) di Tajurhalang, Kabupaten Bogor,
+> Jawa Barat, Indonesia. Mengerjakan kanopi, pagar dan gerbang, teralis,
+> railing, pintu besi, tangga spiral, tower air, dan konstruksi baja.
+> Pengukuran dilakukan di lokasi sebelum penawaran dibuat.
+
+Seluruh isi situs berbahasa Indonesia.
+
+## Informasi bisnis
+
+- Nama: Wareng Jaya Teknik
+- Alamat: Jl. Raya Kalisuren, Kp. Kandang Panjang, Kec. Tajur Halang, Kabupaten Bogor, Jawa Barat 16320
+- Telepon / WhatsApp: +62 813-9842-7309
+- Jam buka: setiap hari, 08.00–17.00 WIB
+- Area layanan: Tajurhalang, Bojonggede, Citayam, Cibinong, Depok, dan Bogor sekitarnya
+
+## Halaman utama
+
+- [/](https://warengjayateknik.my.id/): Beranda — ringkasan layanan dan area kerja
+- [/services](https://warengjayateknik.my.id/services): Layanan: kanopi, pagar & gerbang, teralis, railing, konstruksi baja, pintu besi, tangga spiral, tower air
+- [/gallery](https://warengjayateknik.my.id/gallery): Galeri foto hasil pengerjaan
+- [/about](https://warengjayateknik.my.id/about): Tentang bengkel: cara kerja dan area layanan
+- [/contact](https://warengjayateknik.my.id/contact): Kontak, jam buka, dan lokasi bengkel
+- [/blog](https://warengjayateknik.my.id/blog): Indeks artikel
+- [/privacy](https://warengjayateknik.my.id/privacy): Kebijakan privasi
+
+## Artikel
+
+- [Awning Aluminium Modern: Solusi Teduh yang Elegan untuk Rumah Anda](https://warengjayateknik.my.id/blog/awning-aluminium-modern): Pilihan awning aluminium modern yang menggabungkan perlindungan cuaca dengan desain estetis untuk eksterior rumah.
+- [Harga Bangun Tower Air di Tajurhalang Bogor - Panduan Lengkap 2025](https://warengjayateknik.my.id/blog/harga-bangun-tower-air-tajurhalang): Harga dan biaya pembangunan tower air di Tajurhalang Bogor: faktor penentu biaya, estimasi per meter, dan tips memilih jasa.
+- [Pintu Besi Minimalis: Keamanan Maksimal dengan Desain Elegan](https://warengjayateknik.my.id/blog/pintu-besi-minimalis-keamanan): Pilihan pintu besi minimalis yang menggabungkan keamanan dan estetika modern untuk rumah Anda.
+- [Rincian Biaya & Harga Kanopi per Meter di Tajurhalang (Terbaru 2025)](https://warengjayateknik.my.id/blog/harga-kanopi-tajurhalang): Rincian biaya kanopi di Tajurhalang terbaru 2025: faktor penentu harga dan tips memilih kanopi, tralis, serta gerbang.
+- [Furniture Custom Besi: Solusi Unik dan Tahan Lama untuk Interior dan Eksterior](https://warengjayateknik.my.id/blog/furniture-custom-besi): Keunggulan furniture custom berbahan besi dan logam untuk ruang berkarakter dengan durabilitas tinggi.
+- [5 Tips Merawat Furniture Besi](https://warengjayateknik.my.id/blog/5-tips-merawat-furniture-besi): Cara merawat furniture besi agar tetap awet: pembersihan rutin, pencegahan korosi, pengecatan ulang, dan penempatan yang tepat.
+- [Railing Tangga Stainless Steel: Paduan Keselamatan dan Kemewahan untuk Interior Modern](https://warengjayateknik.my.id/blog/railing-tangga-stainless-steel): Panduan memilih railing tangga stainless steel yang menjamin keselamatan sekaligus meningkatkan nilai estetika interior rumah Anda.
+- [Bengkel Las Bojonggede: Solusi Profesional untuk Kebutuhan Konstruksi Besi Anda](https://warengjayateknik.my.id/blog/bengkel-las-bojonggede): Layanan bengkel las terpercaya di Bojonggede: pengerjaan berkualitas, material premium, dan garansi untuk konstruksi besi.
+- [Pagar Besi Modern: Kombinasi Keamanan dan Estetika untuk Rumah Anda](https://warengjayateknik.my.id/blog/pagar-besi-modern): Temukan berbagai pilihan pagar besi modern yang menggabungkan aspek keamanan dan nilai estetika untuk meningkatkan tampilan eksterior rumah Anda.
+- [5 Tips Memilih Jasa Las Kanopi Terbaik di Bogor](https://warengjayateknik.my.id/blog/jasa-las-kanopi-bogor): Mencari jasa las kanopi di Bogor? Jangan salah pilih! Simak 5 tips penting ini untuk mendapatkan layanan terbaik yang sesuai dengan kebutuhan dan anggaran Anda.
+- [Jasa Pembuatan Kanopi Berkualitas Tinggi untuk Rumah Modern](https://warengjayateknik.my.id/blog/jasa-kanopi-berkualitas): Temukan tips dan panduan lengkap memilih kanopi berkualitas tinggi untuk rumah modern Anda. Kami menawarkan berbagai jenis kanopi dengan garansi terbaik.
+- [5 Keunggulan Teralis Jendela Modern untuk Keamanan dan Estetika Rumah](https://warengjayateknik.my.id/blog/keunggulan-teralis-modern): Pelajari keunggulan teralis jendela modern yang tidak hanya meningkatkan keamanan rumah tetapi juga mempercantik tampilan eksterior dan interior.
+- [Mengenal Jenis-Jenis Konstruksi Baja Ringan untuk Atap Rumah](https://warengjayateknik.my.id/blog/konstruksi-baja-ringan-atap): Panduan lengkap tentang berbagai jenis konstruksi baja ringan untuk atap rumah, kelebihan dan kekurangannya, serta tips memilih yang tepat untuk kebutuhan Anda.
+
+## Catatan
+
+- Situs statis, seluruh halaman sudah ter-render di HTML (tidak butuh eksekusi JavaScript).
+- Filter blog memakai query string (`/blog?tag=…`) dan menyajikan konten yang sama dengan `/blog`; abaikan varian tersebut.
+- Harga tidak dicantumkan sebagai angka pasti karena bergantung pada ukuran, material, dan kondisi lokasi.

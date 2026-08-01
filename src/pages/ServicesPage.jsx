@@ -1,9 +1,12 @@
 import React from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
 import SEO from '../components/SEO';
+import StructuredData from '../components/StructuredData';
+import Breadcrumbs from '../components/Breadcrumbs';
 import Container from '../components/ui/Container';
 import Button from '../components/ui/Button';
 import Reveal from '../components/ui/Reveal';
+import { SITE_URL, absoluteUrl } from '../config/site';
 
 const WA_NUMBER = '6281398427309';
 
@@ -119,7 +122,41 @@ const SERVICES = [
   },
 ];
 
+const SERVICE_AREAS = [
+  'Tajurhalang',
+  'Bojonggede',
+  'Citayam',
+  'Cibinong',
+  'Depok',
+  'Bogor',
+];
+
 const ServicesPage = () => {
+  // One Service entity per offering. `provider` is a bare @id reference to the
+  // LocalBusiness node emitted by StructuredData on this same page — repeating
+  // the full business block eight times would create eight rival entities.
+  const servicesSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Layanan Wareng Jaya Teknik',
+    itemListElement: SERVICES.map((service, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'Service',
+        name: service.name,
+        description: service.description,
+        image: absoluteUrl(service.image),
+        serviceType: service.name,
+        provider: { '@id': `${SITE_URL}/#business` },
+        areaServed: SERVICE_AREAS.map((area) => ({
+          '@type': 'Place',
+          name: area,
+        })),
+      },
+    })),
+  };
+
   return (
     <>
       <SEO
@@ -128,6 +165,10 @@ const ServicesPage = () => {
         canonicalUrl="https://warengjayateknik.my.id/services"
         keywords={['pintu besi', 'pagar', 'teralis jendela', 'kanopi', 'konstruksi logam', 'tangga spiral', 'railing tangga', 'tower air']}
       />
+
+      <StructuredData data={servicesSchema} />
+
+      <Breadcrumbs currentPage="Layanan" />
 
       {/* Page header */}
       <section className="border-b border-line bg-paper py-12 md:py-16">

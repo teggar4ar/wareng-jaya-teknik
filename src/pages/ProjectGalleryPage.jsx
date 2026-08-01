@@ -6,6 +6,7 @@ import 'yet-another-react-lightbox/styles.css';
 import 'yet-another-react-lightbox/plugins/captions.css';
 import { FaWhatsapp } from 'react-icons/fa';
 import SEO from '../components/SEO';
+import Breadcrumbs from '../components/Breadcrumbs';
 import Container from '../components/ui/Container';
 import Button from '../components/ui/Button';
 import Reveal from '../components/ui/Reveal';
@@ -130,6 +131,8 @@ const ProjectGalleryPage = () => {
         canonicalUrl="https://warengjayateknik.my.id/gallery"
         keywords={['galeri proyek', 'hasil pengerjaan bengkel las', 'foto kanopi', 'foto pagar besi']}
       />
+
+      <Breadcrumbs currentPage="Galeri Proyek" />
 
       {/* Page header */}
       <section className="border-b border-line bg-paper py-12 md:py-16">

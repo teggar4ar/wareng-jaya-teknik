@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "npm run generate-data && vite",
-    "build": "npm run generate-data && npm run generate-sitemap && vite-react-ssg build",
+    "build": "npm run generate-data && npm run generate-sitemap && npm run generate-llms && vite-react-ssg build",
     "lint": "eslint .",
     "preview": "vite preview",
     "generate-sitemap": "node scripts/generate-sitemap.js",
+    "generate-llms": "node scripts/generate-llms-txt.js",
     "generate-data": "node scripts/generate-blog-data.js"
   },
   "dependencies": {

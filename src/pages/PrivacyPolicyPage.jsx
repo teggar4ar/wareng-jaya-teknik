@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import Breadcrumbs from '../components/Breadcrumbs';
 import Container from '../components/ui/Container';
 import SectionHeading from '../components/ui/SectionHeading';
 
@@ -15,6 +16,8 @@ const PrivacyPolicyPage = () => {
         canonicalUrl="/privacy"
         keywords={['kebijakan privasi', 'privasi Wareng Jaya Teknik', 'perlindungan data']}
       />
+
+      <Breadcrumbs currentPage="Kebijakan Privasi" />
 
       <section className="border-b border-line bg-paper py-12 md:py-16">
         <Container>

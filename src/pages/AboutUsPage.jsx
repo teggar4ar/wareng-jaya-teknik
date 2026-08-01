@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
 import SEO from '../components/SEO';
+import Breadcrumbs from '../components/Breadcrumbs';
 import Container from '../components/ui/Container';
 import Button from '../components/ui/Button';
 import SectionHeading from '../components/ui/SectionHeading';
@@ -47,6 +48,8 @@ const AboutUsPage = () => {
         canonicalUrl="https://warengjayateknik.my.id/about"
         keywords={['tentang Wareng Jaya Teknik', 'bengkel las Tajurhalang', 'bengkel las Bogor', 'jasa las']}
       />
+
+      <Breadcrumbs currentPage="Tentang Kami" />
 
       {/* Page header */}
       <section className="border-b border-line bg-paper py-12 md:py-16">

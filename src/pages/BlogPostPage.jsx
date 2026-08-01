@@ -311,11 +311,21 @@ const BlogPostPage = () => {
             {post.title}
           </h1>
 
-          {/* Meta row */}
+          {/* Meta row — byline uses rel="author" + itemProp so crawlers can
+              attribute the article to a named author, not just render text. */}
           <div className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-sm text-ink-muted">
-            <span>{post.author || 'Tim Wareng Jaya Teknik'}</span>
+            <span className="not-italic" itemProp="author">
+              Oleh{' '}
+              <Link
+                to="/about"
+                rel="author"
+                className="font-medium text-ink transition-colors duration-150 hover:text-accent"
+              >
+                {post.author || 'Tim Wareng Jaya Teknik'}
+              </Link>
+            </span>
             <span aria-hidden="true">/</span>
-            <span>{post.formattedDate}</span>
+            <time dateTime={post.isoDate || post.date}>{post.formattedDate}</time>
             <span aria-hidden="true">/</span>
             <span>{post.readingTime} menit membaca</span>
           </div>
@@ -474,11 +484,11 @@ const BlogPostPage = () => {
                     <button
                       type="button"
                       onClick={handleCopyLink}
-                      aria-label="Salin tautan artikel"
                       className="inline-flex min-h-11 items-center gap-2 rounded-btn border border-line bg-surface px-3 font-mono text-xs uppercase tracking-wider text-ink-muted transition-colors duration-150 hover:border-accent hover:text-accent"
                     >
                       <FaLink size={14} aria-hidden="true" />
                       Salin Link
+                      <span className="sr-only"> artikel ini</span>
                     </button>
                     <span aria-live="polite" className="font-mono text-xs text-accent">
                       {copied ? 'Tersalin!' : ''}

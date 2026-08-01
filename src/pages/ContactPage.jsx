@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FaWhatsapp, FaPhone, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
 import SEO from '../components/SEO';
+import Breadcrumbs from '../components/Breadcrumbs';
 import Container from '../components/ui/Container';
 import Button from '../components/ui/Button';
 import SectionHeading from '../components/ui/SectionHeading';
@@ -91,6 +92,8 @@ const ContactPage = () => {
         canonicalUrl="https://warengjayateknik.my.id/contact"
         keywords={['kontak Wareng Jaya Teknik', 'kontak bengkel las', 'tanya harga las', 'kontak WhatsApp']}
       />
+
+      <Breadcrumbs currentPage="Hubungi Kami" />
 
       {/* Page header */}
       <section className="border-b border-line bg-paper py-12 md:py-16">
